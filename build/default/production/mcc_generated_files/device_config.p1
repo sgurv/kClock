@@ -2,13 +2,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 mcc_generated_files/device_config.c
 [p x FOSC = INTOSC ]
 "51
-[p x WDTE = OFF ]
+[p x WDTE = ON ]
 "52
-[p x PWRTE = OFF ]
+[p x PWRTE = ON ]
 "53
 [p x MCLRE = ON ]
 "54
-[p x CP = OFF ]
+[p x CP = ON ]
 "55
 [p x CPD = OFF ]
 "56
@@ -22,7 +22,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [p x WRT = OFF ]
 "63
-[p x VCAPEN = OFF ]
+[p x VCAPEN = RA0 ]
 "64
 [p x PLLEN = ON ]
 "65

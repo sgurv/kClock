@@ -5410,6 +5410,7 @@ void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
     for (i=0; i<32; i++)
     {
         ramBuf[i] = FLASH_ReadWord((blockStartAddr+i));
+        __asm("clrwdt");
     }
 
 
@@ -5471,6 +5472,7 @@ int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
    __nop();
 
    writeAddr++;
+   __asm("clrwdt");
   }
  }
 

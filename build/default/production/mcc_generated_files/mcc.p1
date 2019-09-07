@@ -628,8 +628,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _WDT_Initialize ]
 [f ]
 "76
-[; ;mcc_generated_files/mcc.c: 76:     WDTCON = 0x16;
-[e = _WDTCON -> -> 22 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 76:     WDTCON = 0x12;
+[e = _WDTCON -> -> 18 `i `uc ]
 "77
 [; ;mcc_generated_files/mcc.c: 77: }
 [e :UE 384 ]

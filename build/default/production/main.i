@@ -5616,10 +5616,10 @@ extern void (*TMR0_InterruptHandler)(void);
 void TMR0_DefaultInterruptHandler(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/drivers/i2c_master.h" 1
-# 29 "./mcc_generated_files/drivers/i2c_master.h"
-# 1 "./mcc_generated_files/drivers/i2c_types.h" 1
-# 29 "./mcc_generated_files/drivers/i2c_types.h"
+# 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
+# 28 "./mcc_generated_files/drivers/i2c_simple_master.h"
+# 1 "./mcc_generated_files/drivers/../drivers/i2c_types.h" 1
+# 29 "./mcc_generated_files/drivers/../drivers/i2c_types.h"
 typedef enum {
     I2C_NOERR,
     I2C_BUSY,
@@ -5646,11 +5646,21 @@ i2c_operations_t i2c_returnStop(void *p);
 i2c_operations_t i2c_returnReset(void *p);
 i2c_operations_t i2c_restartWrite(void *p);
 i2c_operations_t i2c_restartRead(void *p);
-# 29 "./mcc_generated_files/drivers/i2c_master.h" 2
+# 28 "./mcc_generated_files/drivers/i2c_simple_master.h" 2
 
 
+uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg);
+uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg);
+void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
+void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
 
+void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
+void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
+void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
+# 58 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/drivers/i2c_master.h" 1
+# 33 "./mcc_generated_files/drivers/i2c_master.h"
 i2c_error_t i2c_open(i2c_address_t address);
 void i2c_setAddress(i2c_address_t address);
 i2c_error_t i2c_close(void);
@@ -5671,18 +5681,6 @@ void i2c_setTimeOutCallback(i2c_callback cb, void *p);
 
 void i2c_ISR(void);
 void i2c_busCollisionISR(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
-# 30 "./mcc_generated_files/drivers/i2c_simple_master.h"
-uint8_t i2c_read1ByteRegister(i2c_address_t address, uint8_t reg);
-uint16_t i2c_read2ByteRegister(i2c_address_t address, uint8_t reg);
-void i2c_write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
-void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
-
-void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
-void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
-void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
 # 59 "./mcc_generated_files/mcc.h" 2
 # 74 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -5704,6 +5702,7 @@ const uint8_t displayNum[] = {((1 << 7) | (1 << 6) | (1 << 5) | (1 << 4) | (1 <<
 
 uint8_t displayBuff[4];
 uint8_t flag_time_display_update;
+uint8_t flag_dot_blink;
 
 uint8_t rtcData[9];
 
@@ -5757,7 +5756,7 @@ void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
     rtcData[3] = bcdHour & 0x3F;
     i2c_writeNBytes(0x68,rtcData,4);
 }
-# 123 "main.c"
+
 static uint8_t bcdHourIncr(uint8_t hr){
 
     if(hr == 0x09) return 0x10;
@@ -5829,7 +5828,7 @@ void main(void)
     while (1)
     {
 
-
+        __asm("clrwdt");
 
 
         if(PORTBbits.RB0 == 0){
@@ -5925,10 +5924,12 @@ void main(void)
                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
-                if(mode == MODE_SET_HOUR){
-                    displayBuff[1] |= (1 << 0);
-                } else if(mode == MODE_SET_MINUTE){
-                    displayBuff[3] |= (1 << 0);
+                if(flag_dot_blink){
+                    if(mode == MODE_SET_HOUR){
+                        displayBuff[1] |= (1 << 0);
+                    } else if(mode == MODE_SET_MINUTE){
+                        displayBuff[3] |= (1 << 0);
+                    }
                 }
                 flag_time_display_update = 0;
             }
@@ -5940,6 +5941,10 @@ void secondISR(void){
 
     if(mode == MODE_NORMAL){
         do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0);
+        flag_time_display_update = 1;
+    } else {
+        if(flag_dot_blink) flag_dot_blink = 0;
+        else flag_dot_blink = 1;
         flag_time_display_update = 1;
     }
 

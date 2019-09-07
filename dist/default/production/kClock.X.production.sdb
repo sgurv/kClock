@@ -3,12 +3,6 @@
 [d edition pro ]
 [d chip 16F1939 ]
 [d frameptr 6 ]
-"170 /home/sandeep/MPLABXProjects/kClock.X/main.c
-[e E3489 mode `uc
-MODE_NORMAL 0
-MODE_SET_HOUR 1
-MODE_SET_MINUTE 2
-]
 "80 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_master.c
 [e E3411 . `uc
 I2C_IDLE 0
@@ -71,6 +65,12 @@ i2c_restart_write 3
 i2c_continue 4
 i2c_reset_link 5
 ]
+"157 /home/sandeep/MPLABXProjects/kClock.X/main.c
+[e E3490 mode `uc
+MODE_NORMAL 0
+MODE_SET_HOUR 1
+MODE_SET_MINUTE 2
+]
 "10 /opt/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul8_16.c
@@ -79,23 +79,23 @@ i2c_reset_link 5
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"79 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"80 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _initRTC initRTC `(v  1 e 1 0 ]
-"101
+"102
 [v _updateRTC updateRTC `(v  1 e 1 0 ]
-"123
+"110
 [v _bcdHourIncr bcdHourIncr `(uc  1 s 1 bcdHourIncr ]
-"131
+"118
 [v _bcdHourDecr bcdHourDecr `(uc  1 s 1 bcdHourDecr ]
-"138
+"125
 [v _bcdMinuteIncr bcdMinuteIncr `(uc  1 s 1 bcdMinuteIncr ]
-"149
+"136
 [v _bcdMinuteDecr bcdMinuteDecr `(uc  1 s 1 bcdMinuteDecr ]
-"159
+"146
 [v _main main `(v  1 e 1 0 ]
-"301
+"290
 [v _secondISR secondISR `(v  1 e 1 0 ]
-"316
+"309
 [v _displayRefreshISR displayRefreshISR `(v  1 e 1 0 ]
 "89 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_master.c
 [v _i2c_setDataCompleteCallback i2c_setDataCompleteCallback `(v  1 e 1 0 ]
@@ -262,9 +262,9 @@ i2c_reset_link 5
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "58 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/memory.c
 [v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
-"95
+"96
 [v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
-"156
+"158
 [v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
 "57 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -286,7 +286,11 @@ i2c_reset_link 5
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "137
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-[s S22 . 1 `uc 1 IOCIF 1 0 :1:0 
+"78 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/i2c_driver.h
+[v _i2c_driver_busCollisionISR i2c_driver_busCollisionISR `*.37(v  1 e 2 0 ]
+"79
+[v _i2c_driver_i2cISR i2c_driver_i2cISR `*.37(v  1 e 2 0 ]
+[s S445 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -296,14 +300,14 @@ i2c_reset_link 5
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 /opt/microchip/xc8/v2.05/pic/include/pic16f1939.h
-[s S31 . 1 `uc 1 . 1 0 :2:0 
+[s S454 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S693 . 1 `uc 1 RB0 1 0 :1:0 
+[u S459 . 1 `S445 1 . 1 0 `S454 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES459  1 e 1 @11 ]
+[s S1312 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -313,9 +317,9 @@ i2c_reset_link 5
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S702 . 1 `S693 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES702  1 e 1 @13 ]
-[s S231 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S1321 . 1 `S1312 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1321  1 e 1 @13 ]
+[s S654 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -325,9 +329,9 @@ i2c_reset_link 5
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "732
-[u S240 . 1 `S231 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES240  1 e 1 @17 ]
-[s S189 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S663 . 1 `S654 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES663  1 e 1 @17 ]
+[s S612 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 LCDIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -337,8 +341,8 @@ i2c_reset_link 5
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "794
-[u S198 . 1 `S189 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES198  1 e 1 @18 ]
+[u S621 . 1 `S612 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES621  1 e 1 @18 ]
 "880
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "1313
@@ -351,7 +355,7 @@ i2c_reset_link 5
 [v _TRISD TRISD `VEuc  1 e 1 @143 ]
 "1561
 [v _TRISE TRISE `VEuc  1 e 1 @144 ]
-[s S210 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S633 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -361,9 +365,9 @@ i2c_reset_link 5
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1616
-[u S219 . 1 `S210 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES219  1 e 1 @145 ]
-[s S168 . 1 `uc 1 CCP2IE 1 0 :1:0 
+[u S642 . 1 `S633 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES642  1 e 1 @145 ]
+[s S591 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 LCDIE 1 0 :1:2 
 `uc 1 BCLIE 1 0 :1:3 
@@ -373,11 +377,11 @@ i2c_reset_link 5
 `uc 1 OSFIE 1 0 :1:7 
 ]
 "1678
-[u S177 . 1 `S168 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES177  1 e 1 @146 ]
+[u S600 . 1 `S591 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES600  1 e 1 @146 ]
 "1764
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
-[s S338 . 1 `uc 1 PS0 1 0 :1:0 
+[s S761 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -387,13 +391,13 @@ i2c_reset_link 5
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1787
-[s S347 . 1 `uc 1 PS 1 0 :3:0 
+[s S770 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S352 . 1 `S338 1 . 1 0 `S347 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES352  1 e 1 @149 ]
+[u S775 . 1 `S761 1 . 1 0 `S770 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES775  1 e 1 @149 ]
 "1898
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1957
@@ -402,7 +406,7 @@ i2c_reset_link 5
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2357
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S638 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1257 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -412,13 +416,13 @@ i2c_reset_link 5
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2374
-[u S647 . 1 `S638 1 . 1 0 ]
-[v _LATAbits LATAbits `VES647  1 e 1 @268 ]
+[u S1266 . 1 `S1257 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1266  1 e 1 @268 ]
 "2419
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2481
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S617 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1236 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -428,20 +432,20 @@ i2c_reset_link 5
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2498
-[u S626 . 1 `S617 1 . 1 0 ]
-[v _LATCbits LATCbits `VES626  1 e 1 @270 ]
+[u S1245 . 1 `S1236 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1245  1 e 1 @270 ]
 "2543
 [v _LATD LATD `VEuc  1 e 1 @271 ]
 "2613
 [v _LATE LATE `VEuc  1 e 1 @272 ]
-[s S604 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S1223 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
 ]
 "2626
-[u S609 . 1 `S604 1 . 1 0 ]
-[v _LATEbits LATEbits `VES609  1 e 1 @272 ]
+[u S1228 . 1 `S1223 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1228  1 e 1 @272 ]
 "2923
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3272
@@ -462,7 +466,7 @@ i2c_reset_link 5
 [v _EEDATL EEDATL `VEuc  1 e 1 @403 ]
 "3646
 [v _EEDATH EEDATH `VEuc  1 e 1 @404 ]
-[s S56 . 1 `uc 1 RD 1 0 :1:0 
+[s S479 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -472,8 +476,8 @@ i2c_reset_link 5
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3683
-[u S65 . 1 `S56 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES65  1 e 1 @405 ]
+[u S488 . 1 `S479 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES488  1 e 1 @405 ]
 "3728
 [v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
 "4063
@@ -488,7 +492,7 @@ i2c_reset_link 5
 [v _SSPMSK SSPMSK `VEuc  1 e 1 @531 ]
 "4214
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
-[s S1274 . 1 `uc 1 BF 1 0 :1:0 
+[s S1079 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -498,11 +502,11 @@ i2c_reset_link 5
 `uc 1 SMP 1 0 :1:7 
 ]
 "4231
-[u S1283 . 1 `S1274 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES1283  1 e 1 @532 ]
+[u S1088 . 1 `S1079 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES1088  1 e 1 @532 ]
 "4276
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
-[s S1200 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1001 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
@@ -512,11 +516,11 @@ i2c_reset_link 5
 `uc 1 WCOL 1 0 :1:7 
 ]
 "4298
-[u S1209 . 1 `S1200 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES1209  1 e 1 @533 ]
+[u S1010 . 1 `S1001 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES1010  1 e 1 @533 ]
 "4398
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @534 ]
-[s S1251 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1056 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -526,9 +530,9 @@ i2c_reset_link 5
 `uc 1 GCEN 1 0 :1:7 
 ]
 "4415
-[u S1260 . 1 `S1251 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES1260  1 e 1 @534 ]
-[s S423 . 1 `uc 1 IOCBP0 1 0 :1:0 
+[u S1065 . 1 `S1056 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES1065  1 e 1 @534 ]
+[s S846 . 1 `uc 1 IOCBP0 1 0 :1:0 
 `uc 1 IOCBP1 1 0 :1:1 
 `uc 1 IOCBP2 1 0 :1:2 
 `uc 1 IOCBP3 1 0 :1:3 
@@ -538,11 +542,11 @@ i2c_reset_link 5
 `uc 1 IOCBP7 1 0 :1:7 
 ]
 "5909
-[s S432 . 1 `uc 1 IOCBP 1 0 :8:0 
+[s S855 . 1 `uc 1 IOCBP 1 0 :8:0 
 ]
-[u S434 . 1 `S423 1 . 1 0 `S432 1 . 1 0 ]
-[v _IOCBPbits IOCBPbits `VES434  1 e 1 @916 ]
-[s S397 . 1 `uc 1 IOCBN0 1 0 :1:0 
+[u S857 . 1 `S846 1 . 1 0 `S855 1 . 1 0 ]
+[v _IOCBPbits IOCBPbits `VES857  1 e 1 @916 ]
+[s S820 . 1 `uc 1 IOCBN0 1 0 :1:0 
 `uc 1 IOCBN1 1 0 :1:1 
 `uc 1 IOCBN2 1 0 :1:2 
 `uc 1 IOCBN3 1 0 :1:3 
@@ -552,11 +556,11 @@ i2c_reset_link 5
 `uc 1 IOCBN7 1 0 :1:7 
 ]
 "5979
-[s S406 . 1 `uc 1 IOCBN 1 0 :8:0 
+[s S829 . 1 `uc 1 IOCBN 1 0 :8:0 
 ]
-[u S408 . 1 `S397 1 . 1 0 `S406 1 . 1 0 ]
-[v _IOCBNbits IOCBNbits `VES408  1 e 1 @917 ]
-[s S371 . 1 `uc 1 IOCBF0 1 0 :1:0 
+[u S831 . 1 `S820 1 . 1 0 `S829 1 . 1 0 ]
+[v _IOCBNbits IOCBNbits `VES831  1 e 1 @917 ]
+[s S794 . 1 `uc 1 IOCBF0 1 0 :1:0 
 `uc 1 IOCBF1 1 0 :1:1 
 `uc 1 IOCBF2 1 0 :1:2 
 `uc 1 IOCBF3 1 0 :1:3 
@@ -566,10 +570,10 @@ i2c_reset_link 5
 `uc 1 IOCBF7 1 0 :1:7 
 ]
 "6049
-[s S380 . 1 `uc 1 IOCBF 1 0 :8:0 
+[s S803 . 1 `uc 1 IOCBF 1 0 :8:0 
 ]
-[u S382 . 1 `S371 1 . 1 0 `S380 1 . 1 0 ]
-[v _IOCBFbits IOCBFbits `VES382  1 e 1 @918 ]
+[u S805 . 1 `S794 1 . 1 0 `S803 1 . 1 0 ]
+[v _IOCBFbits IOCBFbits `VES805  1 e 1 @918 ]
 "8823
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
 "50 /home/sandeep/MPLABXProjects/kClock.X/main.c
@@ -578,53 +582,51 @@ i2c_reset_link 5
 [v _displayBuff displayBuff `[4]uc  1 e 4 0 ]
 "54
 [v _flag_time_display_update flag_time_display_update `uc  1 e 1 0 ]
-"56
+"55
+[v _flag_dot_blink flag_dot_blink `uc  1 e 1 0 ]
+"57
 [v _rtcData rtcData `[9]uc  1 e 9 0 ]
-"58
-[v _flag_button_press_count flag_button_press_count `[4]uc  1 e 4 0 ]
 "59
+[v _flag_button_press_count flag_button_press_count `[4]uc  1 e 4 0 ]
+"60
 [v _button_press_count button_press_count `[4]uc  1 e 4 0 ]
-"61
-[v _mode mode `uc  1 e 1 0 ]
 "62
+[v _mode mode `uc  1 e 1 0 ]
+"63
 [v _mode_timeout_count mode_timeout_count `uc  1 e 1 0 ]
-[s S810 . 29 `uc 1 busy 1 0 :1:0 
+[s S52 . 29 `uc 1 busy 1 0 :1:0 
 `uc 1 inUse 1 0 :1:1 
 `uc 1 bufferFree 1 0 :1:2 
 `uc 1 addressNACKCheck 1 0 :1:3 
 `uc 1 address 1 1 `*.4uc 1 data_ptr 1 2 `ui 1 data_length 2 3 `us 1 time_out 2 5 `us 1 time_out_value 2 7 `E3411 1 state 1 9 `E3252 1 error 1 10 `[6]*.37(E3257 1 callbackTable 12 11 `[6]*.4v 1 callbackPayload 6 23 ]
 "80 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_master.c
-[v _i2c_status i2c_status `S810  1 e 29 0 ]
+[v _i2c_status i2c_status `S52  1 e 29 0 ]
 "400
 [v _fsmStateTable fsmStateTable `DC[16]*.37(E3411  1 e 32 0 ]
-"78 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/i2c_driver.h
-[v _i2c_driver_busCollisionISR i2c_driver_busCollisionISR `*.37(v  1 e 2 0 ]
-"79
-[v _i2c_driver_i2cISR i2c_driver_i2cISR `*.37(v  1 e 2 0 ]
 "54 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/pin_manager.c
 [v _IOCBF4_InterruptHandler IOCBF4_InterruptHandler `*.37(v  1 e 2 0 ]
 "58 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"159 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"146 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"299
+"288
 } 0
-"101
+"102
 [v _updateRTC updateRTC `(v  1 e 1 0 ]
 {
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 wreg ]
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 wreg ]
 [v updateRTC@bcdMinute bcdMinute `uc  1 p 1 14 ]
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 16 ]
-"107
+"108
 } 0
-"79
+"80
 [v _initRTC initRTC `(v  1 e 1 0 ]
 {
-"99
+"100
 } 0
 "48 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_simple_master.c
 [v _i2c_writeNBytes i2c_writeNBytes `(v  1 e 1 0 ]
@@ -640,9 +642,9 @@ i2c_reset_link 5
 [v _i2c_readDataBlock i2c_readDataBlock `(v  1 e 1 0 ]
 {
 [v i2c_readDataBlock@address address `uc  1 a 1 wreg ]
-[s S1126 . 3 `ui 1 len 2 0 `*.4uc 1 data 1 2 ]
+[s S373 . 3 `ui 1 len 2 0 `*.4uc 1 data 1 2 ]
 "144
-[v i2c_readDataBlock@d d `S1126  1 a 3 16 ]
+[v i2c_readDataBlock@d d `S373  1 a 3 16 ]
 "141
 [v i2c_readDataBlock@address address `uc  1 a 1 wreg ]
 [v i2c_readDataBlock@reg reg `uc  1 p 1 10 ]
@@ -957,39 +959,39 @@ i2c_reset_link 5
 {
 "57
 } 0
-"138 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"125 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _bcdMinuteIncr bcdMinuteIncr `(uc  1 s 1 bcdMinuteIncr ]
 {
 [v bcdMinuteIncr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteIncr@mn mn `uc  1 a 1 wreg ]
-"140
+"127
 [v bcdMinuteIncr@mn mn `uc  1 a 1 0 ]
-"147
+"134
 } 0
-"149
+"136
 [v _bcdMinuteDecr bcdMinuteDecr `(uc  1 s 1 bcdMinuteDecr ]
 {
 [v bcdMinuteDecr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteDecr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteDecr@mn mn `uc  1 a 1 0 ]
-"157
+"144
 } 0
-"123
+"110
 [v _bcdHourIncr bcdHourIncr `(uc  1 s 1 bcdHourIncr ]
 {
 [v bcdHourIncr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourIncr@hr hr `uc  1 a 1 wreg ]
-"125
+"112
 [v bcdHourIncr@hr hr `uc  1 a 1 0 ]
-"129
+"116
 } 0
-"131
+"118
 [v _bcdHourDecr bcdHourDecr `(uc  1 s 1 bcdHourDecr ]
 {
 [v bcdHourDecr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourDecr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourDecr@hr hr `uc  1 a 1 0 ]
-"136
+"123
 } 0
 "50 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1275,12 +1277,12 @@ i2c_reset_link 5
 {
 "140
 } 0
-"316 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"309 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _displayRefreshISR displayRefreshISR `(v  1 e 1 0 ]
 {
-"317
+"310
 [v displayRefreshISR@i i `uc  1 s 1 i ]
-"355
+"348
 } 0
 "118 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -1297,8 +1299,8 @@ i2c_reset_link 5
 {
 "155
 } 0
-"301 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"290 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _secondISR secondISR `(v  1 e 1 0 ]
 {
-"314
+"307
 } 0

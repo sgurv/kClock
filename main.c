@@ -52,6 +52,7 @@ const uint8_t displayNum[] = {CHAR_0, CHAR_1, CHAR_2, CHAR_3, CHAR_4, CHAR_5,
 
 uint8_t displayBuff[4]; // 4 digits
 uint8_t flag_time_display_update;
+uint8_t flag_dot_blink;
 
 uint8_t rtcData[9];
 
@@ -105,20 +106,6 @@ void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
     rtcData[3] = bcdHour & 0x3F; // hour in 24hr format
     i2c_writeNBytes(0x68,rtcData,4);
 }
-/*
-static uint8_t byteToBcd2(uint8_t Value)
-{
-	uint8_t bcdhigh = 0U;
-
-	while(Value >= 10U)
-	{
-		bcdhigh++;
-		Value -= 10U;
-	}
-
-	return  ((uint8_t)(bcdhigh << 4U) | Value);
-}
-*/
 
 static uint8_t bcdHourIncr(uint8_t hr){
     
@@ -191,7 +178,7 @@ void main(void)
     while (1)
     {
         // Add your application code
-        
+        CLRWDT();
         // Key scan
         
         if(SW_1_GetValue() == false){
@@ -287,10 +274,12 @@ void main(void)
                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
-                if(mode == MODE_SET_HOUR){
-                    displayBuff[1] |= SEG_DOT;
-                } else if(mode == MODE_SET_MINUTE){
-                    displayBuff[3] |= SEG_DOT;
+                if(flag_dot_blink){
+                    if(mode == MODE_SET_HOUR){
+                        displayBuff[1] |= SEG_DOT;
+                    } else if(mode == MODE_SET_MINUTE){
+                        displayBuff[3] |= SEG_DOT;
+                    }
                 }
                 flag_time_display_update = 0;
             }
@@ -302,6 +291,10 @@ void secondISR(void){
     
     if(mode == MODE_NORMAL){
         LED_COLON_Toggle();
+        flag_time_display_update = 1;
+    } else {
+        if(flag_dot_blink) flag_dot_blink = 0;
+        else flag_dot_blink = 1;
         flag_time_display_update = 1;
     }
     
