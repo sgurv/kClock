@@ -2,7 +2,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3343 `(v ~T0 @X0 0 tf ]
 [v F3345 `(v ~T0 @X0 0 tf ]
 [v F2893 `(v ~T0 @X0 1 tf1`ul ]
-"92 /opt/microchip/xc8/v2.05/pic/include/pic.h
+"92 /opt/microchip/xc8/v2.10/pic/include/pic.h
 [v __delay `JF2893 ~T0 @X0 0 e ]
 [p i __delay ]
 "36 ./mcc_generated_files/drivers/i2c_simple_master.h
@@ -12,613 +12,620 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/drivers/i2c_simple_master.h: 35: void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
 [v _i2c_writeNBytes `(v ~T0 @X0 0 ef3`uc`*v`ui ]
 [p mainexit ]
-"74 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
+"76 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 76: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"2619 /opt/microchip/xc8/v2.05/pic/include/pic16f1939.h
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2619:     struct {
+"2619 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2619:     struct {
 [s S128 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S128 . LATE0 LATE1 LATE2 LATE3 ]
 "2618
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2618: typedef union {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2618: typedef union {
 [u S127 `S128 1 ]
 [n S127 . . ]
 "2626
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2626: extern volatile LATEbits_t LATEbits __attribute__((address(0x110)));
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2626: extern volatile LATEbits_t LATEbits __attribute__((address(0x110)));
 [v _LATEbits `VS127 ~T0 @X0 0 e@272 ]
 "2487
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2487:     struct {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2487:     struct {
 [s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S123 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
 "2486
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2486: typedef union {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2486: typedef union {
 [u S122 `S123 1 ]
 [n S122 . . ]
 "2498
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2498: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2498: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
 [v _LATCbits `VS122 ~T0 @X0 0 e@270 ]
 "2363
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2363:     struct {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2363:     struct {
 [s S119 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S119 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
 "2362
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2362: typedef union {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2362: typedef union {
 [u S118 `S119 1 ]
 [n S118 . . ]
 "2374
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2374: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2374: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
 [v _LATAbits `VS118 ~T0 @X0 0 e@268 ]
-"157 main.c
-[; ;main.c: 157:     mode = MODE_NORMAL;
-[c E3490 0 1 2 .. ]
-[n E3490 mode MODE_NORMAL MODE_SET_HOUR MODE_SET_MINUTE  ]
+"173 main.c
+[; ;main.c: 173:     mode = MODE_NORMAL;
+[c E3513 0 1 2 3 .. ]
+[n E3513 mode MODE_NORMAL MODE_TEMPERATURE MODE_SET_HOUR MODE_SET_MINUTE  ]
 [v F2908 `(v ~T0 @X0 0 tf ]
-"409 ./mcc_generated_files/pin_manager.h
-[; ;./mcc_generated_files/pin_manager.h: 409: void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
+"426 ./mcc_generated_files/pin_manager.h
+[; ;./mcc_generated_files/pin_manager.h: 426: void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2908 ]
-"71 main.c
-[; ;main.c: 71: void secondISR(void);
+"74 main.c
+[; ;main.c: 74: void secondISR(void);
 [v _secondISR `(v ~T0 @X0 0 ef ]
-[v F3370 `(v ~T0 @X0 0 tf ]
+[v F3354 `(v ~T0 @X0 0 tf ]
 "261 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 261:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F3370 ]
-"72 main.c
-[; ;main.c: 72: void displayRefreshISR(void);
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F3354 ]
+"75 main.c
+[; ;main.c: 75: void displayRefreshISR(void);
 [v _displayRefreshISR `(v ~T0 @X0 0 ef ]
-"357 /opt/microchip/xc8/v2.05/pic/include/pic16f1939.h
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 357:     struct {
+"357 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 357:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "367
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 367:     struct {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 367:     struct {
 [s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
 [n S32 . . T0IF . T0IE ]
 "356
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 356: typedef union {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 356: typedef union {
 [u S30 `S31 1 `S32 1 ]
 [n S30 . . . ]
 "374
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
 "497
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 497:     struct {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 497:     struct {
 [s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
 "496
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 496: typedef union {
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 496: typedef union {
 [u S35 `S36 1 ]
 [n S35 . . ]
 "508
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
 [v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"2543
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2543: extern volatile unsigned char LATD __attribute__((address(0x10F)));
+"296 main.c
+[; ;main.c: 296:                 bcd_temp = intToBCD(ADC_GetConversion(channel_AN13));
+[c E3383 13 29 30 31 .. ]
+[n E3383 . channel_AN13 channel_Temp channel_DAC channel_FVR  ]
+"288 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 288: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E3383 ]
+"2543 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2543: extern volatile unsigned char LATD __attribute__((address(0x10F)));
 [v _LATD `Vuc ~T0 @X0 0 e@271 ]
-"54 /opt/microchip/xc8/v2.05/pic/include/pic16f1939.h
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 54: __asm("INDF0 equ 00h");
+"54 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 "74
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 74: __asm("INDF1 equ 01h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 74: __asm("INDF1 equ 01h");
 [; <" INDF1 equ 01h ;# ">
 "94
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 94: __asm("PCL equ 02h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 94: __asm("PCL equ 02h");
 [; <" PCL equ 02h ;# ">
 "114
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 114: __asm("STATUS equ 03h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 114: __asm("STATUS equ 03h");
 [; <" STATUS equ 03h ;# ">
 "177
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 177: __asm("FSR0L equ 04h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 177: __asm("FSR0L equ 04h");
 [; <" FSR0L equ 04h ;# ">
 "197
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 197: __asm("FSR0H equ 05h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 197: __asm("FSR0H equ 05h");
 [; <" FSR0H equ 05h ;# ">
 "221
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 221: __asm("FSR1L equ 06h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 221: __asm("FSR1L equ 06h");
 [; <" FSR1L equ 06h ;# ">
 "241
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 241: __asm("FSR1H equ 07h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 241: __asm("FSR1H equ 07h");
 [; <" FSR1H equ 07h ;# ">
 "261
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 261: __asm("BSR equ 08h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 261: __asm("BSR equ 08h");
 [; <" BSR equ 08h ;# ">
 "313
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 313: __asm("WREG equ 09h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 313: __asm("WREG equ 09h");
 [; <" WREG equ 09h ;# ">
 "333
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 333: __asm("PCLATH equ 0Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 333: __asm("PCLATH equ 0Ah");
 [; <" PCLATH equ 0Ah ;# ">
 "353
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 353: __asm("INTCON equ 0Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 353: __asm("INTCON equ 0Bh");
 [; <" INTCON equ 0Bh ;# ">
 "431
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 431: __asm("PORTA equ 0Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 431: __asm("PORTA equ 0Ch");
 [; <" PORTA equ 0Ch ;# ">
 "493
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 493: __asm("PORTB equ 0Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 493: __asm("PORTB equ 0Dh");
 [; <" PORTB equ 0Dh ;# ">
 "555
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 555: __asm("PORTC equ 0Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 555: __asm("PORTC equ 0Eh");
 [; <" PORTC equ 0Eh ;# ">
 "617
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 617: __asm("PORTD equ 0Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 617: __asm("PORTD equ 0Fh");
 [; <" PORTD equ 0Fh ;# ">
 "679
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 679: __asm("PORTE equ 010h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 679: __asm("PORTE equ 010h");
 [; <" PORTE equ 010h ;# ">
 "717
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 717: __asm("PIR1 equ 011h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 717: __asm("PIR1 equ 011h");
 [; <" PIR1 equ 011h ;# ">
 "779
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 779: __asm("PIR2 equ 012h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 779: __asm("PIR2 equ 012h");
 [; <" PIR2 equ 012h ;# ">
 "836
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 836: __asm("PIR3 equ 013h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 836: __asm("PIR3 equ 013h");
 [; <" PIR3 equ 013h ;# ">
 "882
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 882: __asm("TMR0 equ 015h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 882: __asm("TMR0 equ 015h");
 [; <" TMR0 equ 015h ;# ">
 "902
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 902: __asm("TMR1 equ 016h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 902: __asm("TMR1 equ 016h");
 [; <" TMR1 equ 016h ;# ">
 "909
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 909: __asm("TMR1L equ 016h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 909: __asm("TMR1L equ 016h");
 [; <" TMR1L equ 016h ;# ">
 "929
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 929: __asm("TMR1H equ 017h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 929: __asm("TMR1H equ 017h");
 [; <" TMR1H equ 017h ;# ">
 "949
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 949: __asm("T1CON equ 018h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 949: __asm("T1CON equ 018h");
 [; <" T1CON equ 018h ;# ">
 "1021
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1021: __asm("T1GCON equ 019h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1021: __asm("T1GCON equ 019h");
 [; <" T1GCON equ 019h ;# ">
 "1098
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1098: __asm("TMR2 equ 01Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1098: __asm("TMR2 equ 01Ah");
 [; <" TMR2 equ 01Ah ;# ">
 "1118
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1118: __asm("PR2 equ 01Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1118: __asm("PR2 equ 01Bh");
 [; <" PR2 equ 01Bh ;# ">
 "1138
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1138: __asm("T2CON equ 01Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1138: __asm("T2CON equ 01Ch");
 [; <" T2CON equ 01Ch ;# ">
 "1209
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1209: __asm("CPSCON0 equ 01Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1209: __asm("CPSCON0 equ 01Eh");
 [; <" CPSCON0 equ 01Eh ;# ">
 "1269
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1269: __asm("CPSCON1 equ 01Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1269: __asm("CPSCON1 equ 01Fh");
 [; <" CPSCON1 equ 01Fh ;# ">
 "1315
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1315: __asm("TRISA equ 08Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1315: __asm("TRISA equ 08Ch");
 [; <" TRISA equ 08Ch ;# ">
 "1377
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1377: __asm("TRISB equ 08Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1377: __asm("TRISB equ 08Dh");
 [; <" TRISB equ 08Dh ;# ">
 "1439
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1439: __asm("TRISC equ 08Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1439: __asm("TRISC equ 08Eh");
 [; <" TRISC equ 08Eh ;# ">
 "1501
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1501: __asm("TRISD equ 08Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1501: __asm("TRISD equ 08Fh");
 [; <" TRISD equ 08Fh ;# ">
 "1563
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1563: __asm("TRISE equ 090h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1563: __asm("TRISE equ 090h");
 [; <" TRISE equ 090h ;# ">
 "1601
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1601: __asm("PIE1 equ 091h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1601: __asm("PIE1 equ 091h");
 [; <" PIE1 equ 091h ;# ">
 "1663
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1663: __asm("PIE2 equ 092h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1663: __asm("PIE2 equ 092h");
 [; <" PIE2 equ 092h ;# ">
 "1720
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1720: __asm("PIE3 equ 093h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1720: __asm("PIE3 equ 093h");
 [; <" PIE3 equ 093h ;# ">
 "1766
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1766: __asm("OPTION_REG equ 095h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1766: __asm("OPTION_REG equ 095h");
 [; <" OPTION_REG equ 095h ;# ">
 "1849
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1849: __asm("PCON equ 096h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1849: __asm("PCON equ 096h");
 [; <" PCON equ 096h ;# ">
 "1900
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1900: __asm("WDTCON equ 097h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1900: __asm("WDTCON equ 097h");
 [; <" WDTCON equ 097h ;# ">
 "1959
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 1959: __asm("OSCTUNE equ 098h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 1959: __asm("OSCTUNE equ 098h");
 [; <" OSCTUNE equ 098h ;# ">
 "2017
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2017: __asm("OSCCON equ 099h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2017: __asm("OSCCON equ 099h");
 [; <" OSCCON equ 099h ;# ">
 "2089
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2089: __asm("OSCSTAT equ 09Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2089: __asm("OSCSTAT equ 09Ah");
 [; <" OSCSTAT equ 09Ah ;# ">
 "2151
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2151: __asm("ADRES equ 09Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2151: __asm("ADRES equ 09Bh");
 [; <" ADRES equ 09Bh ;# ">
 "2158
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2158: __asm("ADRESL equ 09Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2158: __asm("ADRESL equ 09Bh");
 [; <" ADRESL equ 09Bh ;# ">
 "2178
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2178: __asm("ADRESH equ 09Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2178: __asm("ADRESH equ 09Ch");
 [; <" ADRESH equ 09Ch ;# ">
 "2198
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2198: __asm("ADCON0 equ 09Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2198: __asm("ADCON0 equ 09Dh");
 [; <" ADCON0 equ 09Dh ;# ">
 "2287
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2287: __asm("ADCON1 equ 09Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2287: __asm("ADCON1 equ 09Eh");
 [; <" ADCON1 equ 09Eh ;# ">
 "2359
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2359: __asm("LATA equ 010Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2359: __asm("LATA equ 010Ch");
 [; <" LATA equ 010Ch ;# ">
 "2421
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2421: __asm("LATB equ 010Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2421: __asm("LATB equ 010Dh");
 [; <" LATB equ 010Dh ;# ">
 "2483
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2483: __asm("LATC equ 010Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2483: __asm("LATC equ 010Eh");
 [; <" LATC equ 010Eh ;# ">
 "2545
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2545: __asm("LATD equ 010Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2545: __asm("LATD equ 010Fh");
 [; <" LATD equ 010Fh ;# ">
 "2615
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2615: __asm("LATE equ 0110h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2615: __asm("LATE equ 0110h");
 [; <" LATE equ 0110h ;# ">
 "2653
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2653: __asm("CM1CON0 equ 0111h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2653: __asm("CM1CON0 equ 0111h");
 [; <" CM1CON0 equ 0111h ;# ">
 "2710
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2710: __asm("CM1CON1 equ 0112h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2710: __asm("CM1CON1 equ 0112h");
 [; <" CM1CON1 equ 0112h ;# ">
 "2776
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2776: __asm("CM2CON0 equ 0113h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2776: __asm("CM2CON0 equ 0113h");
 [; <" CM2CON0 equ 0113h ;# ">
 "2833
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2833: __asm("CM2CON1 equ 0114h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2833: __asm("CM2CON1 equ 0114h");
 [; <" CM2CON1 equ 0114h ;# ">
 "2899
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2899: __asm("CMOUT equ 0115h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2899: __asm("CMOUT equ 0115h");
 [; <" CMOUT equ 0115h ;# ">
 "2925
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2925: __asm("BORCON equ 0116h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2925: __asm("BORCON equ 0116h");
 [; <" BORCON equ 0116h ;# ">
 "2952
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 2952: __asm("FVRCON equ 0117h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2952: __asm("FVRCON equ 0117h");
 [; <" FVRCON equ 0117h ;# ">
 "3028
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3028: __asm("DACCON0 equ 0118h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3028: __asm("DACCON0 equ 0118h");
 [; <" DACCON0 equ 0118h ;# ">
 "3089
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3089: __asm("DACCON1 equ 0119h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3089: __asm("DACCON1 equ 0119h");
 [; <" DACCON1 equ 0119h ;# ">
 "3141
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3141: __asm("SRCON0 equ 011Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3141: __asm("SRCON0 equ 011Ah");
 [; <" SRCON0 equ 011Ah ;# ">
 "3212
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3212: __asm("SRCON1 equ 011Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3212: __asm("SRCON1 equ 011Bh");
 [; <" SRCON1 equ 011Bh ;# ">
 "3274
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3274: __asm("APFCON equ 011Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3274: __asm("APFCON equ 011Dh");
 [; <" APFCON equ 011Dh ;# ">
 "3330
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3330: __asm("ANSELA equ 018Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3330: __asm("ANSELA equ 018Ch");
 [; <" ANSELA equ 018Ch ;# ">
 "3388
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3388: __asm("ANSELB equ 018Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3388: __asm("ANSELB equ 018Dh");
 [; <" ANSELB equ 018Dh ;# ">
 "3446
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3446: __asm("ANSELD equ 018Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3446: __asm("ANSELD equ 018Fh");
 [; <" ANSELD equ 018Fh ;# ">
 "3516
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3516: __asm("ANSELE equ 0190h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3516: __asm("ANSELE equ 0190h");
 [; <" ANSELE equ 0190h ;# ">
 "3556
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3556: __asm("EEADR equ 0191h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3556: __asm("EEADR equ 0191h");
 [; <" EEADR equ 0191h ;# ">
 "3563
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3563: __asm("EEADRL equ 0191h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3563: __asm("EEADRL equ 0191h");
 [; <" EEADRL equ 0191h ;# ">
 "3583
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3583: __asm("EEADRH equ 0192h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3583: __asm("EEADRH equ 0192h");
 [; <" EEADRH equ 0192h ;# ">
 "3603
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3603: __asm("EEDAT equ 0193h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3603: __asm("EEDAT equ 0193h");
 [; <" EEDAT equ 0193h ;# ">
 "3610
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3610: __asm("EEDATL equ 0193h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3610: __asm("EEDATL equ 0193h");
 [; <" EEDATL equ 0193h ;# ">
 "3615
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3615: __asm("EEDATA equ 0193h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3615: __asm("EEDATA equ 0193h");
 [; <" EEDATA equ 0193h ;# ">
 "3648
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3648: __asm("EEDATH equ 0194h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3648: __asm("EEDATH equ 0194h");
 [; <" EEDATH equ 0194h ;# ">
 "3668
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3668: __asm("EECON1 equ 0195h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3668: __asm("EECON1 equ 0195h");
 [; <" EECON1 equ 0195h ;# ">
 "3730
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3730: __asm("EECON2 equ 0196h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3730: __asm("EECON2 equ 0196h");
 [; <" EECON2 equ 0196h ;# ">
 "3750
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3750: __asm("RCREG equ 0199h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3750: __asm("RCREG equ 0199h");
 [; <" RCREG equ 0199h ;# ">
 "3770
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3770: __asm("TXREG equ 019Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3770: __asm("TXREG equ 019Ah");
 [; <" TXREG equ 019Ah ;# ">
 "3790
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3790: __asm("SP1BRG equ 019Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3790: __asm("SP1BRG equ 019Bh");
 [; <" SP1BRG equ 019Bh ;# ">
 "3797
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3797: __asm("SP1BRGL equ 019Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3797: __asm("SP1BRGL equ 019Bh");
 [; <" SP1BRGL equ 019Bh ;# ">
 "3802
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3802: __asm("SPBRG equ 019Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3802: __asm("SPBRG equ 019Bh");
 [; <" SPBRG equ 019Bh ;# ">
 "3806
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3806: __asm("SPBRGL equ 019Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3806: __asm("SPBRGL equ 019Bh");
 [; <" SPBRGL equ 019Bh ;# ">
 "3851
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3851: __asm("SP1BRGH equ 019Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3851: __asm("SP1BRGH equ 019Ch");
 [; <" SP1BRGH equ 019Ch ;# ">
 "3856
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3856: __asm("SPBRGH equ 019Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3856: __asm("SPBRGH equ 019Ch");
 [; <" SPBRGH equ 019Ch ;# ">
 "3889
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3889: __asm("RCSTA equ 019Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3889: __asm("RCSTA equ 019Dh");
 [; <" RCSTA equ 019Dh ;# ">
 "3951
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 3951: __asm("TXSTA equ 019Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 3951: __asm("TXSTA equ 019Eh");
 [; <" TXSTA equ 019Eh ;# ">
 "4013
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4013: __asm("BAUDCON equ 019Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4013: __asm("BAUDCON equ 019Fh");
 [; <" BAUDCON equ 019Fh ;# ">
 "4065
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4065: __asm("WPUB equ 020Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4065: __asm("WPUB equ 020Dh");
 [; <" WPUB equ 020Dh ;# ">
 "4135
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4135: __asm("WPUE equ 0210h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4135: __asm("WPUE equ 0210h");
 [; <" WPUE equ 0210h ;# ">
 "4156
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4156: __asm("SSPBUF equ 0211h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4156: __asm("SSPBUF equ 0211h");
 [; <" SSPBUF equ 0211h ;# ">
 "4176
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4176: __asm("SSPADD equ 0212h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4176: __asm("SSPADD equ 0212h");
 [; <" SSPADD equ 0212h ;# ">
 "4196
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4196: __asm("SSPMSK equ 0213h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4196: __asm("SSPMSK equ 0213h");
 [; <" SSPMSK equ 0213h ;# ">
 "4216
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4216: __asm("SSPSTAT equ 0214h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4216: __asm("SSPSTAT equ 0214h");
 [; <" SSPSTAT equ 0214h ;# ">
 "4278
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4278: __asm("SSPCON1 equ 0215h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4278: __asm("SSPCON1 equ 0215h");
 [; <" SSPCON1 equ 0215h ;# ">
 "4283
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4283: __asm("SSPCON equ 0215h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4283: __asm("SSPCON equ 0215h");
 [; <" SSPCON equ 0215h ;# ">
 "4400
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4400: __asm("SSPCON2 equ 0216h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4400: __asm("SSPCON2 equ 0216h");
 [; <" SSPCON2 equ 0216h ;# ">
 "4462
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4462: __asm("SSPCON3 equ 0217h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4462: __asm("SSPCON3 equ 0217h");
 [; <" SSPCON3 equ 0217h ;# ">
 "4524
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4524: __asm("CCPR1 equ 0291h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4524: __asm("CCPR1 equ 0291h");
 [; <" CCPR1 equ 0291h ;# ">
 "4531
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4531: __asm("CCPR1L equ 0291h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4531: __asm("CCPR1L equ 0291h");
 [; <" CCPR1L equ 0291h ;# ">
 "4551
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4551: __asm("CCPR1H equ 0292h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4551: __asm("CCPR1H equ 0292h");
 [; <" CCPR1H equ 0292h ;# ">
 "4571
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4571: __asm("CCP1CON equ 0293h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4571: __asm("CCP1CON equ 0293h");
 [; <" CCP1CON equ 0293h ;# ">
 "4653
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4653: __asm("PWM1CON equ 0294h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4653: __asm("PWM1CON equ 0294h");
 [; <" PWM1CON equ 0294h ;# ">
 "4715
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4715: __asm("CCP1AS equ 0295h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4715: __asm("CCP1AS equ 0295h");
 [; <" CCP1AS equ 0295h ;# ">
 "4720
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4720: __asm("ECCP1AS equ 0295h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4720: __asm("ECCP1AS equ 0295h");
 [; <" ECCP1AS equ 0295h ;# ">
 "4837
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4837: __asm("PSTR1CON equ 0296h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4837: __asm("PSTR1CON equ 0296h");
 [; <" PSTR1CON equ 0296h ;# ">
 "4881
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4881: __asm("CCPR2 equ 0298h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4881: __asm("CCPR2 equ 0298h");
 [; <" CCPR2 equ 0298h ;# ">
 "4888
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4888: __asm("CCPR2L equ 0298h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4888: __asm("CCPR2L equ 0298h");
 [; <" CCPR2L equ 0298h ;# ">
 "4908
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4908: __asm("CCPR2H equ 0299h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4908: __asm("CCPR2H equ 0299h");
 [; <" CCPR2H equ 0299h ;# ">
 "4928
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 4928: __asm("CCP2CON equ 029Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 4928: __asm("CCP2CON equ 029Ah");
 [; <" CCP2CON equ 029Ah ;# ">
 "5010
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5010: __asm("PWM2CON equ 029Bh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5010: __asm("PWM2CON equ 029Bh");
 [; <" PWM2CON equ 029Bh ;# ">
 "5072
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5072: __asm("CCP2AS equ 029Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5072: __asm("CCP2AS equ 029Ch");
 [; <" CCP2AS equ 029Ch ;# ">
 "5077
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5077: __asm("ECCP2AS equ 029Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5077: __asm("ECCP2AS equ 029Ch");
 [; <" ECCP2AS equ 029Ch ;# ">
 "5194
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5194: __asm("PSTR2CON equ 029Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5194: __asm("PSTR2CON equ 029Dh");
 [; <" PSTR2CON equ 029Dh ;# ">
 "5238
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5238: __asm("CCPTMRS0 equ 029Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5238: __asm("CCPTMRS0 equ 029Eh");
 [; <" CCPTMRS0 equ 029Eh ;# ">
 "5326
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5326: __asm("CCPTMRS1 equ 029Fh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5326: __asm("CCPTMRS1 equ 029Fh");
 [; <" CCPTMRS1 equ 029Fh ;# ">
 "5360
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5360: __asm("CCPR3 equ 0311h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5360: __asm("CCPR3 equ 0311h");
 [; <" CCPR3 equ 0311h ;# ">
 "5367
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5367: __asm("CCPR3L equ 0311h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5367: __asm("CCPR3L equ 0311h");
 [; <" CCPR3L equ 0311h ;# ">
 "5387
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5387: __asm("CCPR3H equ 0312h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5387: __asm("CCPR3H equ 0312h");
 [; <" CCPR3H equ 0312h ;# ">
 "5407
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5407: __asm("CCP3CON equ 0313h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5407: __asm("CCP3CON equ 0313h");
 [; <" CCP3CON equ 0313h ;# ">
 "5469
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5469: __asm("PWM3CON equ 0314h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5469: __asm("PWM3CON equ 0314h");
 [; <" PWM3CON equ 0314h ;# ">
 "5531
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5531: __asm("CCP3AS equ 0315h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5531: __asm("CCP3AS equ 0315h");
 [; <" CCP3AS equ 0315h ;# ">
 "5536
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5536: __asm("ECCP3AS equ 0315h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5536: __asm("ECCP3AS equ 0315h");
 [; <" ECCP3AS equ 0315h ;# ">
 "5653
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5653: __asm("PSTR3CON equ 0316h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5653: __asm("PSTR3CON equ 0316h");
 [; <" PSTR3CON equ 0316h ;# ">
 "5697
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5697: __asm("CCPR4 equ 0318h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5697: __asm("CCPR4 equ 0318h");
 [; <" CCPR4 equ 0318h ;# ">
 "5704
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5704: __asm("CCPR4L equ 0318h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5704: __asm("CCPR4L equ 0318h");
 [; <" CCPR4L equ 0318h ;# ">
 "5724
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5724: __asm("CCPR4H equ 0319h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5724: __asm("CCPR4H equ 0319h");
 [; <" CCPR4H equ 0319h ;# ">
 "5744
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5744: __asm("CCP4CON equ 031Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5744: __asm("CCP4CON equ 031Ah");
 [; <" CCP4CON equ 031Ah ;# ">
 "5794
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5794: __asm("CCPR5 equ 031Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5794: __asm("CCPR5 equ 031Ch");
 [; <" CCPR5 equ 031Ch ;# ">
 "5801
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5801: __asm("CCPR5L equ 031Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5801: __asm("CCPR5L equ 031Ch");
 [; <" CCPR5L equ 031Ch ;# ">
 "5821
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5821: __asm("CCPR5H equ 031Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5821: __asm("CCPR5H equ 031Dh");
 [; <" CCPR5H equ 031Dh ;# ">
 "5841
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5841: __asm("CCP5CON equ 031Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5841: __asm("CCP5CON equ 031Eh");
 [; <" CCP5CON equ 031Eh ;# ">
 "5891
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5891: __asm("IOCBP equ 0394h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5891: __asm("IOCBP equ 0394h");
 [; <" IOCBP equ 0394h ;# ">
 "5961
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 5961: __asm("IOCBN equ 0395h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5961: __asm("IOCBN equ 0395h");
 [; <" IOCBN equ 0395h ;# ">
 "6031
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6031: __asm("IOCBF equ 0396h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6031: __asm("IOCBF equ 0396h");
 [; <" IOCBF equ 0396h ;# ">
 "6101
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6101: __asm("TMR4 equ 0415h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6101: __asm("TMR4 equ 0415h");
 [; <" TMR4 equ 0415h ;# ">
 "6121
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6121: __asm("PR4 equ 0416h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6121: __asm("PR4 equ 0416h");
 [; <" PR4 equ 0416h ;# ">
 "6141
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6141: __asm("T4CON equ 0417h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6141: __asm("T4CON equ 0417h");
 [; <" T4CON equ 0417h ;# ">
 "6212
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6212: __asm("TMR6 equ 041Ch");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6212: __asm("TMR6 equ 041Ch");
 [; <" TMR6 equ 041Ch ;# ">
 "6232
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6232: __asm("PR6 equ 041Dh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6232: __asm("PR6 equ 041Dh");
 [; <" PR6 equ 041Dh ;# ">
 "6252
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6252: __asm("T6CON equ 041Eh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6252: __asm("T6CON equ 041Eh");
 [; <" T6CON equ 041Eh ;# ">
 "6323
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6323: __asm("LCDCON equ 0791h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6323: __asm("LCDCON equ 0791h");
 [; <" LCDCON equ 0791h ;# ">
 "6394
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6394: __asm("LCDPS equ 0792h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6394: __asm("LCDPS equ 0792h");
 [; <" LCDPS equ 0792h ;# ">
 "6464
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6464: __asm("LCDREF equ 0793h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6464: __asm("LCDREF equ 0793h");
 [; <" LCDREF equ 0793h ;# ">
 "6516
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6516: __asm("LCDCST equ 0794h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6516: __asm("LCDCST equ 0794h");
 [; <" LCDCST equ 0794h ;# ">
 "6556
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6556: __asm("LCDRL equ 0795h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6556: __asm("LCDRL equ 0795h");
 [; <" LCDRL equ 0795h ;# ">
 "6634
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6634: __asm("LCDSE0 equ 0798h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6634: __asm("LCDSE0 equ 0798h");
 [; <" LCDSE0 equ 0798h ;# ">
 "6696
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6696: __asm("LCDSE1 equ 0799h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6696: __asm("LCDSE1 equ 0799h");
 [; <" LCDSE1 equ 0799h ;# ">
 "6758
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6758: __asm("LCDSE2 equ 079Ah");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6758: __asm("LCDSE2 equ 079Ah");
 [; <" LCDSE2 equ 079Ah ;# ">
 "6820
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6820: __asm("LCDDATA0 equ 07A0h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6820: __asm("LCDDATA0 equ 07A0h");
 [; <" LCDDATA0 equ 07A0h ;# ">
 "6882
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6882: __asm("LCDDATA1 equ 07A1h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6882: __asm("LCDDATA1 equ 07A1h");
 [; <" LCDDATA1 equ 07A1h ;# ">
 "6944
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 6944: __asm("LCDDATA2 equ 07A2h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 6944: __asm("LCDDATA2 equ 07A2h");
 [; <" LCDDATA2 equ 07A2h ;# ">
 "7006
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7006: __asm("LCDDATA3 equ 07A3h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7006: __asm("LCDDATA3 equ 07A3h");
 [; <" LCDDATA3 equ 07A3h ;# ">
 "7068
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7068: __asm("LCDDATA4 equ 07A4h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7068: __asm("LCDDATA4 equ 07A4h");
 [; <" LCDDATA4 equ 07A4h ;# ">
 "7130
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7130: __asm("LCDDATA5 equ 07A5h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7130: __asm("LCDDATA5 equ 07A5h");
 [; <" LCDDATA5 equ 07A5h ;# ">
 "7192
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7192: __asm("LCDDATA6 equ 07A6h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7192: __asm("LCDDATA6 equ 07A6h");
 [; <" LCDDATA6 equ 07A6h ;# ">
 "7254
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7254: __asm("LCDDATA7 equ 07A7h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7254: __asm("LCDDATA7 equ 07A7h");
 [; <" LCDDATA7 equ 07A7h ;# ">
 "7316
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7316: __asm("LCDDATA8 equ 07A8h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7316: __asm("LCDDATA8 equ 07A8h");
 [; <" LCDDATA8 equ 07A8h ;# ">
 "7378
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7378: __asm("LCDDATA9 equ 07A9h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7378: __asm("LCDDATA9 equ 07A9h");
 [; <" LCDDATA9 equ 07A9h ;# ">
 "7440
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7440: __asm("LCDDATA10 equ 07AAh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7440: __asm("LCDDATA10 equ 07AAh");
 [; <" LCDDATA10 equ 07AAh ;# ">
 "7502
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7502: __asm("LCDDATA11 equ 07ABh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7502: __asm("LCDDATA11 equ 07ABh");
 [; <" LCDDATA11 equ 07ABh ;# ">
 "7564
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7564: __asm("STATUS_SHAD equ 0FE4h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7564: __asm("STATUS_SHAD equ 0FE4h");
 [; <" STATUS_SHAD equ 0FE4h ;# ">
 "7596
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7596: __asm("WREG_SHAD equ 0FE5h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7596: __asm("WREG_SHAD equ 0FE5h");
 [; <" WREG_SHAD equ 0FE5h ;# ">
 "7616
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7616: __asm("BSR_SHAD equ 0FE6h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7616: __asm("BSR_SHAD equ 0FE6h");
 [; <" BSR_SHAD equ 0FE6h ;# ">
 "7636
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7636: __asm("PCLATH_SHAD equ 0FE7h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7636: __asm("PCLATH_SHAD equ 0FE7h");
 [; <" PCLATH_SHAD equ 0FE7h ;# ">
 "7656
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7656: __asm("FSR0L_SHAD equ 0FE8h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7656: __asm("FSR0L_SHAD equ 0FE8h");
 [; <" FSR0L_SHAD equ 0FE8h ;# ">
 "7676
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7676: __asm("FSR0H_SHAD equ 0FE9h");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7676: __asm("FSR0H_SHAD equ 0FE9h");
 [; <" FSR0H_SHAD equ 0FE9h ;# ">
 "7696
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7696: __asm("FSR1L_SHAD equ 0FEAh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7696: __asm("FSR1L_SHAD equ 0FEAh");
 [; <" FSR1L_SHAD equ 0FEAh ;# ">
 "7716
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7716: __asm("FSR1H_SHAD equ 0FEBh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7716: __asm("FSR1H_SHAD equ 0FEBh");
 [; <" FSR1H_SHAD equ 0FEBh ;# ">
 "7736
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7736: __asm("STKPTR equ 0FEDh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7736: __asm("STKPTR equ 0FEDh");
 [; <" STKPTR equ 0FEDh ;# ">
 "7756
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7756: __asm("TOSL equ 0FEEh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7756: __asm("TOSL equ 0FEEh");
 [; <" TOSL equ 0FEEh ;# ">
 "7776
-[; ;/opt/microchip/xc8/v2.05/pic/include/pic16f1939.h: 7776: __asm("TOSH equ 0FEFh");
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 7776: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "78 ./mcc_generated_files/i2c_driver.h
 [; ;./mcc_generated_files/i2c_driver.h: 78: void (*i2c_driver_busCollisionISR)(void);
@@ -656,456 +663,452 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 57: uint8_t rtcData[9];
 [v _rtcData `uc ~T0 @X0 -> 9 `i e ]
 "59
-[; ;main.c: 59: uint8_t flag_button_press_count[4];
+[; ;main.c: 59: uint16_t bcd_temp;
+[v _bcd_temp `us ~T0 @X0 1 e ]
+"61
+[; ;main.c: 61: uint8_t flag_button_press_count[4];
 [v _flag_button_press_count `uc ~T0 @X0 -> 4 `i e ]
-"60
-[; ;main.c: 60: uint8_t button_press_count[4];
-[v _button_press_count `uc ~T0 @X0 -> 4 `i e ]
 "62
-[; ;main.c: 62: uint8_t mode;
+[; ;main.c: 62: uint8_t button_press_count[4];
+[v _button_press_count `uc ~T0 @X0 -> 4 `i e ]
+"64
+[; ;main.c: 64: uint8_t mode;
 [v _mode `uc ~T0 @X0 1 e ]
-"63
-[; ;main.c: 63: uint8_t mode_timeout_count;
+"65
+[; ;main.c: 65: uint8_t mode_timeout_count;
 [v _mode_timeout_count `uc ~T0 @X0 1 e ]
-"80
-[; ;main.c: 80: void initRTC(void){
+"84
+[; ;main.c: 84: void initRTC(void){
 [v _initRTC `(v ~T0 @X0 1 ef ]
 {
 [e :U _initRTC ]
 [f ]
-"81
-[; ;main.c: 81:     _delay((unsigned long)((30)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "85
-[; ;main.c: 85:     i2c_readDataBlock(0x68,0x00,rtcData,sizeof(rtcData));
-[e ( _i2c_readDataBlock (4 , , , -> -> 104 `i `uc -> -> 0 `i `uc -> &U _rtcData `*v -> # _rtcData `ui ]
-"86
-[; ;main.c: 86:     if((rtcData[0] & 0x80) == 0x80){
-[e $ ! == & -> *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 128 `i -> 128 `i 380  ]
-{
-"88
-[; ;main.c: 88:         rtcData[0] = 0x00;
-[e = *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 85:     _delay((unsigned long)((30)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "89
-[; ;main.c: 89:         rtcData[1] = 0x00;
-[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 89:     i2c_readDataBlock(0x68,0x00,rtcData,sizeof(rtcData));
+[e ( _i2c_readDataBlock (4 , , , -> -> 104 `i `uc -> -> 0 `i `uc -> &U _rtcData `*v -> # _rtcData `ui ]
 "90
-[; ;main.c: 90:         rtcData[2] = 0x00;
-[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
-"91
-[; ;main.c: 91:         rtcData[3] = 0x00;
-[e = *U + &U _rtcData * -> -> -> 3 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 90:     if((rtcData[0] & 0x80) == 0x80){
+[e $ ! == & -> *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 128 `i -> 128 `i 381  ]
+{
 "92
-[; ;main.c: 92:         rtcData[4] = 0x01;
-[e = *U + &U _rtcData * -> -> -> 4 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 1 `i `uc ]
+[; ;main.c: 92:         rtcData[0] = 0x00;
+[e = *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
 "93
-[; ;main.c: 93:         rtcData[5] = 0x01;
-[e = *U + &U _rtcData * -> -> -> 5 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 1 `i `uc ]
+[; ;main.c: 93:         rtcData[1] = 0x00;
+[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
 "94
-[; ;main.c: 94:         rtcData[6] = 0x01;
-[e = *U + &U _rtcData * -> -> -> 6 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 1 `i `uc ]
+[; ;main.c: 94:         rtcData[2] = 0x00;
+[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
 "95
-[; ;main.c: 95:         rtcData[7] = 0x19;
-[e = *U + &U _rtcData * -> -> -> 7 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 25 `i `uc ]
+[; ;main.c: 95:         rtcData[3] = 0x00;
+[e = *U + &U _rtcData * -> -> -> 3 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
 "96
-[; ;main.c: 96:         rtcData[8] = 0x10;
-[e = *U + &U _rtcData * -> -> -> 8 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 16 `i `uc ]
+[; ;main.c: 96:         rtcData[4] = 0x01;
+[e = *U + &U _rtcData * -> -> -> 4 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 1 `i `uc ]
+"97
+[; ;main.c: 97:         rtcData[5] = 0x01;
+[e = *U + &U _rtcData * -> -> -> 5 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 1 `i `uc ]
 "98
-[; ;main.c: 98:         i2c_writeNBytes(0x68,rtcData,sizeof(rtcData));
-[e ( _i2c_writeNBytes (3 , , -> -> 104 `i `uc -> &U _rtcData `*v -> # _rtcData `ui ]
+[; ;main.c: 98:         rtcData[6] = 0x01;
+[e = *U + &U _rtcData * -> -> -> 6 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 1 `i `uc ]
 "99
-[; ;main.c: 99:     }
-}
-[e :U 380 ]
+[; ;main.c: 99:         rtcData[7] = 0x19;
+[e = *U + &U _rtcData * -> -> -> 7 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 25 `i `uc ]
 "100
-[; ;main.c: 100: }
-[e :UE 379 ]
-}
+[; ;main.c: 100:         rtcData[8] = 0x10;
+[e = *U + &U _rtcData * -> -> -> 8 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 16 `i `uc ]
 "102
-[; ;main.c: 102: void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
+[; ;main.c: 102:         i2c_writeNBytes(0x68,rtcData,sizeof(rtcData));
+[e ( _i2c_writeNBytes (3 , , -> -> 104 `i `uc -> &U _rtcData `*v -> # _rtcData `ui ]
+"103
+[; ;main.c: 103:     }
+}
+[e :U 381 ]
+"104
+[; ;main.c: 104: }
+[e :UE 380 ]
+}
+"106
+[; ;main.c: 106: void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
 [v _updateRTC `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _updateRTC ]
 [v _bcdHour `uc ~T0 @X0 1 r1 ]
 [v _bcdMinute `uc ~T0 @X0 1 r2 ]
 [f ]
-"103
-[; ;main.c: 103:     rtcData[0] = 0x00;
-[e = *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:     rtcData[1] = 0x00;
-[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
-"105
-[; ;main.c: 105:     rtcData[2] = bcdMinute & 0x7F;
-[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> & -> _bcdMinute `i -> 127 `i `uc ]
-"106
-[; ;main.c: 106:     rtcData[3] = bcdHour & 0x3F;
-[e = *U + &U _rtcData * -> -> -> 3 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> & -> _bcdHour `i -> 63 `i `uc ]
 "107
-[; ;main.c: 107:     i2c_writeNBytes(0x68,rtcData,4);
-[e ( _i2c_writeNBytes (3 , , -> -> 104 `i `uc -> &U _rtcData `*v -> -> 4 `i `ui ]
+[; ;main.c: 107:     rtcData[0] = 0x00;
+[e = *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
 "108
-[; ;main.c: 108: }
-[e :UE 381 ]
-}
+[; ;main.c: 108:     rtcData[1] = 0x00;
+[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> -> 0 `i `uc ]
+"109
+[; ;main.c: 109:     rtcData[2] = bcdMinute & 0x7F;
+[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> & -> _bcdMinute `i -> 127 `i `uc ]
 "110
-[; ;main.c: 110: static uint8_t bcdHourIncr(uint8_t hr){
+[; ;main.c: 110:     rtcData[3] = bcdHour & 0x3F;
+[e = *U + &U _rtcData * -> -> -> 3 `i `ui `ux -> -> # *U &U _rtcData `ui `ux -> & -> _bcdHour `i -> 63 `i `uc ]
+"111
+[; ;main.c: 111:     i2c_writeNBytes(0x68,rtcData,4);
+[e ( _i2c_writeNBytes (3 , , -> -> 104 `i `uc -> &U _rtcData `*v -> -> 4 `i `ui ]
+"112
+[; ;main.c: 112: }
+[e :UE 382 ]
+}
+"114
+[; ;main.c: 114: static uint8_t bcdHourIncr(uint8_t hr){
 [v _bcdHourIncr `(uc ~T0 @X0 1 sf1`uc ]
 {
 [e :U _bcdHourIncr ]
 [v _hr `uc ~T0 @X0 1 r1 ]
 [f ]
-"112
-[; ;main.c: 112:     if(hr == 0x09) return 0x10;
-[e $ ! == -> _hr `i -> 9 `i 383  ]
-[e ) -> -> 16 `i `uc ]
-[e $UE 382  ]
-[e :U 383 ]
-"113
-[; ;main.c: 113:     if(hr == 0x19) return 0x20;
-[e $ ! == -> _hr `i -> 25 `i 384  ]
-[e ) -> -> 32 `i `uc ]
-[e $UE 382  ]
-[e :U 384 ]
-"114
-[; ;main.c: 114:     if(hr == 0x23) return 0x00;
-[e $ ! == -> _hr `i -> 35 `i 385  ]
-[e ) -> -> 0 `i `uc ]
-[e $UE 382  ]
-[e :U 385 ]
-"115
-[; ;main.c: 115:     return (hr + 1);
-[e ) -> + -> _hr `i -> 1 `i `uc ]
-[e $UE 382  ]
 "116
-[; ;main.c: 116: }
-[e :UE 382 ]
-}
+[; ;main.c: 116:     if(hr == 0x09) return 0x10;
+[e $ ! == -> _hr `i -> 9 `i 384  ]
+[e ) -> -> 16 `i `uc ]
+[e $UE 383  ]
+[e :U 384 ]
+"117
+[; ;main.c: 117:     if(hr == 0x19) return 0x20;
+[e $ ! == -> _hr `i -> 25 `i 385  ]
+[e ) -> -> 32 `i `uc ]
+[e $UE 383  ]
+[e :U 385 ]
 "118
-[; ;main.c: 118: static uint8_t bcdHourDecr(uint8_t hr){
+[; ;main.c: 118:     if(hr == 0x23) return 0x00;
+[e $ ! == -> _hr `i -> 35 `i 386  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 383  ]
+[e :U 386 ]
+"119
+[; ;main.c: 119:     return (hr + 1);
+[e ) -> + -> _hr `i -> 1 `i `uc ]
+[e $UE 383  ]
+"120
+[; ;main.c: 120: }
+[e :UE 383 ]
+}
+"122
+[; ;main.c: 122: static uint8_t bcdHourDecr(uint8_t hr){
 [v _bcdHourDecr `(uc ~T0 @X0 1 sf1`uc ]
 {
 [e :U _bcdHourDecr ]
 [v _hr `uc ~T0 @X0 1 r1 ]
 [f ]
-"119
-[; ;main.c: 119:     if(hr == 0x00) return 0x23;
-[e $ ! == -> _hr `i -> 0 `i 387  ]
-[e ) -> -> 35 `i `uc ]
-[e $UE 386  ]
-[e :U 387 ]
-"120
-[; ;main.c: 120:     if(hr == 0x10) return 0x09;
-[e $ ! == -> _hr `i -> 16 `i 388  ]
-[e ) -> -> 9 `i `uc ]
-[e $UE 386  ]
-[e :U 388 ]
-"121
-[; ;main.c: 121:     if(hr == 0x20) return 0x19;
-[e $ ! == -> _hr `i -> 32 `i 389  ]
-[e ) -> -> 25 `i `uc ]
-[e $UE 386  ]
-[e :U 389 ]
-"122
-[; ;main.c: 122:     return (hr - 1);
-[e ) -> - -> _hr `i -> 1 `i `uc ]
-[e $UE 386  ]
 "123
-[; ;main.c: 123: }
-[e :UE 386 ]
-}
+[; ;main.c: 123:     if(hr == 0x00) return 0x23;
+[e $ ! == -> _hr `i -> 0 `i 388  ]
+[e ) -> -> 35 `i `uc ]
+[e $UE 387  ]
+[e :U 388 ]
+"124
+[; ;main.c: 124:     if(hr == 0x10) return 0x09;
+[e $ ! == -> _hr `i -> 16 `i 389  ]
+[e ) -> -> 9 `i `uc ]
+[e $UE 387  ]
+[e :U 389 ]
 "125
-[; ;main.c: 125: static uint8_t bcdMinuteIncr(uint8_t mn){
+[; ;main.c: 125:     if(hr == 0x20) return 0x19;
+[e $ ! == -> _hr `i -> 32 `i 390  ]
+[e ) -> -> 25 `i `uc ]
+[e $UE 387  ]
+[e :U 390 ]
+"126
+[; ;main.c: 126:     return (hr - 1);
+[e ) -> - -> _hr `i -> 1 `i `uc ]
+[e $UE 387  ]
+"127
+[; ;main.c: 127: }
+[e :UE 387 ]
+}
+"129
+[; ;main.c: 129: static uint8_t bcdMinuteIncr(uint8_t mn){
 [v _bcdMinuteIncr `(uc ~T0 @X0 1 sf1`uc ]
 {
 [e :U _bcdMinuteIncr ]
 [v _mn `uc ~T0 @X0 1 r1 ]
 [f ]
-"127
-[; ;main.c: 127:     if(mn == 0x09) return 0x10;
-[e $ ! == -> _mn `i -> 9 `i 391  ]
-[e ) -> -> 16 `i `uc ]
-[e $UE 390  ]
-[e :U 391 ]
-"128
-[; ;main.c: 128:     if(mn == 0x19) return 0x20;
-[e $ ! == -> _mn `i -> 25 `i 392  ]
-[e ) -> -> 32 `i `uc ]
-[e $UE 390  ]
-[e :U 392 ]
-"129
-[; ;main.c: 129:     if(mn == 0x29) return 0x30;
-[e $ ! == -> _mn `i -> 41 `i 393  ]
-[e ) -> -> 48 `i `uc ]
-[e $UE 390  ]
-[e :U 393 ]
-"130
-[; ;main.c: 130:     if(mn == 0x39) return 0x40;
-[e $ ! == -> _mn `i -> 57 `i 394  ]
-[e ) -> -> 64 `i `uc ]
-[e $UE 390  ]
-[e :U 394 ]
 "131
-[; ;main.c: 131:     if(mn == 0x49) return 0x50;
-[e $ ! == -> _mn `i -> 73 `i 395  ]
-[e ) -> -> 80 `i `uc ]
-[e $UE 390  ]
-[e :U 395 ]
+[; ;main.c: 131:     if(mn == 0x09) return 0x10;
+[e $ ! == -> _mn `i -> 9 `i 392  ]
+[e ) -> -> 16 `i `uc ]
+[e $UE 391  ]
+[e :U 392 ]
 "132
-[; ;main.c: 132:     if(mn == 0x59) return 0x00;
-[e $ ! == -> _mn `i -> 89 `i 396  ]
-[e ) -> -> 0 `i `uc ]
-[e $UE 390  ]
-[e :U 396 ]
+[; ;main.c: 132:     if(mn == 0x19) return 0x20;
+[e $ ! == -> _mn `i -> 25 `i 393  ]
+[e ) -> -> 32 `i `uc ]
+[e $UE 391  ]
+[e :U 393 ]
 "133
-[; ;main.c: 133:     return (mn + 1);
-[e ) -> + -> _mn `i -> 1 `i `uc ]
-[e $UE 390  ]
+[; ;main.c: 133:     if(mn == 0x29) return 0x30;
+[e $ ! == -> _mn `i -> 41 `i 394  ]
+[e ) -> -> 48 `i `uc ]
+[e $UE 391  ]
+[e :U 394 ]
 "134
-[; ;main.c: 134: }
-[e :UE 390 ]
-}
+[; ;main.c: 134:     if(mn == 0x39) return 0x40;
+[e $ ! == -> _mn `i -> 57 `i 395  ]
+[e ) -> -> 64 `i `uc ]
+[e $UE 391  ]
+[e :U 395 ]
+"135
+[; ;main.c: 135:     if(mn == 0x49) return 0x50;
+[e $ ! == -> _mn `i -> 73 `i 396  ]
+[e ) -> -> 80 `i `uc ]
+[e $UE 391  ]
+[e :U 396 ]
 "136
-[; ;main.c: 136: static uint8_t bcdMinuteDecr(uint8_t mn){
+[; ;main.c: 136:     if(mn == 0x59) return 0x00;
+[e $ ! == -> _mn `i -> 89 `i 397  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 391  ]
+[e :U 397 ]
+"137
+[; ;main.c: 137:     return (mn + 1);
+[e ) -> + -> _mn `i -> 1 `i `uc ]
+[e $UE 391  ]
+"138
+[; ;main.c: 138: }
+[e :UE 391 ]
+}
+"140
+[; ;main.c: 140: static uint8_t bcdMinuteDecr(uint8_t mn){
 [v _bcdMinuteDecr `(uc ~T0 @X0 1 sf1`uc ]
 {
 [e :U _bcdMinuteDecr ]
 [v _mn `uc ~T0 @X0 1 r1 ]
 [f ]
-"137
-[; ;main.c: 137:     if(mn == 0x00) return 0x59;
-[e $ ! == -> _mn `i -> 0 `i 398  ]
-[e ) -> -> 89 `i `uc ]
-[e $UE 397  ]
-[e :U 398 ]
-"138
-[; ;main.c: 138:     if(mn == 0x10) return 0x09;
-[e $ ! == -> _mn `i -> 16 `i 399  ]
-[e ) -> -> 9 `i `uc ]
-[e $UE 397  ]
-[e :U 399 ]
-"139
-[; ;main.c: 139:     if(mn == 0x20) return 0x19;
-[e $ ! == -> _mn `i -> 32 `i 400  ]
-[e ) -> -> 25 `i `uc ]
-[e $UE 397  ]
-[e :U 400 ]
-"140
-[; ;main.c: 140:     if(mn == 0x30) return 0x29;
-[e $ ! == -> _mn `i -> 48 `i 401  ]
-[e ) -> -> 41 `i `uc ]
-[e $UE 397  ]
-[e :U 401 ]
 "141
-[; ;main.c: 141:     if(mn == 0x40) return 0x39;
-[e $ ! == -> _mn `i -> 64 `i 402  ]
-[e ) -> -> 57 `i `uc ]
-[e $UE 397  ]
-[e :U 402 ]
+[; ;main.c: 141:     if(mn == 0x00) return 0x59;
+[e $ ! == -> _mn `i -> 0 `i 399  ]
+[e ) -> -> 89 `i `uc ]
+[e $UE 398  ]
+[e :U 399 ]
 "142
-[; ;main.c: 142:     if(mn == 0x50) return 0x49;
-[e $ ! == -> _mn `i -> 80 `i 403  ]
-[e ) -> -> 73 `i `uc ]
-[e $UE 397  ]
-[e :U 403 ]
+[; ;main.c: 142:     if(mn == 0x10) return 0x09;
+[e $ ! == -> _mn `i -> 16 `i 400  ]
+[e ) -> -> 9 `i `uc ]
+[e $UE 398  ]
+[e :U 400 ]
 "143
-[; ;main.c: 143:     return (mn - 1);
-[e ) -> - -> _mn `i -> 1 `i `uc ]
-[e $UE 397  ]
+[; ;main.c: 143:     if(mn == 0x20) return 0x19;
+[e $ ! == -> _mn `i -> 32 `i 401  ]
+[e ) -> -> 25 `i `uc ]
+[e $UE 398  ]
+[e :U 401 ]
 "144
-[; ;main.c: 144: }
-[e :UE 397 ]
+[; ;main.c: 144:     if(mn == 0x30) return 0x29;
+[e $ ! == -> _mn `i -> 48 `i 402  ]
+[e ) -> -> 41 `i `uc ]
+[e $UE 398  ]
+[e :U 402 ]
+"145
+[; ;main.c: 145:     if(mn == 0x40) return 0x39;
+[e $ ! == -> _mn `i -> 64 `i 403  ]
+[e ) -> -> 57 `i `uc ]
+[e $UE 398  ]
+[e :U 403 ]
+"146
+[; ;main.c: 146:     if(mn == 0x50) return 0x49;
+[e $ ! == -> _mn `i -> 80 `i 404  ]
+[e ) -> -> 73 `i `uc ]
+[e $UE 398  ]
+[e :U 404 ]
+"147
+[; ;main.c: 147:     return (mn - 1);
+[e ) -> - -> _mn `i -> 1 `i `uc ]
+[e $UE 398  ]
+"148
+[; ;main.c: 148: }
+[e :UE 398 ]
+}
+"150
+[; ;main.c: 150: uint16_t intToBCD(uint16_t binaryInput){
+[v _intToBCD `(us ~T0 @X0 1 ef1`us ]
+{
+[e :U _intToBCD ]
+[v _binaryInput `us ~T0 @X0 1 r1 ]
+[f ]
+"151
+[; ;main.c: 151:     uint16_t bcdResult = 0;
+[v _bcdResult `us ~T0 @X0 1 a ]
+[e = _bcdResult -> -> 0 `i `us ]
+"152
+[; ;main.c: 152:     uint16_t shift = 0;
+[v _shift `us ~T0 @X0 1 a ]
+[e = _shift -> -> 0 `i `us ]
+"154
+[; ;main.c: 154:     while (binaryInput > 0) {
+[e $U 406  ]
+[e :U 407 ]
+{
+"155
+[; ;main.c: 155:       bcdResult |= (binaryInput % 10) << (shift++ << 2);
+[e =| _bcdResult -> << % -> _binaryInput `ui -> -> 10 `i `ui << -> ++ _shift -> -> 1 `i `us `ui -> 2 `i `us ]
+"156
+[; ;main.c: 156:       binaryInput /= 10;
+[e =/ _binaryInput -> -> 10 `i `ui ]
+"157
+[; ;main.c: 157:     }
+}
+[e :U 406 ]
+"154
+[; ;main.c: 154:     while (binaryInput > 0) {
+[e $ > -> _binaryInput `ui -> -> 0 `i `ui 407  ]
+[e :U 408 ]
+"159
+[; ;main.c: 159:     return bcdResult;
+[e ) _bcdResult ]
+[e $UE 405  ]
+"160
+[; ;main.c: 160: }
+[e :UE 405 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"146
-[; ;main.c: 146: void main(void)
+"162
+[; ;main.c: 162: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"147
-[; ;main.c: 147: {
+"163
+[; ;main.c: 163: {
 {
 [e :U _main ]
 [f ]
-"149
-[; ;main.c: 149:     SYSTEM_Initialize();
+"165
+[; ;main.c: 165:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"152
-[; ;main.c: 152:     do { LATEbits.LATE1 = 0; } while(0);
-[e :U 407 ]
+"168
+[; ;main.c: 168:     do { LATEbits.LATE1 = 0; } while(0);
+[e :U 412 ]
 {
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 406 ]
-"153
-[; ;main.c: 153:     do { LATCbits.LATC1 = 0; } while(0);
-[e :U 410 ]
+[e :U 411 ]
+"169
+[; ;main.c: 169:     do { LATCbits.LATC1 = 0; } while(0);
+[e :U 415 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 409 ]
-"154
-[; ;main.c: 154:     do { LATAbits.LATA4 = 0; } while(0);
-[e :U 413 ]
+[e :U 414 ]
+"170
+[; ;main.c: 170:     do { LATAbits.LATA4 = 0; } while(0);
+[e :U 418 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 412 ]
-"155
-[; ;main.c: 155:     do { LATAbits.LATA3 = 0; } while(0);
-[e :U 416 ]
+[e :U 417 ]
+"171
+[; ;main.c: 171:     do { LATAbits.LATA3 = 0; } while(0);
+[e :U 421 ]
 {
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 415 ]
-"157
-[; ;main.c: 157:     mode = MODE_NORMAL;
-[e = _mode -> . `E3490 0 `uc ]
-"159
-[; ;main.c: 159:     IOCBF4_SetInterruptHandler(&secondISR);
-[e ( _IOCBF4_SetInterruptHandler (1 &U _secondISR ]
-"160
-[; ;main.c: 160:     TMR0_SetInterruptHandler(&displayRefreshISR);
-[e ( _TMR0_SetInterruptHandler (1 &U _displayRefreshISR ]
-"165
-[; ;main.c: 165:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"168
-[; ;main.c: 168:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"176
-[; ;main.c: 176:     initRTC();
-[e ( _initRTC ..  ]
-"178
-[; ;main.c: 178:     while (1)
-[e :U 418 ]
-"179
-[; ;main.c: 179:     {
-{
-"181
-[; ;main.c: 181:         __asm("clrwdt");
-[; <" clrwdt ;# ">
-"184
-[; ;main.c: 184:         if(PORTBbits.RB0 == 0){
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 420  ]
-{
-"185
-[; ;main.c: 185:             flag_button_press_count[0] = 1;
-[e = *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
-"186
-[; ;main.c: 186:         } else if(PORTBbits.RB1 == 0){
-}
-[e $U 421  ]
 [e :U 420 ]
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 422  ]
-{
-"187
-[; ;main.c: 187:             flag_button_press_count[1] = 1;
-[e = *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
-"188
-[; ;main.c: 188:         } else if(PORTBbits.RB2 == 0){
-}
-[e $U 423  ]
-[e :U 422 ]
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 424  ]
-{
-"189
-[; ;main.c: 189:             flag_button_press_count[2] = 1;
-[e = *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
-"190
-[; ;main.c: 190:         } else if(PORTBbits.RB3 == 0){
-}
-[e $U 425  ]
-[e :U 424 ]
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 426  ]
-{
-"191
-[; ;main.c: 191:             flag_button_press_count[3] = 1;
-[e = *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
+"173
+[; ;main.c: 173:     mode = MODE_NORMAL;
+[e = _mode -> . `E3513 0 `uc ]
+"175
+[; ;main.c: 175:     IOCBF4_SetInterruptHandler(&secondISR);
+[e ( _IOCBF4_SetInterruptHandler (1 &U _secondISR ]
+"176
+[; ;main.c: 176:     TMR0_SetInterruptHandler(&displayRefreshISR);
+[e ( _TMR0_SetInterruptHandler (1 &U _displayRefreshISR ]
+"181
+[; ;main.c: 181:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"184
+[; ;main.c: 184:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "192
-[; ;main.c: 192:         } else {
-}
-[e $U 427  ]
-[e :U 426 ]
-{
-"193
-[; ;main.c: 193:             if(flag_button_press_count[0] == 1){
-[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 428  ]
-{
+[; ;main.c: 192:     initRTC();
+[e ( _initRTC ..  ]
 "194
-[; ;main.c: 194:                 if(button_press_count[0] > 5 && button_press_count[0] < 100){
-[e $ ! && > -> *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 429  ]
-{
+[; ;main.c: 194:     while (1)
+[e :U 423 ]
 "195
-[; ;main.c: 195:                     if(mode == MODE_NORMAL){
-[e $ ! == -> _mode `i -> . `E3490 0 `i 430  ]
+[; ;main.c: 195:     {
 {
-"196
-[; ;main.c: 196:                         mode = MODE_SET_HOUR;
-[e = _mode -> . `E3490 1 `uc ]
 "197
-[; ;main.c: 197:                         mode_timeout_count = 8;
-[e = _mode_timeout_count -> -> 8 `i `uc ]
-"198
-[; ;main.c: 198:                         flag_time_display_update = 1;
-[e = _flag_time_display_update -> -> 1 `i `uc ]
-"199
-[; ;main.c: 199:                     } else if(mode == MODE_SET_HOUR){
-}
-[e $U 431  ]
-[e :U 430 ]
-[e $ ! == -> _mode `i -> . `E3490 1 `i 432  ]
-{
+[; ;main.c: 197:         __asm("clrwdt");
+[; <" clrwdt ;# ">
 "200
-[; ;main.c: 200:                         mode = MODE_SET_MINUTE;
-[e = _mode -> . `E3490 2 `uc ]
+[; ;main.c: 200:         if(PORTBbits.RB0 == 0){
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 425  ]
+{
 "201
-[; ;main.c: 201:                         mode_timeout_count = 8;
-[e = _mode_timeout_count -> -> 8 `i `uc ]
+[; ;main.c: 201:             flag_button_press_count[0] = 1;
+[e = *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
 "202
-[; ;main.c: 202:                         flag_time_display_update = 1;
-[e = _flag_time_display_update -> -> 1 `i `uc ]
+[; ;main.c: 202:         } else if(PORTBbits.RB1 == 0){
+}
+[e $U 426  ]
+[e :U 425 ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 427  ]
+{
 "203
-[; ;main.c: 203:                     } else {
-}
-[e $U 433  ]
-[e :U 432 ]
-{
+[; ;main.c: 203:             flag_button_press_count[1] = 1;
+[e = *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
 "204
-[; ;main.c: 204:                         mode = MODE_NORMAL;
-[e = _mode -> . `E3490 0 `uc ]
+[; ;main.c: 204:         } else if(PORTBbits.RB2 == 0){
+}
+[e $U 428  ]
+[e :U 427 ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 429  ]
+{
 "205
-[; ;main.c: 205:                     }
+[; ;main.c: 205:             flag_button_press_count[2] = 1;
+[e = *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
+"206
+[; ;main.c: 206:         } else if(PORTBbits.RB3 == 0){
 }
-[e :U 433 ]
-[e :U 431 ]
-"207
-[; ;main.c: 207:                 }
-}
+[e $U 430  ]
 [e :U 429 ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 431  ]
+{
+"207
+[; ;main.c: 207:             flag_button_press_count[3] = 1;
+[e = *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 1 `i `uc ]
 "208
-[; ;main.c: 208:                 button_press_count[0] = 0;
-[e = *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
-"209
-[; ;main.c: 209:                 flag_button_press_count[0] = 0;
-[e = *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
-"210
-[; ;main.c: 210:             }
+[; ;main.c: 208:         } else {
 }
-[e :U 428 ]
+[e $U 432  ]
+[e :U 431 ]
+{
+"209
+[; ;main.c: 209:             if(flag_button_press_count[0] == 1){
+[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 433  ]
+{
+"210
+[; ;main.c: 210:                 if(button_press_count[0] > 5 && button_press_count[0] < 100){
+[e $ ! && > -> *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 434  ]
+{
+"211
+[; ;main.c: 211:                     if(mode == MODE_NORMAL){
+[e $ ! == -> _mode `i -> . `E3513 0 `i 435  ]
+{
 "212
-[; ;main.c: 212:             if(flag_button_press_count[1] == 1){
-[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 434  ]
-{
+[; ;main.c: 212:                         mode = MODE_SET_HOUR;
+[e = _mode -> . `E3513 2 `uc ]
 "213
-[; ;main.c: 213:                 if(button_press_count[1] > 5 && button_press_count[1] < 100){
-[e $ ! && > -> *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 435  ]
-{
+[; ;main.c: 213:                         mode_timeout_count = 8;
+[e = _mode_timeout_count -> -> 8 `i `uc ]
+"214
+[; ;main.c: 214:                         flag_time_display_update = 1;
+[e = _flag_time_display_update -> -> 1 `i `uc ]
 "215
-[; ;main.c: 215:                     if(mode == MODE_SET_HOUR){
-[e $ ! == -> _mode `i -> . `E3490 1 `i 436  ]
+[; ;main.c: 215:                     } else if(mode == MODE_SET_HOUR){
+}
+[e $U 436  ]
+[e :U 435 ]
+[e $ ! == -> _mode `i -> . `E3513 2 `i 437  ]
 {
 "216
-[; ;main.c: 216:                         rtcData[2] = bcdHourIncr(rtcData[2]);
-[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdHourIncr (1 *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
+[; ;main.c: 216:                         mode = MODE_SET_MINUTE;
+[e = _mode -> . `E3513 3 `uc ]
 "217
 [; ;main.c: 217:                         mode_timeout_count = 8;
 [e = _mode_timeout_count -> -> 8 `i `uc ]
@@ -1113,479 +1116,583 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 218:                         flag_time_display_update = 1;
 [e = _flag_time_display_update -> -> 1 `i `uc ]
 "219
-[; ;main.c: 219:                     } else if(mode == MODE_SET_MINUTE){
+[; ;main.c: 219:                     } else {
 }
-[e $U 437  ]
-[e :U 436 ]
-[e $ ! == -> _mode `i -> . `E3490 2 `i 438  ]
+[e $U 438  ]
+[e :U 437 ]
 {
 "220
-[; ;main.c: 220:                         rtcData[1] = bcdMinuteIncr(rtcData[1]);
-[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdMinuteIncr (1 *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
+[; ;main.c: 220:                         mode = MODE_NORMAL;
+[e = _mode -> . `E3513 0 `uc ]
 "221
-[; ;main.c: 221:                         mode_timeout_count = 8;
-[e = _mode_timeout_count -> -> 8 `i `uc ]
-"222
-[; ;main.c: 222:                         flag_time_display_update = 1;
-[e = _flag_time_display_update -> -> 1 `i `uc ]
-"223
-[; ;main.c: 223:                     }
+[; ;main.c: 221:                     }
 }
 [e :U 438 ]
-[e :U 437 ]
-"225
-[; ;main.c: 225:                 }
-}
-[e :U 435 ]
-"226
-[; ;main.c: 226:                 button_press_count[1] = 0;
-[e = *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
-"227
-[; ;main.c: 227:                 flag_button_press_count[1] = 0;
-[e = *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
-"228
-[; ;main.c: 228:             }
+[e :U 436 ]
+"223
+[; ;main.c: 223:                 }
 }
 [e :U 434 ]
-"230
-[; ;main.c: 230:             if(flag_button_press_count[2] == 1){
-[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 439  ]
+"224
+[; ;main.c: 224:                 button_press_count[0] = 0;
+[e = *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
+"225
+[; ;main.c: 225:                 flag_button_press_count[0] = 0;
+[e = *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
+"226
+[; ;main.c: 226:             }
+}
+[e :U 433 ]
+"228
+[; ;main.c: 228:             if(flag_button_press_count[1] == 1){
+[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 439  ]
+{
+"229
+[; ;main.c: 229:                 if(button_press_count[1] > 5 && button_press_count[1] < 100){
+[e $ ! && > -> *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 440  ]
 {
 "231
-[; ;main.c: 231:                 if(button_press_count[2] > 5 && button_press_count[2] < 100){
-[e $ ! && > -> *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 440  ]
+[; ;main.c: 231:                     if(mode == MODE_SET_HOUR){
+[e $ ! == -> _mode `i -> . `E3513 2 `i 441  ]
 {
+"232
+[; ;main.c: 232:                         rtcData[2] = bcdHourIncr(rtcData[2]);
+[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdHourIncr (1 *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
 "233
-[; ;main.c: 233:                     if(mode == MODE_SET_HOUR){
-[e $ ! == -> _mode `i -> . `E3490 1 `i 441  ]
-{
-"234
-[; ;main.c: 234:                         rtcData[2] = bcdHourDecr(rtcData[2]);
-[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdHourDecr (1 *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
-"235
-[; ;main.c: 235:                         mode_timeout_count = 8;
+[; ;main.c: 233:                         mode_timeout_count = 8;
 [e = _mode_timeout_count -> -> 8 `i `uc ]
-"236
-[; ;main.c: 236:                         flag_time_display_update = 1;
+"234
+[; ;main.c: 234:                         flag_time_display_update = 1;
 [e = _flag_time_display_update -> -> 1 `i `uc ]
-"237
-[; ;main.c: 237:                     } else if(mode == MODE_SET_MINUTE){
+"235
+[; ;main.c: 235:                     } else if(mode == MODE_SET_MINUTE){
 }
 [e $U 442  ]
 [e :U 441 ]
-[e $ ! == -> _mode `i -> . `E3490 2 `i 443  ]
+[e $ ! == -> _mode `i -> . `E3513 3 `i 443  ]
 {
-"238
-[; ;main.c: 238:                         rtcData[1] = bcdMinuteDecr(rtcData[1]);
-[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdMinuteDecr (1 *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
-"239
-[; ;main.c: 239:                         mode_timeout_count = 8;
+"236
+[; ;main.c: 236:                         rtcData[1] = bcdMinuteIncr(rtcData[1]);
+[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdMinuteIncr (1 *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
+"237
+[; ;main.c: 237:                         mode_timeout_count = 8;
 [e = _mode_timeout_count -> -> 8 `i `uc ]
-"240
-[; ;main.c: 240:                         flag_time_display_update = 1;
+"238
+[; ;main.c: 238:                         flag_time_display_update = 1;
 [e = _flag_time_display_update -> -> 1 `i `uc ]
-"241
-[; ;main.c: 241:                     }
+"239
+[; ;main.c: 239:                     }
 }
 [e :U 443 ]
 [e :U 442 ]
-"242
-[; ;main.c: 242:                 }
+"241
+[; ;main.c: 241:                 }
 }
 [e :U 440 ]
+"242
+[; ;main.c: 242:                 button_press_count[1] = 0;
+[e = *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
 "243
-[; ;main.c: 243:                 button_press_count[2] = 0;
-[e = *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 243:                 flag_button_press_count[1] = 0;
+[e = *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
 "244
-[; ;main.c: 244:                 flag_button_press_count[2] = 0;
-[e = *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
-"245
-[; ;main.c: 245:             }
+[; ;main.c: 244:             }
 }
 [e :U 439 ]
-"247
-[; ;main.c: 247:             if(flag_button_press_count[3] == 1){
-[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 444  ]
+"246
+[; ;main.c: 246:             if(flag_button_press_count[2] == 1){
+[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 444  ]
 {
-"248
-[; ;main.c: 248:                 if(button_press_count[3] > 5 && button_press_count[3] < 100){
-[e $ ! && > -> *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 445  ]
+"247
+[; ;main.c: 247:                 if(button_press_count[2] > 5 && button_press_count[2] < 100){
+[e $ ! && > -> *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 445  ]
 {
 "249
-[; ;main.c: 249:                     updateRTC(rtcData[2],rtcData[1]);
-[e ( _updateRTC (2 , *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
+[; ;main.c: 249:                     if(mode == MODE_SET_HOUR){
+[e $ ! == -> _mode `i -> . `E3513 2 `i 446  ]
+{
+"250
+[; ;main.c: 250:                         rtcData[2] = bcdHourDecr(rtcData[2]);
+[e = *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdHourDecr (1 *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
 "251
-[; ;main.c: 251:                     mode = MODE_NORMAL;
-[e = _mode -> . `E3490 0 `uc ]
+[; ;main.c: 251:                         mode_timeout_count = 8;
+[e = _mode_timeout_count -> -> 8 `i `uc ]
 "252
-[; ;main.c: 252:                     flag_time_display_update = 1;
+[; ;main.c: 252:                         flag_time_display_update = 1;
 [e = _flag_time_display_update -> -> 1 `i `uc ]
 "253
-[; ;main.c: 253:                 }
+[; ;main.c: 253:                     } else if(mode == MODE_SET_MINUTE){
+}
+[e $U 447  ]
+[e :U 446 ]
+[e $ ! == -> _mode `i -> . `E3513 3 `i 448  ]
+{
+"254
+[; ;main.c: 254:                         rtcData[1] = bcdMinuteDecr(rtcData[1]);
+[e = *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ( _bcdMinuteDecr (1 *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
+"255
+[; ;main.c: 255:                         mode_timeout_count = 8;
+[e = _mode_timeout_count -> -> 8 `i `uc ]
+"256
+[; ;main.c: 256:                         flag_time_display_update = 1;
+[e = _flag_time_display_update -> -> 1 `i `uc ]
+"257
+[; ;main.c: 257:                     }
+}
+[e :U 448 ]
+[e :U 447 ]
+"258
+[; ;main.c: 258:                 }
 }
 [e :U 445 ]
-"254
-[; ;main.c: 254:                 button_press_count[3] = 0;
-[e = *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
-"255
-[; ;main.c: 255:                 flag_button_press_count[3] = 0;
-[e = *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
-"256
-[; ;main.c: 256:             }
+"259
+[; ;main.c: 259:                 button_press_count[2] = 0;
+[e = *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
+"260
+[; ;main.c: 260:                 flag_button_press_count[2] = 0;
+[e = *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
+"261
+[; ;main.c: 261:             }
 }
 [e :U 444 ]
-"257
-[; ;main.c: 257:         }
-}
-[e :U 427 ]
-[e :U 425 ]
-[e :U 423 ]
-[e :U 421 ]
-"259
-[; ;main.c: 259:         if(mode == MODE_NORMAL){
-[e $ ! == -> _mode `i -> . `E3490 0 `i 446  ]
-{
-"260
-[; ;main.c: 260:             if(flag_time_display_update == 1){
-[e $ ! == -> _flag_time_display_update `i -> 1 `i 447  ]
-{
-"261
-[; ;main.c: 261:                 i2c_readDataBlock(0x68,0x00,rtcData,sizeof(rtcData));
-[e ( _i2c_readDataBlock (4 , , , -> -> 104 `i `uc -> -> 0 `i `uc -> &U _rtcData `*v -> # _rtcData `ui ]
 "263
-[; ;main.c: 263:                 displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
-[e = *U + &U _displayBuff * -> -> -> 0 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 3 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+[; ;main.c: 263:             if(flag_button_press_count[3] == 1){
+[e $ ! == -> *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 1 `i 449  ]
+{
 "264
-[; ;main.c: 264:                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
-[e = *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+[; ;main.c: 264:                 if(button_press_count[3] > 5 && button_press_count[3] < 100){
+[e $ ! && > -> *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 5 `i < -> *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 100 `i 450  ]
+{
 "265
-[; ;main.c: 265:                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
-[e = *U + &U _displayBuff * -> -> -> 2 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
-"266
-[; ;main.c: 266:                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
-[e = *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+[; ;main.c: 265:                     updateRTC(rtcData[2],rtcData[1]);
+[e ( _updateRTC (2 , *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux ]
+"267
+[; ;main.c: 267:                     mode = MODE_NORMAL;
+[e = _mode -> . `E3513 0 `uc ]
 "268
-[; ;main.c: 268:                 flag_time_display_update = 0;
-[e = _flag_time_display_update -> -> 0 `i `uc ]
+[; ;main.c: 268:                     flag_time_display_update = 1;
+[e = _flag_time_display_update -> -> 1 `i `uc ]
 "269
-[; ;main.c: 269:             }
+[; ;main.c: 269:                 }
 }
-[e :U 447 ]
+[e :U 450 ]
 "270
-[; ;main.c: 270:         } else {
-}
-[e $U 448  ]
-[e :U 446 ]
-{
+[; ;main.c: 270:                 button_press_count[3] = 0;
+[e = *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 0 `i `uc ]
 "271
-[; ;main.c: 271:             if(flag_time_display_update == 1){
-[e $ ! == -> _flag_time_display_update `i -> 1 `i 449  ]
-{
+[; ;main.c: 271:                 flag_button_press_count[3] = 0;
+[e = *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux -> -> 0 `i `uc ]
 "272
-[; ;main.c: 272:                 do { LATAbits.LATA7 = 1; } while(0);
-[e :U 452 ]
-{
-[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 272:             }
 }
-[e :U 451 ]
+[e :U 449 ]
 "273
-[; ;main.c: 273:                 displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
-[e = *U + &U _displayBuff * -> -> -> 0 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 3 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
-"274
-[; ;main.c: 274:                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
-[e = *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+[; ;main.c: 273:         }
+}
+[e :U 432 ]
+[e :U 430 ]
+[e :U 428 ]
+[e :U 426 ]
 "275
-[; ;main.c: 275:                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
-[e = *U + &U _displayBuff * -> -> -> 2 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+[; ;main.c: 275:         if(mode == MODE_NORMAL){
+[e $ ! == -> _mode `i -> . `E3513 0 `i 451  ]
+{
 "276
-[; ;main.c: 276:                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
-[e = *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+[; ;main.c: 276:             if(flag_time_display_update == 1){
+[e $ ! == -> _flag_time_display_update `i -> 1 `i 452  ]
+{
 "277
-[; ;main.c: 277:                 if(flag_dot_blink){
-[e $ ! != -> _flag_dot_blink `i -> 0 `i 453  ]
-{
-"278
-[; ;main.c: 278:                     if(mode == MODE_SET_HOUR){
-[e $ ! == -> _mode `i -> . `E3490 1 `i 454  ]
-{
+[; ;main.c: 277:                 i2c_readDataBlock(0x68,0x00,rtcData,sizeof(rtcData));
+[e ( _i2c_readDataBlock (4 , , , -> -> 104 `i `uc -> -> 0 `i `uc -> &U _rtcData `*v -> # _rtcData `ui ]
 "279
-[; ;main.c: 279:                         displayBuff[1] |= (1 << 0);
-[e =| *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+[; ;main.c: 279:                 displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
+[e = *U + &U _displayBuff * -> -> -> 0 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 3 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
 "280
-[; ;main.c: 280:                     } else if(mode == MODE_SET_MINUTE){
-}
-[e $U 455  ]
-[e :U 454 ]
-[e $ ! == -> _mode `i -> . `E3490 2 `i 456  ]
-{
+[; ;main.c: 280:                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
 "281
-[; ;main.c: 281:                         displayBuff[3] |= (1 << 0);
-[e =| *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+[; ;main.c: 281:                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 2 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
 "282
-[; ;main.c: 282:                     }
-}
-[e :U 456 ]
-[e :U 455 ]
-"283
-[; ;main.c: 283:                 }
-}
-[e :U 453 ]
+[; ;main.c: 282:                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
 "284
 [; ;main.c: 284:                 flag_time_display_update = 0;
 [e = _flag_time_display_update -> -> 0 `i `uc ]
-"285
-[; ;main.c: 285:             }
-}
-[e :U 449 ]
 "286
-[; ;main.c: 286:         }
-}
-[e :U 448 ]
+[; ;main.c: 286:                 if((rtcData[0]& 0x0F) == 0x07){
+[e $ ! == & -> *U + &U _rtcData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i -> 7 `i 453  ]
+{
 "287
-[; ;main.c: 287:     }
-}
-[e :U 417 ]
-[e $U 418  ]
-[e :U 419 ]
+[; ;main.c: 287:                     mode = MODE_TEMPERATURE;
+[e = _mode -> . `E3513 1 `uc ]
 "288
-[; ;main.c: 288: }
-[e :UE 404 ]
+[; ;main.c: 288:                     mode_timeout_count = 3;
+[e = _mode_timeout_count -> -> 3 `i `uc ]
+"289
+[; ;main.c: 289:                 }
 }
+[e :U 453 ]
 "290
-[; ;main.c: 290: void secondISR(void){
+[; ;main.c: 290:             }
+}
+[e :U 452 ]
+"291
+[; ;main.c: 291:         } else if(mode == MODE_TEMPERATURE){
+}
+[e $U 454  ]
+[e :U 451 ]
+[e $ ! == -> _mode `i -> . `E3513 1 `i 455  ]
+{
+"292
+[; ;main.c: 292:             if(flag_time_display_update == 1){
+[e $ ! == -> _flag_time_display_update `i -> 1 `i 456  ]
+{
+"294
+[; ;main.c: 294:                 do { LATAbits.LATA7 = 0; } while(0);
+[e :U 459 ]
+{
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 458 ]
+"296
+[; ;main.c: 296:                 bcd_temp = intToBCD(ADC_GetConversion(channel_AN13));
+[e = _bcd_temp ( _intToBCD (1 ( _ADC_GetConversion (1 . `E3383 0 ]
+"298
+[; ;main.c: 298:                 displayBuff[0] = displayNum[((bcd_temp >> 8) & 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 0 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> & >> -> _bcd_temp `ui -> 8 `i -> -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+"299
+[; ;main.c: 299:                 displayBuff[1] = displayNum[((bcd_temp >> 4) & 0x0F)] | (1 << 0);
+[e = *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux -> | -> *U + &U _displayNum * -> & >> -> _bcd_temp `ui -> 4 `i -> -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux `i << -> 1 `i -> 0 `i `uc ]
+"300
+[; ;main.c: 300:                 displayBuff[2] = displayNum[(bcd_temp & 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 2 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> & -> _bcd_temp `ui -> -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+"301
+[; ;main.c: 301:                 displayBuff[3] = ((1 << 7) | (1 << 4) | (1 << 3) | (1 << 2));
+[e = *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux -> | | | << -> 1 `i -> 7 `i << -> 1 `i -> 4 `i << -> 1 `i -> 3 `i << -> 1 `i -> 2 `i `uc ]
+"303
+[; ;main.c: 303:                 flag_time_display_update = 0;
+[e = _flag_time_display_update -> -> 0 `i `uc ]
+"304
+[; ;main.c: 304:             }
+}
+[e :U 456 ]
+"305
+[; ;main.c: 305:         } else {
+}
+[e $U 460  ]
+[e :U 455 ]
+{
+"306
+[; ;main.c: 306:             if(flag_time_display_update == 1){
+[e $ ! == -> _flag_time_display_update `i -> 1 `i 461  ]
+{
+"307
+[; ;main.c: 307:                 do { LATAbits.LATA7 = 1; } while(0);
+[e :U 464 ]
+{
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 463 ]
+"308
+[; ;main.c: 308:                 displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
+[e = *U + &U _displayBuff * -> -> -> 0 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 3 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+"309
+[; ;main.c: 309:                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 2 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+"310
+[; ;main.c: 310:                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 2 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & >> -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 4 `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+"311
+[; ;main.c: 311:                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
+[e = *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux *U + &U _displayNum * -> -> & -> *U + &U _rtcData * -> -> -> 1 `i `ui `ux -> -> # *U &U _rtcData `ui `ux `i -> 15 `i `ui `ux -> -> # *U &U _displayNum `ui `ux ]
+"312
+[; ;main.c: 312:                 if(flag_dot_blink){
+[e $ ! != -> _flag_dot_blink `i -> 0 `i 465  ]
+{
+"313
+[; ;main.c: 313:                     if(mode == MODE_SET_HOUR){
+[e $ ! == -> _mode `i -> . `E3513 2 `i 466  ]
+{
+"314
+[; ;main.c: 314:                         displayBuff[1] |= (1 << 0);
+[e =| *U + &U _displayBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+"315
+[; ;main.c: 315:                     } else if(mode == MODE_SET_MINUTE){
+}
+[e $U 467  ]
+[e :U 466 ]
+[e $ ! == -> _mode `i -> . `E3513 3 `i 468  ]
+{
+"316
+[; ;main.c: 316:                         displayBuff[3] |= (1 << 0);
+[e =| *U + &U _displayBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _displayBuff `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+"317
+[; ;main.c: 317:                     }
+}
+[e :U 468 ]
+[e :U 467 ]
+"318
+[; ;main.c: 318:                 }
+}
+[e :U 465 ]
+"319
+[; ;main.c: 319:                 flag_time_display_update = 0;
+[e = _flag_time_display_update -> -> 0 `i `uc ]
+"320
+[; ;main.c: 320:             }
+}
+[e :U 461 ]
+"321
+[; ;main.c: 321:         }
+}
+[e :U 460 ]
+[e :U 454 ]
+"322
+[; ;main.c: 322:     }
+}
+[e :U 422 ]
+[e $U 423  ]
+[e :U 424 ]
+"323
+[; ;main.c: 323: }
+[e :UE 409 ]
+}
+"325
+[; ;main.c: 325: void secondISR(void){
 [v _secondISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _secondISR ]
 [f ]
-"292
-[; ;main.c: 292:     if(mode == MODE_NORMAL){
-[e $ ! == -> _mode `i -> . `E3490 0 `i 458  ]
+"327
+[; ;main.c: 327:     if(mode == MODE_NORMAL){
+[e $ ! == -> _mode `i -> . `E3513 0 `i 470  ]
 {
-"293
-[; ;main.c: 293:         do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0);
-[e :U 461 ]
+"328
+[; ;main.c: 328:         do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0);
+[e :U 473 ]
 {
 [e = . . _LATAbits 0 7 -> ~ -> . . _LATAbits 0 7 `i `uc ]
 }
-[e :U 460 ]
-"294
-[; ;main.c: 294:         flag_time_display_update = 1;
+[e :U 472 ]
+"329
+[; ;main.c: 329:         flag_time_display_update = 1;
 [e = _flag_time_display_update -> -> 1 `i `uc ]
-"295
-[; ;main.c: 295:     } else {
+"330
+[; ;main.c: 330:     } else {
 }
-[e $U 462  ]
-[e :U 458 ]
+[e $U 474  ]
+[e :U 470 ]
 {
-"296
-[; ;main.c: 296:         if(flag_dot_blink) flag_dot_blink = 0;
-[e $ ! != -> _flag_dot_blink `i -> 0 `i 463  ]
+"331
+[; ;main.c: 331:         if(flag_dot_blink) flag_dot_blink = 0;
+[e $ ! != -> _flag_dot_blink `i -> 0 `i 475  ]
 [e = _flag_dot_blink -> -> 0 `i `uc ]
-[e $U 464  ]
-"297
-[; ;main.c: 297:         else flag_dot_blink = 1;
-[e :U 463 ]
+[e $U 476  ]
+"332
+[; ;main.c: 332:         else flag_dot_blink = 1;
+[e :U 475 ]
 [e = _flag_dot_blink -> -> 1 `i `uc ]
-[e :U 464 ]
-"298
-[; ;main.c: 298:         flag_time_display_update = 1;
+[e :U 476 ]
+"333
+[; ;main.c: 333:         flag_time_display_update = 1;
 [e = _flag_time_display_update -> -> 1 `i `uc ]
-"299
-[; ;main.c: 299:     }
+"334
+[; ;main.c: 334:     }
 }
-[e :U 462 ]
-"301
-[; ;main.c: 301:     if(mode_timeout_count) {
-[e $ ! != -> _mode_timeout_count `i -> 0 `i 465  ]
+[e :U 474 ]
+"336
+[; ;main.c: 336:     if(mode_timeout_count) {
+[e $ ! != -> _mode_timeout_count `i -> 0 `i 477  ]
 {
-"302
-[; ;main.c: 302:         mode_timeout_count--;
+"337
+[; ;main.c: 337:         mode_timeout_count--;
 [e -- _mode_timeout_count -> -> 1 `i `uc ]
-"303
-[; ;main.c: 303:         if(mode_timeout_count == 0){
-[e $ ! == -> _mode_timeout_count `i -> 0 `i 466  ]
+"338
+[; ;main.c: 338:         if(mode_timeout_count == 0){
+[e $ ! == -> _mode_timeout_count `i -> 0 `i 478  ]
 {
-"304
-[; ;main.c: 304:             mode = MODE_NORMAL;
-[e = _mode -> . `E3490 0 `uc ]
-"305
-[; ;main.c: 305:         }
+"339
+[; ;main.c: 339:             mode = MODE_NORMAL;
+[e = _mode -> . `E3513 0 `uc ]
+"340
+[; ;main.c: 340:         }
 }
-[e :U 466 ]
-"306
-[; ;main.c: 306:     }
+[e :U 478 ]
+"341
+[; ;main.c: 341:     }
 }
-[e :U 465 ]
-"307
-[; ;main.c: 307: }
-[e :UE 457 ]
+[e :U 477 ]
+"342
+[; ;main.c: 342: }
+[e :UE 469 ]
 }
-"309
-[; ;main.c: 309: void displayRefreshISR(void){
+"344
+[; ;main.c: 344: void displayRefreshISR(void){
 [v _displayRefreshISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _displayRefreshISR ]
 [f ]
-"310
-[; ;main.c: 310:     static uint8_t i;
-[v F3525 `uc ~T0 @X0 1 s i ]
-"311
-[; ;main.c: 311:     i &= 0x03;
-[e =& F3525 -> -> 3 `i `uc ]
-"312
-[; ;main.c: 312:     LATD = displayBuff[i];
-[e = _LATD *U + &U _displayBuff * -> F3525 `ux -> -> # *U &U _displayBuff `ui `ux ]
-"313
-[; ;main.c: 313:     switch(i){
-[e $U 469  ]
+"345
+[; ;main.c: 345:     static uint8_t i;
+[v F3555 `uc ~T0 @X0 1 s i ]
+"346
+[; ;main.c: 346:     i &= 0x03;
+[e =& F3555 -> -> 3 `i `uc ]
+"347
+[; ;main.c: 347:     LATD = displayBuff[i];
+[e = _LATD *U + &U _displayBuff * -> F3555 `ux -> -> # *U &U _displayBuff `ui `ux ]
+"348
+[; ;main.c: 348:     switch(i){
+[e $U 481  ]
 {
-"314
-[; ;main.c: 314:         case 0:
-[e :U 470 ]
-"315
-[; ;main.c: 315:             do { LATAbits.LATA3 = 0; } while(0);
-[e :U 473 ]
+"349
+[; ;main.c: 349:         case 0:
+[e :U 482 ]
+"350
+[; ;main.c: 350:             do { LATAbits.LATA3 = 0; } while(0);
+[e :U 485 ]
 {
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 472 ]
-"316
-[; ;main.c: 316:             do { LATEbits.LATE1 = 1; } while(0);
-[e :U 476 ]
+[e :U 484 ]
+"351
+[; ;main.c: 351:             do { LATEbits.LATE1 = 1; } while(0);
+[e :U 488 ]
 {
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 475 ]
-"317
-[; ;main.c: 317:             break;
-[e $U 468  ]
-"318
-[; ;main.c: 318:         case 1:
-[e :U 477 ]
-"319
-[; ;main.c: 319:             do { LATEbits.LATE1 = 0; } while(0);
-[e :U 480 ]
+[e :U 487 ]
+"352
+[; ;main.c: 352:             break;
+[e $U 480  ]
+"353
+[; ;main.c: 353:         case 1:
+[e :U 489 ]
+"354
+[; ;main.c: 354:             do { LATEbits.LATE1 = 0; } while(0);
+[e :U 492 ]
 {
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 479 ]
-"320
-[; ;main.c: 320:             do { LATCbits.LATC1 = 1; } while(0);
-[e :U 483 ]
+[e :U 491 ]
+"355
+[; ;main.c: 355:             do { LATCbits.LATC1 = 1; } while(0);
+[e :U 495 ]
 {
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 482 ]
-"321
-[; ;main.c: 321:             break;
-[e $U 468  ]
-"322
-[; ;main.c: 322:         case 2:
-[e :U 484 ]
-"323
-[; ;main.c: 323:             do { LATCbits.LATC1 = 0; } while(0);
-[e :U 487 ]
+[e :U 494 ]
+"356
+[; ;main.c: 356:             break;
+[e $U 480  ]
+"357
+[; ;main.c: 357:         case 2:
+[e :U 496 ]
+"358
+[; ;main.c: 358:             do { LATCbits.LATC1 = 0; } while(0);
+[e :U 499 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 486 ]
-"324
-[; ;main.c: 324:             do { LATAbits.LATA4 = 1; } while(0);
-[e :U 490 ]
+[e :U 498 ]
+"359
+[; ;main.c: 359:             do { LATAbits.LATA4 = 1; } while(0);
+[e :U 502 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 489 ]
-"325
-[; ;main.c: 325:             break;
-[e $U 468  ]
-"326
-[; ;main.c: 326:         case 3:
-[e :U 491 ]
-"327
-[; ;main.c: 327:             do { LATAbits.LATA4 = 0; } while(0);
-[e :U 494 ]
+[e :U 501 ]
+"360
+[; ;main.c: 360:             break;
+[e $U 480  ]
+"361
+[; ;main.c: 361:         case 3:
+[e :U 503 ]
+"362
+[; ;main.c: 362:             do { LATAbits.LATA4 = 0; } while(0);
+[e :U 506 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 493 ]
-"328
-[; ;main.c: 328:             do { LATAbits.LATA3 = 1; } while(0);
-[e :U 497 ]
+[e :U 505 ]
+"363
+[; ;main.c: 363:             do { LATAbits.LATA3 = 1; } while(0);
+[e :U 509 ]
 {
 [e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
 }
-[e :U 496 ]
-"329
-[; ;main.c: 329:             break;
-[e $U 468  ]
-"330
-[; ;main.c: 330:     }
+[e :U 508 ]
+"364
+[; ;main.c: 364:             break;
+[e $U 480  ]
+"365
+[; ;main.c: 365:     }
 }
-[e $U 468  ]
-[e :U 469 ]
-[e [\ -> F3525 `i , $ -> 0 `i 470
- , $ -> 1 `i 477
- , $ -> 2 `i 484
- , $ -> 3 `i 491
- 468 ]
-[e :U 468 ]
-"332
-[; ;main.c: 332:     i++;
-[e ++ F3525 -> -> 1 `i `uc ]
-"335
-[; ;main.c: 335:     if(flag_button_press_count[0] != 0){
-[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 498  ]
+[e $U 480  ]
+[e :U 481 ]
+[e [\ -> F3555 `i , $ -> 0 `i 482
+ , $ -> 1 `i 489
+ , $ -> 2 `i 496
+ , $ -> 3 `i 503
+ 480 ]
+[e :U 480 ]
+"367
+[; ;main.c: 367:     i++;
+[e ++ F3555 -> -> 1 `i `uc ]
+"370
+[; ;main.c: 370:     if(flag_button_press_count[0] != 0){
+[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 510  ]
 {
-"336
-[; ;main.c: 336:   if(button_press_count[0] < 200) button_press_count[0]++;
-[e $ ! < -> *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 499  ]
+"371
+[; ;main.c: 371:   if(button_press_count[0] < 200) button_press_count[0]++;
+[e $ ! < -> *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 511  ]
 [e ++ *U + &U _button_press_count * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 1 `i `uc ]
-[e :U 499 ]
-"337
-[; ;main.c: 337:  }
+[e :U 511 ]
+"372
+[; ;main.c: 372:  }
 }
-[e :U 498 ]
-"338
-[; ;main.c: 338:     if(flag_button_press_count[1] != 0){
-[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 500  ]
+[e :U 510 ]
+"373
+[; ;main.c: 373:     if(flag_button_press_count[1] != 0){
+[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 512  ]
 {
-"339
-[; ;main.c: 339:   if(button_press_count[1] < 200) button_press_count[1]++;
-[e $ ! < -> *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 501  ]
+"374
+[; ;main.c: 374:   if(button_press_count[1] < 200) button_press_count[1]++;
+[e $ ! < -> *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 513  ]
 [e ++ *U + &U _button_press_count * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 1 `i `uc ]
-[e :U 501 ]
-"340
-[; ;main.c: 340:  }
+[e :U 513 ]
+"375
+[; ;main.c: 375:  }
 }
-[e :U 500 ]
-"341
-[; ;main.c: 341:     if(flag_button_press_count[2] != 0){
-[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 502  ]
+[e :U 512 ]
+"376
+[; ;main.c: 376:     if(flag_button_press_count[2] != 0){
+[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 514  ]
 {
-"342
-[; ;main.c: 342:   if(button_press_count[2] < 200) button_press_count[2]++;
-[e $ ! < -> *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 503  ]
+"377
+[; ;main.c: 377:   if(button_press_count[2] < 200) button_press_count[2]++;
+[e $ ! < -> *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 515  ]
 [e ++ *U + &U _button_press_count * -> -> -> 2 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 1 `i `uc ]
-[e :U 503 ]
-"343
-[; ;main.c: 343:  }
+[e :U 515 ]
+"378
+[; ;main.c: 378:  }
 }
-[e :U 502 ]
-"344
-[; ;main.c: 344:     if(flag_button_press_count[3] != 0){
-[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 504  ]
+[e :U 514 ]
+"379
+[; ;main.c: 379:     if(flag_button_press_count[3] != 0){
+[e $ ! != -> *U + &U _flag_button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _flag_button_press_count `ui `ux `i -> 0 `i 516  ]
 {
-"345
-[; ;main.c: 345:   if(button_press_count[3] < 200) button_press_count[3]++;
-[e $ ! < -> *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 505  ]
+"380
+[; ;main.c: 380:   if(button_press_count[3] < 200) button_press_count[3]++;
+[e $ ! < -> *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux `i -> 200 `i 517  ]
 [e ++ *U + &U _button_press_count * -> -> -> 3 `i `ui `ux -> -> # *U &U _button_press_count `ui `ux -> -> 1 `i `uc ]
-[e :U 505 ]
-"346
-[; ;main.c: 346:  }
+[e :U 517 ]
+"381
+[; ;main.c: 381:  }
 }
-[e :U 504 ]
-"348
-[; ;main.c: 348: }
-[e :UE 467 ]
+[e :U 516 ]
+"383
+[; ;main.c: 383: }
+[e :UE 479 ]
 }

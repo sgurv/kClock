@@ -56,6 +56,8 @@ uint8_t flag_dot_blink;
 
 uint8_t rtcData[9];
 
+uint16_t bcd_temp;
+
 uint8_t flag_button_press_count[4];
 uint8_t button_press_count[4];
 
@@ -64,6 +66,7 @@ uint8_t mode_timeout_count; // timeout to mode normal in seconds
 
 enum mode{
     MODE_NORMAL,
+    MODE_TEMPERATURE,
     MODE_SET_HOUR,
     MODE_SET_MINUTE
 };
@@ -76,6 +79,7 @@ static uint8_t bcdHourIncr(uint8_t hr);
 static uint8_t bcdHourDecr(uint8_t hr);
 static uint8_t bcdMinuteIncr(uint8_t mn);
 static uint8_t bcdMinuteDecr(uint8_t mn);
+uint16_t intToBCD(uint16_t binaryInput);
 
 void initRTC(void){
     __delay_ms(30);
@@ -141,6 +145,18 @@ static uint8_t bcdMinuteDecr(uint8_t mn){
     if(mn == 0x40) return 0x39;
     if(mn == 0x50) return 0x49;
     return (mn - 1);
+}
+
+uint16_t intToBCD(uint16_t binaryInput){
+    uint16_t bcdResult = 0;
+    uint16_t shift = 0;
+    
+    while (binaryInput > 0) {
+      bcdResult |= (binaryInput % 10) << (shift++ << 2);
+      binaryInput /= 10;
+    }
+    
+    return bcdResult;
 }
 
 void main(void)
@@ -264,6 +280,25 @@ void main(void)
                 displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
                 displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
                 displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
+                
+                flag_time_display_update = 0;
+                
+                if((rtcData[0]& 0x0F) == 0x07){ // every 8th second ..
+                    mode = MODE_TEMPERATURE; // .. display temperature next
+                    mode_timeout_count = 3; // .. for next 2 second
+                }
+            }
+        } else if(mode == MODE_TEMPERATURE){
+            if(flag_time_display_update == 1){
+                
+                LED_COLON_SetLow();
+                
+                bcd_temp = intToBCD(ADC_GetConversion(channel_AN13)); // read ADC
+                
+                displayBuff[0] = displayNum[((bcd_temp >> 8) & 0x0F)];
+                displayBuff[1] = displayNum[((bcd_temp >> 4) & 0x0F)] | SEG_DOT;
+                displayBuff[2] = displayNum[(bcd_temp & 0x0F)];
+                displayBuff[3] = CHAR_C;
                 
                 flag_time_display_update = 0;
             }

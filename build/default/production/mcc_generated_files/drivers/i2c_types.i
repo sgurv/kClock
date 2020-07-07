@@ -4,25 +4,25 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "/opt/microchip/xc8/v2.05/pic/include/language_support.h" 1 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "mcc_generated_files/drivers/i2c_types.c" 2
 # 23 "mcc_generated_files/drivers/i2c_types.c"
 # 1 "mcc_generated_files/drivers/i2c_types.h" 1
 # 26 "mcc_generated_files/drivers/i2c_types.h"
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 1 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 1 3
 
 
 
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/musl_xc8.h" 1 3
-# 5 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 2 3
-# 22 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 3
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 1 3
-# 135 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/musl_xc8.h" 1 3
+# 5 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 2 3
+# 22 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 1 3
+# 127 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 150 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 142 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef long intptr_t;
-# 166 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 158 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
@@ -45,7 +45,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 196 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 188 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -74,9 +74,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 237 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 229 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 23 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 2 3
+# 23 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 2 3
 
 typedef int8_t int_fast8_t;
 
@@ -106,38 +106,42 @@ typedef uint24_t uint_least24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 155 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 3
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/stdint.h" 1 3
+# 139 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/stdint.h" 1 3
 typedef int32_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 156 "/opt/microchip/xc8/v2.05/pic/include/c99/stdint.h" 2 3
+# 140 "/opt/microchip/xc8/v2.10/pic/include/c99/stdint.h" 2 3
 # 26 "mcc_generated_files/drivers/i2c_types.h" 2
 
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 1 3
-# 10 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/features.h" 1 3
-# 11 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 2 3
-# 24 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
-# 1 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 1 3
-# 10 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/stdio.h" 1 3
+# 10 "/opt/microchip/xc8/v2.10/pic/include/c99/stdio.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/features.h" 1 3
+# 11 "/opt/microchip/xc8/v2.10/pic/include/c99/stdio.h" 2 3
+# 24 "/opt/microchip/xc8/v2.10/pic/include/c99/stdio.h" 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 1 3
+
+
+
+
+
 typedef void * va_list[1];
 
 
 
 
 typedef void * __isoc_va_list[1];
-# 127 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 122 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef unsigned size_t;
-# 145 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 137 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef long ssize_t;
-# 254 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 246 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef long long off_t;
-# 407 "/opt/microchip/xc8/v2.05/pic/include/c99/bits/alltypes.h" 3
+# 399 "/opt/microchip/xc8/v2.10/pic/include/c99/bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 25 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 2 3
-# 52 "/opt/microchip/xc8/v2.05/pic/include/c99/stdio.h" 3
+# 25 "/opt/microchip/xc8/v2.10/pic/include/c99/stdio.h" 2 3
+# 52 "/opt/microchip/xc8/v2.10/pic/include/c99/stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -190,14 +194,12 @@ char *gets(char *);
 int fputs(const char *restrict, FILE *restrict);
 int puts(const char *);
 
-
 #pragma printf_check(printf) const
 #pragma printf_check(vprintf) const
 #pragma printf_check(sprintf) const
 #pragma printf_check(snprintf) const
 #pragma printf_check(vsprintf) const
 #pragma printf_check(vsnprintf) const
-
 
 int printf(const char *restrict, ...);
 int fprintf(FILE *restrict, const char *restrict, ...);

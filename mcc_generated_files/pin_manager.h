@@ -189,6 +189,23 @@
 #define PULSE_IN_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
 #define PULSE_IN_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
 
+// get/set channel_AN13 aliases
+#define channel_AN13_TRIS                 TRISBbits.TRISB5
+#define channel_AN13_LAT                  LATBbits.LATB5
+#define channel_AN13_PORT                 PORTBbits.RB5
+#define channel_AN13_WPU                  WPUBbits.WPUB5
+#define channel_AN13_ANS                  ANSELBbits.ANSB5
+#define channel_AN13_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
+#define channel_AN13_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
+#define channel_AN13_Toggle()             do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
+#define channel_AN13_GetValue()           PORTBbits.RB5
+#define channel_AN13_SetDigitalInput()    do { TRISBbits.TRISB5 = 1; } while(0)
+#define channel_AN13_SetDigitalOutput()   do { TRISBbits.TRISB5 = 0; } while(0)
+#define channel_AN13_SetPullup()          do { WPUBbits.WPUB5 = 1; } while(0)
+#define channel_AN13_ResetPullup()        do { WPUBbits.WPUB5 = 0; } while(0)
+#define channel_AN13_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
+#define channel_AN13_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
+
 // get/set DIGIT_2 aliases
 #define DIGIT_2_TRIS                 TRISCbits.TRISC1
 #define DIGIT_2_LAT                  LATCbits.LATC1

@@ -65,38 +65,63 @@ i2c_restart_write 3
 i2c_continue 4
 i2c_reset_link 5
 ]
-"157 /home/sandeep/MPLABXProjects/kClock.X/main.c
-[e E3490 mode `uc
-MODE_NORMAL 0
-MODE_SET_HOUR 1
-MODE_SET_MINUTE 2
+"83 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/adc.c
+[e E2939 . `uc
+channel_AN13 13
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
 ]
-"10 /opt/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+"173 /home/sandeep/MPLABXProjects/kClock.X/main.c
+[e E3513 mode `uc
+MODE_NORMAL 0
+MODE_TEMPERATURE 1
+MODE_SET_HOUR 2
+MODE_SET_MINUTE 3
+]
+"296
+[e E3383 . `uc
+channel_AN13 13
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"5 /opt/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.10/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.10/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul8_16.c
+"4 /opt/microchip/xc8/v2.10/pic/sources/c99/common/Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 /opt/microchip/xc8/v2.05/pic/sources/c99/pic/__eeprom.c
+"6 /opt/microchip/xc8/v2.10/pic/sources/c99/pic/__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"80 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"84 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _initRTC initRTC `(v  1 e 1 0 ]
-"102
+"106
 [v _updateRTC updateRTC `(v  1 e 1 0 ]
-"110
+"114
 [v _bcdHourIncr bcdHourIncr `(uc  1 s 1 bcdHourIncr ]
-"118
+"122
 [v _bcdHourDecr bcdHourDecr `(uc  1 s 1 bcdHourDecr ]
-"125
+"129
 [v _bcdMinuteIncr bcdMinuteIncr `(uc  1 s 1 bcdMinuteIncr ]
-"136
+"140
 [v _bcdMinuteDecr bcdMinuteDecr `(uc  1 s 1 bcdMinuteDecr ]
-"146
+"150
+[v _intToBCD intToBCD `(us  1 e 2 0 ]
+"162
 [v _main main `(v  1 e 1 0 ]
-"290
+"325
 [v _secondISR secondISR `(v  1 e 1 0 ]
-"309
+"344
 [v _displayRefreshISR displayRefreshISR `(v  1 e 1 0 ]
+"65 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"110
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
 "89 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_master.c
 [v _i2c_setDataCompleteCallback i2c_setDataCompleteCallback `(v  1 e 1 0 ]
 [v i1_i2c_setDataCompleteCallback i2c_setDataCompleteCallback `(v  1 e 1 0 ]
@@ -201,6 +226,8 @@ MODE_SET_MINUTE 2
 "35 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_types.c
 [v _i2c_restartWrite i2c_restartWrite `(E358  1 e 1 0 ]
 [v i1_i2c_restartWrite i2c_restartWrite `(E358  1 e 1 0 ]
+"58 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 "39 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/i2c_driver.c
 [v _mssp_enableIRQ mssp_enableIRQ `T(v  1 e 1 0 ]
 "44
@@ -256,9 +283,9 @@ MODE_SET_MINUTE 2
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 "50 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"59
+"61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"73
+"75
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "58 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/memory.c
 [v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
@@ -299,7 +326,7 @@ MODE_SET_MINUTE 2
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"374 /opt/microchip/xc8/v2.05/pic/include/pic16f1939.h
+"374 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
 [s S454 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -307,7 +334,7 @@ MODE_SET_MINUTE 2
 ]
 [u S459 . 1 `S445 1 . 1 0 `S454 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES459  1 e 1 @11 ]
-[s S1312 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1432 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -317,8 +344,8 @@ MODE_SET_MINUTE 2
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S1321 . 1 `S1312 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1321  1 e 1 @13 ]
+[u S1441 . 1 `S1432 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1441  1 e 1 @13 ]
 [s S654 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -381,7 +408,7 @@ MODE_SET_MINUTE 2
 [v _PIE2bits PIE2bits `VES600  1 e 1 @146 ]
 "1764
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
-[s S761 . 1 `uc 1 PS0 1 0 :1:0 
+[s S769 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -391,22 +418,51 @@ MODE_SET_MINUTE 2
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1787
-[s S770 . 1 `uc 1 PS 1 0 :3:0 
+[s S778 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S775 . 1 `S761 1 . 1 0 `S770 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES775  1 e 1 @149 ]
+[u S783 . 1 `S769 1 . 1 0 `S778 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES783  1 e 1 @149 ]
 "1898
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1957
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
 "2015
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2156
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"2176
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"2196
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S1272 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"2225
+[s S1280 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S1284 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S1287 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[u S1290 . 1 `S1272 1 . 1 0 `S1280 1 . 1 0 `S1284 1 . 1 0 `S1287 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1290  1 e 1 @157 ]
+"2285
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2357
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1257 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1376 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -416,13 +472,13 @@ MODE_SET_MINUTE 2
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2374
-[u S1266 . 1 `S1257 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1266  1 e 1 @268 ]
+[u S1385 . 1 `S1376 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1385  1 e 1 @268 ]
 "2419
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2481
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S1236 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1355 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -432,22 +488,39 @@ MODE_SET_MINUTE 2
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2498
-[u S1245 . 1 `S1236 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1245  1 e 1 @270 ]
+[u S1364 . 1 `S1355 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1364  1 e 1 @270 ]
 "2543
 [v _LATD LATD `VEuc  1 e 1 @271 ]
 "2613
 [v _LATE LATE `VEuc  1 e 1 @272 ]
-[s S1223 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S1342 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
 ]
 "2626
-[u S1228 . 1 `S1223 1 . 1 0 ]
-[v _LATEbits LATEbits `VES1228  1 e 1 @272 ]
+[u S1347 . 1 `S1342 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1347  1 e 1 @272 ]
 "2923
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2950
+[v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
+[s S1225 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+"2971
+[s S1234 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+]
+[u S1237 . 1 `S1225 1 . 1 0 `S1234 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES1237  1 e 1 @279 ]
 "3272
 [v _APFCON APFCON `VEuc  1 e 1 @285 ]
 "3328
@@ -492,7 +565,7 @@ MODE_SET_MINUTE 2
 [v _SSPMSK SSPMSK `VEuc  1 e 1 @531 ]
 "4214
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
-[s S1079 . 1 `uc 1 BF 1 0 :1:0 
+[s S1087 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -502,11 +575,11 @@ MODE_SET_MINUTE 2
 `uc 1 SMP 1 0 :1:7 
 ]
 "4231
-[u S1088 . 1 `S1079 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES1088  1 e 1 @532 ]
+[u S1096 . 1 `S1087 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES1096  1 e 1 @532 ]
 "4276
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
-[s S1001 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1009 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
@@ -516,11 +589,11 @@ MODE_SET_MINUTE 2
 `uc 1 WCOL 1 0 :1:7 
 ]
 "4298
-[u S1010 . 1 `S1001 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES1010  1 e 1 @533 ]
+[u S1018 . 1 `S1009 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES1018  1 e 1 @533 ]
 "4398
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @534 ]
-[s S1056 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1064 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -530,9 +603,9 @@ MODE_SET_MINUTE 2
 `uc 1 GCEN 1 0 :1:7 
 ]
 "4415
-[u S1065 . 1 `S1056 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES1065  1 e 1 @534 ]
-[s S846 . 1 `uc 1 IOCBP0 1 0 :1:0 
+[u S1073 . 1 `S1064 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES1073  1 e 1 @534 ]
+[s S854 . 1 `uc 1 IOCBP0 1 0 :1:0 
 `uc 1 IOCBP1 1 0 :1:1 
 `uc 1 IOCBP2 1 0 :1:2 
 `uc 1 IOCBP3 1 0 :1:3 
@@ -542,11 +615,11 @@ MODE_SET_MINUTE 2
 `uc 1 IOCBP7 1 0 :1:7 
 ]
 "5909
-[s S855 . 1 `uc 1 IOCBP 1 0 :8:0 
+[s S863 . 1 `uc 1 IOCBP 1 0 :8:0 
 ]
-[u S857 . 1 `S846 1 . 1 0 `S855 1 . 1 0 ]
-[v _IOCBPbits IOCBPbits `VES857  1 e 1 @916 ]
-[s S820 . 1 `uc 1 IOCBN0 1 0 :1:0 
+[u S865 . 1 `S854 1 . 1 0 `S863 1 . 1 0 ]
+[v _IOCBPbits IOCBPbits `VES865  1 e 1 @916 ]
+[s S828 . 1 `uc 1 IOCBN0 1 0 :1:0 
 `uc 1 IOCBN1 1 0 :1:1 
 `uc 1 IOCBN2 1 0 :1:2 
 `uc 1 IOCBN3 1 0 :1:3 
@@ -556,11 +629,11 @@ MODE_SET_MINUTE 2
 `uc 1 IOCBN7 1 0 :1:7 
 ]
 "5979
-[s S829 . 1 `uc 1 IOCBN 1 0 :8:0 
+[s S837 . 1 `uc 1 IOCBN 1 0 :8:0 
 ]
-[u S831 . 1 `S820 1 . 1 0 `S829 1 . 1 0 ]
-[v _IOCBNbits IOCBNbits `VES831  1 e 1 @917 ]
-[s S794 . 1 `uc 1 IOCBF0 1 0 :1:0 
+[u S839 . 1 `S828 1 . 1 0 `S837 1 . 1 0 ]
+[v _IOCBNbits IOCBNbits `VES839  1 e 1 @917 ]
+[s S802 . 1 `uc 1 IOCBF0 1 0 :1:0 
 `uc 1 IOCBF1 1 0 :1:1 
 `uc 1 IOCBF2 1 0 :1:2 
 `uc 1 IOCBF3 1 0 :1:3 
@@ -570,10 +643,10 @@ MODE_SET_MINUTE 2
 `uc 1 IOCBF7 1 0 :1:7 
 ]
 "6049
-[s S803 . 1 `uc 1 IOCBF 1 0 :8:0 
+[s S811 . 1 `uc 1 IOCBF 1 0 :8:0 
 ]
-[u S805 . 1 `S794 1 . 1 0 `S803 1 . 1 0 ]
-[v _IOCBFbits IOCBFbits `VES805  1 e 1 @918 ]
+[u S813 . 1 `S802 1 . 1 0 `S811 1 . 1 0 ]
+[v _IOCBFbits IOCBFbits `VES813  1 e 1 @918 ]
 "8823
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
 "50 /home/sandeep/MPLABXProjects/kClock.X/main.c
@@ -587,12 +660,14 @@ MODE_SET_MINUTE 2
 "57
 [v _rtcData rtcData `[9]uc  1 e 9 0 ]
 "59
+[v _bcd_temp bcd_temp `us  1 e 2 0 ]
+"61
 [v _flag_button_press_count flag_button_press_count `[4]uc  1 e 4 0 ]
-"60
-[v _button_press_count button_press_count `[4]uc  1 e 4 0 ]
 "62
+[v _button_press_count button_press_count `[4]uc  1 e 4 0 ]
+"64
 [v _mode mode `uc  1 e 1 0 ]
-"63
+"65
 [v _mode_timeout_count mode_timeout_count `uc  1 e 1 0 ]
 [s S52 . 29 `uc 1 busy 1 0 :1:0 
 `uc 1 inUse 1 0 :1:1 
@@ -609,24 +684,57 @@ MODE_SET_MINUTE 2
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"146 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"162 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"288
+"323
 } 0
-"102
+"106
 [v _updateRTC updateRTC `(v  1 e 1 0 ]
 {
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 wreg ]
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 wreg ]
 [v updateRTC@bcdMinute bcdMinute `uc  1 p 1 14 ]
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 16 ]
-"108
+"112
 } 0
-"80
+"150
+[v _intToBCD intToBCD `(us  1 e 2 0 ]
+{
+"152
+[v intToBCD@shift shift `us  1 a 2 15 ]
+"151
+[v intToBCD@bcdResult bcdResult `us  1 a 2 13 ]
+"150
+[v intToBCD@binaryInput binaryInput `us  1 p 2 8 ]
+"160
+} 0
+"5 /opt/microchip/xc8/v2.10/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 /opt/microchip/xc8/v2.10/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 6 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"84 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _initRTC initRTC `(v  1 e 1 0 ]
 {
-"100
+"104
 } 0
 "48 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_simple_master.c
 [v _i2c_writeNBytes i2c_writeNBytes `(v  1 e 1 0 ]
@@ -959,49 +1067,49 @@ MODE_SET_MINUTE 2
 {
 "57
 } 0
-"125 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"129 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _bcdMinuteIncr bcdMinuteIncr `(uc  1 s 1 bcdMinuteIncr ]
 {
 [v bcdMinuteIncr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteIncr@mn mn `uc  1 a 1 wreg ]
-"127
+"131
 [v bcdMinuteIncr@mn mn `uc  1 a 1 0 ]
-"134
+"138
 } 0
-"136
+"140
 [v _bcdMinuteDecr bcdMinuteDecr `(uc  1 s 1 bcdMinuteDecr ]
 {
 [v bcdMinuteDecr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteDecr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteDecr@mn mn `uc  1 a 1 0 ]
-"144
+"148
 } 0
-"110
+"114
 [v _bcdHourIncr bcdHourIncr `(uc  1 s 1 bcdHourIncr ]
 {
 [v bcdHourIncr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourIncr@hr hr `uc  1 a 1 wreg ]
-"112
-[v bcdHourIncr@hr hr `uc  1 a 1 0 ]
 "116
+[v bcdHourIncr@hr hr `uc  1 a 1 0 ]
+"120
 } 0
-"118
+"122
 [v _bcdHourDecr bcdHourDecr `(uc  1 s 1 bcdHourDecr ]
 {
 [v bcdHourDecr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourDecr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourDecr@hr hr `uc  1 a 1 0 ]
-"123
+"127
 } 0
 "50 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"57
+"59
 } 0
-"73
+"75
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 {
-"77
+"79
 } 0
 "64 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
@@ -1025,10 +1133,29 @@ MODE_SET_MINUTE 2
 [v IOCBF4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "147
 } 0
-"59 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/mcc.c
+"61 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"71
+"73
+} 0
+"58 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"65 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"81
+} 0
+"110
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E2939  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E2939  1 a 1 wreg ]
+"113
+[v ADC_GetConversion@channel channel `E2939  1 a 1 3 ]
+"132
 } 0
 "52 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -1277,12 +1404,12 @@ MODE_SET_MINUTE 2
 {
 "140
 } 0
-"309 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"344 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _displayRefreshISR displayRefreshISR `(v  1 e 1 0 ]
 {
-"310
+"345
 [v displayRefreshISR@i i `uc  1 s 1 i ]
-"348
+"383
 } 0
 "118 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -1299,8 +1426,8 @@ MODE_SET_MINUTE 2
 {
 "155
 } 0
-"290 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"325 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _secondISR secondISR `(v  1 e 1 0 ]
 {
-"307
+"342
 } 0
