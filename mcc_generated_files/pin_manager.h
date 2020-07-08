@@ -206,6 +206,20 @@
 #define channel_AN13_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
 #define channel_AN13_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
 
+// get/set BUZZ aliases
+#define BUZZ_TRIS                 TRISBbits.TRISB7
+#define BUZZ_LAT                  LATBbits.LATB7
+#define BUZZ_PORT                 PORTBbits.RB7
+#define BUZZ_WPU                  WPUBbits.WPUB7
+#define BUZZ_SetHigh()            do { LATBbits.LATB7 = 1; } while(0)
+#define BUZZ_SetLow()             do { LATBbits.LATB7 = 0; } while(0)
+#define BUZZ_Toggle()             do { LATBbits.LATB7 = ~LATBbits.LATB7; } while(0)
+#define BUZZ_GetValue()           PORTBbits.RB7
+#define BUZZ_SetDigitalInput()    do { TRISBbits.TRISB7 = 1; } while(0)
+#define BUZZ_SetDigitalOutput()   do { TRISBbits.TRISB7 = 0; } while(0)
+#define BUZZ_SetPullup()          do { WPUBbits.WPUB7 = 1; } while(0)
+#define BUZZ_ResetPullup()        do { WPUBbits.WPUB7 = 0; } while(0)
+
 // get/set DIGIT_2 aliases
 #define DIGIT_2_TRIS                 TRISCbits.TRISC1
 #define DIGIT_2_LAT                  LATCbits.LATC1

@@ -5281,17 +5281,17 @@ extern __bank0 __bit __timeout;
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 378 "mcc_generated_files/pin_manager.h"
+# 392 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 390 "mcc_generated_files/pin_manager.h"
+# 404 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 403 "mcc_generated_files/pin_manager.h"
+# 417 "mcc_generated_files/pin_manager.h"
 void IOCBF4_ISR(void);
-# 426 "mcc_generated_files/pin_manager.h"
+# 440 "mcc_generated_files/pin_manager.h"
 void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
-# 450 "mcc_generated_files/pin_manager.h"
+# 464 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF4_InterruptHandler)(void);
-# 474 "mcc_generated_files/pin_manager.h"
+# 488 "mcc_generated_files/pin_manager.h"
 void IOCBF4_DefaultInterruptHandler(void);
 # 51 "mcc_generated_files/mcc.h" 2
 

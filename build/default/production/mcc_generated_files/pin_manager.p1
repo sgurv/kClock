@@ -112,11 +112,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 5909: extern volatile IOCBPbits_t IOCBPbits __attribute__((address(0x394)));
 [v _IOCBPbits `VS288 ~T0 @X0 0 e@916 ]
 [v F2908 `(v ~T0 @X0 0 tf ]
-"426 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 426: void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
+"440 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 440: void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2908 ]
-"474
-[; ;mcc_generated_files/pin_manager.h: 474: void IOCBF4_DefaultInterruptHandler(void);
+"488
+[; ;mcc_generated_files/pin_manager.h: 488: void IOCBF4_DefaultInterruptHandler(void);
 [v _IOCBF4_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "357 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 357:     struct {
@@ -133,8 +133,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"403 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 403: void IOCBF4_ISR(void);
+"417 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 417: void IOCBF4_ISR(void);
 [v _IOCBF4_ISR `(v ~T0 @X0 0 ef ]
 [v F2920 `(v ~T0 @X0 0 tf ]
 [v F2922 `(v ~T0 @X0 0 tf ]
@@ -697,8 +697,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 72:     TRISA = 0x67;
 [e = _TRISA -> -> 103 `i `uc ]
 "73
-[; ;mcc_generated_files/pin_manager.c: 73:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 73:     TRISB = 0x7F;
+[e = _TRISB -> -> 127 `i `uc ]
 "74
 [; ;mcc_generated_files/pin_manager.c: 74:     TRISC = 0xFD;
 [e = _TRISC -> -> 253 `i `uc ]

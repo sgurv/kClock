@@ -72,14 +72,21 @@ channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"173 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"244 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [e E3513 mode `uc
 MODE_NORMAL 0
 MODE_TEMPERATURE 1
 MODE_SET_HOUR 2
 MODE_SET_MINUTE 3
+MODE_SET_MONTH 4
+MODE_SET_DATE 5
+MODE_SET_AL1_H 6
+MODE_SET_AL1_M 7
+MODE_SET_AL2_H 8
+MODE_SET_AL2_M 9
+MODE_SET_TEMP_MODE 10
 ]
-"296
+"386
 [e E3383 . `uc
 channel_AN13 13
 channel_Temp 29
@@ -98,25 +105,27 @@ channel_FVR 31
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"84 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"96 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _initRTC initRTC `(v  1 e 1 0 ]
-"106
+"118
 [v _updateRTC updateRTC `(v  1 e 1 0 ]
-"114
+"126
 [v _bcdHourIncr bcdHourIncr `(uc  1 s 1 bcdHourIncr ]
-"122
+"134
 [v _bcdHourDecr bcdHourDecr `(uc  1 s 1 bcdHourDecr ]
-"129
+"141
 [v _bcdMinuteIncr bcdMinuteIncr `(uc  1 s 1 bcdMinuteIncr ]
-"140
+"152
 [v _bcdMinuteDecr bcdMinuteDecr `(uc  1 s 1 bcdMinuteDecr ]
-"150
+"191
 [v _intToBCD intToBCD `(us  1 e 2 0 ]
-"162
+"219
+[v _FIR_filter FIR_filter `(us  1 e 2 0 ]
+"233
 [v _main main `(v  1 e 1 0 ]
-"325
+"457
 [v _secondISR secondISR `(v  1 e 1 0 ]
-"344
+"476
 [v _displayRefreshISR displayRefreshISR `(v  1 e 1 0 ]
 "65 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -334,7 +343,7 @@ channel_FVR 31
 ]
 [u S459 . 1 `S445 1 . 1 0 `S454 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES459  1 e 1 @11 ]
-[s S1432 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1439 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -344,8 +353,8 @@ channel_FVR 31
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S1441 . 1 `S1432 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1441  1 e 1 @13 ]
+[u S1448 . 1 `S1439 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1448  1 e 1 @13 ]
 [s S654 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -684,30 +693,30 @@ channel_FVR 31
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"162 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"233 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"323
+"455
 } 0
-"106
+"118
 [v _updateRTC updateRTC `(v  1 e 1 0 ]
 {
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 wreg ]
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 wreg ]
 [v updateRTC@bcdMinute bcdMinute `uc  1 p 1 14 ]
 [v updateRTC@bcdHour bcdHour `uc  1 a 1 16 ]
-"112
+"124
 } 0
-"150
+"191
 [v _intToBCD intToBCD `(us  1 e 2 0 ]
 {
-"152
-[v intToBCD@shift shift `us  1 a 2 15 ]
-"151
-[v intToBCD@bcdResult bcdResult `us  1 a 2 13 ]
-"150
-[v intToBCD@binaryInput binaryInput `us  1 p 2 8 ]
-"160
+"193
+[v intToBCD@shift shift `us  1 a 2 19 ]
+"192
+[v intToBCD@bcdResult bcdResult `us  1 a 2 17 ]
+"191
+[v intToBCD@binaryInput binaryInput `us  1 p 2 12 ]
+"201
 } 0
 "5 /opt/microchip/xc8/v2.10/pic/sources/c99/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -731,10 +740,10 @@ channel_FVR 31
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"84 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"96 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _initRTC initRTC `(v  1 e 1 0 ]
 {
-"104
+"116
 } 0
 "48 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/drivers/i2c_simple_master.c
 [v _i2c_writeNBytes i2c_writeNBytes `(v  1 e 1 0 ]
@@ -1067,39 +1076,39 @@ channel_FVR 31
 {
 "57
 } 0
-"129 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"141 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _bcdMinuteIncr bcdMinuteIncr `(uc  1 s 1 bcdMinuteIncr ]
 {
 [v bcdMinuteIncr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteIncr@mn mn `uc  1 a 1 wreg ]
-"131
+"143
 [v bcdMinuteIncr@mn mn `uc  1 a 1 0 ]
-"138
+"150
 } 0
-"140
+"152
 [v _bcdMinuteDecr bcdMinuteDecr `(uc  1 s 1 bcdMinuteDecr ]
 {
 [v bcdMinuteDecr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteDecr@mn mn `uc  1 a 1 wreg ]
 [v bcdMinuteDecr@mn mn `uc  1 a 1 0 ]
-"148
+"160
 } 0
-"114
+"126
 [v _bcdHourIncr bcdHourIncr `(uc  1 s 1 bcdHourIncr ]
 {
 [v bcdHourIncr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourIncr@hr hr `uc  1 a 1 wreg ]
-"116
+"128
 [v bcdHourIncr@hr hr `uc  1 a 1 0 ]
-"120
+"132
 } 0
-"122
+"134
 [v _bcdHourDecr bcdHourDecr `(uc  1 s 1 bcdHourDecr ]
 {
 [v bcdHourDecr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourDecr@hr hr `uc  1 a 1 wreg ]
 [v bcdHourDecr@hr hr `uc  1 a 1 0 ]
-"127
+"139
 } 0
 "50 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1148,7 +1157,19 @@ channel_FVR 31
 {
 "81
 } 0
-"110
+"219 /home/sandeep/MPLABXProjects/kClock.X/main.c
+[v _FIR_filter FIR_filter `(us  1 e 2 0 ]
+{
+[v FIR_filter@sample sample `us  1 p 2 4 ]
+"220
+[v FIR_filter@buffer buffer `[8]us  1 s 16 buffer ]
+"221
+[v FIR_filter@oldest oldest `us  1 s 2 oldest ]
+"222
+[v FIR_filter@sum sum `ul  1 s 4 sum ]
+"231
+} 0
+"110 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/adc.c
 [v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
 {
 [v ADC_GetConversion@channel channel `E2939  1 a 1 wreg ]
@@ -1404,12 +1425,12 @@ channel_FVR 31
 {
 "140
 } 0
-"344 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"476 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _displayRefreshISR displayRefreshISR `(v  1 e 1 0 ]
 {
-"345
+"477
 [v displayRefreshISR@i i `uc  1 s 1 i ]
-"383
+"515
 } 0
 "118 /home/sandeep/MPLABXProjects/kClock.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -1426,8 +1447,8 @@ channel_FVR 31
 {
 "155
 } 0
-"325 /home/sandeep/MPLABXProjects/kClock.X/main.c
+"457 /home/sandeep/MPLABXProjects/kClock.X/main.c
 [v _secondISR secondISR `(v  1 e 1 0 ]
 {
-"342
+"474
 } 0

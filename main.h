@@ -51,6 +51,8 @@ extern "C" {
 #define     CHAR_J  (SEG_B | SEG_C | SEG_D | SEG_E)
 #define     CHAR_K  (SEG_E | SEG_F | SEG_G)    
 #define     CHAR_L  (SEG_D | SEG_E | SEG_F)    
+
+#define     CHAR_T  (SEG_D | SEG_E | SEG_F | SEG_G)
     
 #ifdef	__cplusplus
 }
