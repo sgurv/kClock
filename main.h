@@ -16,7 +16,8 @@ extern "C" {
 #define     BTN_DEBOUNCE_MAX    100
 #define     BTN_MAX             200
     
-#define     MODE_TIMEOUT_INTERVAL   8
+#define     MODE_TIMEOUT_INTERVAL   18
+#define     MODE_FLASH_INTERVAL     4
     
 #define     SEG_A   (1 << 7)
 #define     SEG_B   (1 << 6)

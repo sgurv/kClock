@@ -13,12 +13,12 @@
   @Description
     This header file provides APIs for driver for .
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.3
         Device            :  PIC16F1939
         Driver Version    :  2.11
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
-        MPLAB 	          :  MPLAB X 5.20	
+        Compiler          :  XC8 2.20 and above
+        MPLAB 	          :  MPLAB X 5.40	
 */
 
 /*
@@ -252,6 +252,22 @@
 #define SDA_GetValue()           PORTCbits.RC4
 #define SDA_SetDigitalInput()    do { TRISCbits.TRISC4 = 1; } while(0)
 #define SDA_SetDigitalOutput()   do { TRISCbits.TRISC4 = 0; } while(0)
+
+// get/set RC6 procedures
+#define RC6_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
+#define RC6_SetLow()             do { LATCbits.LATC6 = 0; } while(0)
+#define RC6_Toggle()             do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
+#define RC6_GetValue()              PORTCbits.RC6
+#define RC6_SetDigitalInput()    do { TRISCbits.TRISC6 = 1; } while(0)
+#define RC6_SetDigitalOutput()   do { TRISCbits.TRISC6 = 0; } while(0)
+
+// get/set RC7 procedures
+#define RC7_SetHigh()            do { LATCbits.LATC7 = 1; } while(0)
+#define RC7_SetLow()             do { LATCbits.LATC7 = 0; } while(0)
+#define RC7_Toggle()             do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0)
+#define RC7_GetValue()              PORTCbits.RC7
+#define RC7_SetDigitalInput()    do { TRISCbits.TRISC7 = 1; } while(0)
+#define RC7_SetDigitalOutput()   do { TRISCbits.TRISC7 = 0; } while(0)
 
 // get/set SEG_DOT aliases
 #define SEG_DOT_TRIS                 TRISDbits.TRISD0

@@ -21,6 +21,7 @@
         <itemPath>mcc_generated_files/i2c_driver.h</itemPath>
         <itemPath>mcc_generated_files/adc.h</itemPath>
         <itemPath>mcc_generated_files/fvr.h</itemPath>
+        <itemPath>mcc_generated_files/eusart.h</itemPath>
       </logicalFolder>
       <itemPath>main.h</itemPath>
     </logicalFolder>
@@ -48,6 +49,7 @@
         <itemPath>mcc_generated_files/i2c_driver.c</itemPath>
         <itemPath>mcc_generated_files/fvr.c</itemPath>
         <itemPath>mcc_generated_files/adc.c</itemPath>
+        <itemPath>mcc_generated_files/eusart.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -200,7 +202,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3fff"/>
-        <property key="poweroptions.powerenable" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

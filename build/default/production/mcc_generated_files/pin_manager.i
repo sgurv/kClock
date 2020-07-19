@@ -5273,17 +5273,17 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/opt/microchip/xc8/v2.10/pic/include/xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 392 "mcc_generated_files/pin_manager.h"
+# 408 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 404 "mcc_generated_files/pin_manager.h"
+# 420 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 417 "mcc_generated_files/pin_manager.h"
+# 433 "mcc_generated_files/pin_manager.h"
 void IOCBF4_ISR(void);
-# 440 "mcc_generated_files/pin_manager.h"
+# 456 "mcc_generated_files/pin_manager.h"
 void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
-# 464 "mcc_generated_files/pin_manager.h"
+# 480 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF4_InterruptHandler)(void);
-# 488 "mcc_generated_files/pin_manager.h"
+# 504 "mcc_generated_files/pin_manager.h"
 void IOCBF4_DefaultInterruptHandler(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
@@ -5311,7 +5311,7 @@ void PIN_MANAGER_Initialize(void)
     TRISE = 0x0D;
     TRISA = 0x67;
     TRISB = 0x7F;
-    TRISC = 0xFD;
+    TRISC = 0xBD;
     TRISD = 0x00;
 
 
@@ -5341,7 +5341,7 @@ void PIN_MANAGER_Initialize(void)
 
     IOCBFbits.IOCBF4 = 0;
 
-    IOCBNbits.IOCBN4 = 0;
+    IOCBNbits.IOCBN4 = 1;
 
     IOCBPbits.IOCBP4 = 1;
 

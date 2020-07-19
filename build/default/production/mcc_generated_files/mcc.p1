@@ -1,24 +1,27 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3343 `(v ~T0 @X0 0 tf ]
-[v F3345 `(v ~T0 @X0 0 tf ]
-"392 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 392: void PIN_MANAGER_Initialize (void);
+[v F3356 `(v ~T0 @X0 0 tf ]
+[v F3358 `(v ~T0 @X0 0 tf ]
+"408 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 408: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"89 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 89: void OSCILLATOR_Initialize(void);
+"91 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 91: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"101
-[; ;mcc_generated_files/mcc.h: 101: void WDT_Initialize(void);
+"103
+[; ;mcc_generated_files/mcc.h: 103: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/fvr.h
 [; ;mcc_generated_files/fvr.h: 93:  void FVR_Initialize(void);
 [v _FVR_Initialize `(v ~T0 @X0 0 ef ]
-"104 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 104: void TMR0_Initialize(void);
-[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
 "136 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 136: void ADC_Initialize(void);
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"104 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 104: void TMR0_Initialize(void);
+[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
+"110 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 110: void EUSART_Initialize(void);
+[v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "2015 /opt/microchip/xc8/v2.10/pic/include/pic16f1939.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f1939.h: 2015: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
@@ -561,10 +564,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 0FEFh ;# ">
 "78 mcc_generated_files/i2c_driver.h
 [; ;mcc_generated_files/i2c_driver.h: 78: void (*i2c_driver_busCollisionISR)(void);
-[v _i2c_driver_busCollisionISR `*F3343 ~T0 @X0 1 e ]
+[v _i2c_driver_busCollisionISR `*F3356 ~T0 @X0 1 e ]
 "79
 [; ;mcc_generated_files/i2c_driver.h: 79: void (*i2c_driver_i2cISR)(void);
-[v _i2c_driver_i2cISR `*F3345 ~T0 @X0 1 e ]
+[v _i2c_driver_i2cISR `*F3358 ~T0 @X0 1 e ]
 "50 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -586,63 +589,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 56:     FVR_Initialize();
 [e ( _FVR_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58:     ADC_Initialize();
+[; ;mcc_generated_files/mcc.c: 57:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]
+"58
+[; ;mcc_generated_files/mcc.c: 58:     TMR0_Initialize();
+[e ( _TMR0_Initialize ..  ]
 "59
-[; ;mcc_generated_files/mcc.c: 59: }
-[e :UE 380 ]
+[; ;mcc_generated_files/mcc.c: 59:     EUSART_Initialize();
+[e ( _EUSART_Initialize ..  ]
+"60
+[; ;mcc_generated_files/mcc.c: 60: }
+[e :UE 382 ]
 }
-"61
-[; ;mcc_generated_files/mcc.c: 61: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "62
-[; ;mcc_generated_files/mcc.c: 62: {
+[; ;mcc_generated_files/mcc.c: 62: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"63
+[; ;mcc_generated_files/mcc.c: 63: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"64
-[; ;mcc_generated_files/mcc.c: 64:     OSCCON = 0x70;
+"65
+[; ;mcc_generated_files/mcc.c: 65:     OSCCON = 0x70;
 [e = _OSCCON -> -> 112 `i `uc ]
-"66
-[; ;mcc_generated_files/mcc.c: 66:     OSCTUNE = 0x00;
+"67
+[; ;mcc_generated_files/mcc.c: 67:     OSCTUNE = 0x00;
 [e = _OSCTUNE -> -> 0 `i `uc ]
-"68
-[; ;mcc_generated_files/mcc.c: 68:     BORCON = 0x00;
+"69
+[; ;mcc_generated_files/mcc.c: 69:     BORCON = 0x00;
 [e = _BORCON -> -> 0 `i `uc ]
-"70
-[; ;mcc_generated_files/mcc.c: 70:     while(PLLR == 0)
-[e $U 382  ]
-[e :U 383 ]
 "71
-[; ;mcc_generated_files/mcc.c: 71:     {
-{
+[; ;mcc_generated_files/mcc.c: 71:     while(PLLR == 0)
+[e $U 384  ]
+[e :U 385 ]
 "72
-[; ;mcc_generated_files/mcc.c: 72:     }
-}
-[e :U 382 ]
-"70
-[; ;mcc_generated_files/mcc.c: 70:     while(PLLR == 0)
-[e $ == -> _PLLR `i -> 0 `i 383  ]
-[e :U 384 ]
+[; ;mcc_generated_files/mcc.c: 72:     {
+{
 "73
-[; ;mcc_generated_files/mcc.c: 73: }
-[e :UE 381 ]
+[; ;mcc_generated_files/mcc.c: 73:     }
 }
-"75
-[; ;mcc_generated_files/mcc.c: 75: void WDT_Initialize(void)
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+[e :U 384 ]
+"71
+[; ;mcc_generated_files/mcc.c: 71:     while(PLLR == 0)
+[e $ == -> _PLLR `i -> 0 `i 385  ]
+[e :U 386 ]
+"74
+[; ;mcc_generated_files/mcc.c: 74: }
+[e :UE 383 ]
+}
 "76
-[; ;mcc_generated_files/mcc.c: 76: {
+[; ;mcc_generated_files/mcc.c: 76: void WDT_Initialize(void)
+[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
+"77
+[; ;mcc_generated_files/mcc.c: 77: {
 {
 [e :U _WDT_Initialize ]
 [f ]
-"78
-[; ;mcc_generated_files/mcc.c: 78:     WDTCON = 0x12;
-[e = _WDTCON -> -> 18 `i `uc ]
 "79
-[; ;mcc_generated_files/mcc.c: 79: }
-[e :UE 385 ]
+[; ;mcc_generated_files/mcc.c: 79:     WDTCON = 0x14;
+[e = _WDTCON -> -> 20 `i `uc ]
+"80
+[; ;mcc_generated_files/mcc.c: 80: }
+[e :UE 387 ]
 }

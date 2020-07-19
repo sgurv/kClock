@@ -5278,17 +5278,17 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 392 "./mcc_generated_files/pin_manager.h"
+# 408 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 404 "./mcc_generated_files/pin_manager.h"
+# 420 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 417 "./mcc_generated_files/pin_manager.h"
+# 433 "./mcc_generated_files/pin_manager.h"
 void IOCBF4_ISR(void);
-# 440 "./mcc_generated_files/pin_manager.h"
+# 456 "./mcc_generated_files/pin_manager.h"
 void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
-# 464 "./mcc_generated_files/pin_manager.h"
+# 480 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF4_InterruptHandler)(void);
-# 488 "./mcc_generated_files/pin_manager.h"
+# 504 "./mcc_generated_files/pin_manager.h"
 void IOCBF4_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5379,8 +5379,39 @@ typedef uint32_t uint_fast32_t;
 # 1 "/opt/microchip/xc8/v2.10/pic/include/c99/stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "/opt/microchip/xc8/v2.10/pic/include/c99/errno.h" 1 3
+# 10 "/opt/microchip/xc8/v2.10/pic/include/c99/errno.h" 3
+extern int errno;
+# 9 "/opt/microchip/xc8/v2.10/pic/include/c99/conio.h" 2 3
+# 1 "/opt/microchip/xc8/v2.10/pic/include/__null.h" 1 3
+# 10 "/opt/microchip/xc8/v2.10/pic/include/c99/conio.h" 2 3
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
 # 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/i2c_driver.h" 1
 # 26 "./mcc_generated_files/i2c_driver.h"
@@ -5577,7 +5608,7 @@ __attribute__((inline)) void i2c_driver_setBusCollisionISR(interruptHandler hand
 __attribute__((inline)) void i2c_driver_setI2cISR(interruptHandler handler);
 void (*i2c_driver_busCollisionISR)(void);
 void (*i2c_driver_i2cISR)(void);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
 # 104 "./mcc_generated_files/tmr0.h"
@@ -5598,14 +5629,14 @@ void TMR0_CallBack(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 297 "./mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/fvr.h" 1
 # 93 "./mcc_generated_files/fvr.h"
  void FVR_Initialize(void);
 # 127 "./mcc_generated_files/fvr.h"
 _Bool FVR_IsOutputReady(void);
-# 57 "./mcc_generated_files/mcc.h" 2
+# 58 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/memory.h" 1
 # 99 "./mcc_generated_files/memory.h"
@@ -5620,7 +5651,7 @@ void FLASH_EraseBlock(uint16_t startAddr);
 void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
 # 246 "./mcc_generated_files/memory.h"
 uint8_t DATAEE_ReadByte(uint8_t bAdd);
-# 58 "./mcc_generated_files/mcc.h" 2
+# 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/adc.h" 1
 # 72 "./mcc_generated_files/adc.h"
@@ -5647,16 +5678,49 @@ void ADC_Initialize(void);
 # 166 "./mcc_generated_files/adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
 # 193 "./mcc_generated_files/adc.h"
-void ADC_StartConversion();
+void ADC_StartConversion(void);
 # 225 "./mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone();
+_Bool ADC_IsConversionDone(void);
 # 258 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
 # 288 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 316 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 59 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart.h" 1
+# 75 "./mcc_generated_files/eusart.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart_status_t;
+# 110 "./mcc_generated_files/eusart.h"
+void EUSART_Initialize(void);
+# 158 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 206 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_rx_ready(void);
+# 253 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_done(void);
+# 301 "./mcc_generated_files/eusart.h"
+eusart_status_t EUSART_get_last_status(void);
+# 321 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_Read(void);
+# 341 "./mcc_generated_files/eusart.h"
+void EUSART_Write(uint8_t txData);
+# 361 "./mcc_generated_files/eusart.h"
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 379 "./mcc_generated_files/eusart.h"
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 397 "./mcc_generated_files/eusart.h"
+void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+# 61 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
 # 28 "./mcc_generated_files/drivers/i2c_simple_master.h"
@@ -5699,7 +5763,7 @@ void i2c_write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
 void i2c_writeNBytes(i2c_address_t address, void* data, size_t len);
 void i2c_readDataBlock(i2c_address_t address, uint8_t reg, void *data, size_t len);
 void i2c_readNBytes(i2c_address_t address, void *data, size_t len);
-# 60 "./mcc_generated_files/mcc.h" 2
+# 62 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/drivers/i2c_master.h" 1
 # 33 "./mcc_generated_files/drivers/i2c_master.h"
@@ -5723,22 +5787,18 @@ void i2c_setTimeOutCallback(i2c_callback cb, void *p);
 
 void i2c_ISR(void);
 void i2c_busCollisionISR(void);
-# 61 "./mcc_generated_files/mcc.h" 2
-# 76 "./mcc_generated_files/mcc.h"
+# 63 "./mcc_generated_files/mcc.h" 2
+# 78 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 89 "./mcc_generated_files/mcc.h"
+# 91 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 101 "./mcc_generated_files/mcc.h"
+# 103 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 44 "main.c" 2
 
 # 1 "./main.h" 1
 # 45 "main.c" 2
-
-
-
-
-
+# 88 "main.c"
 const uint8_t displayNum[] = {((1 << 7) | (1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 2)), ((1 << 6) | (1 << 5)), ((1 << 7) | (1 << 6) | (1 << 4) | (1 << 3) | (1 << 1)), ((1 << 7) | (1 << 6) | (1 << 5) | (1 << 4) | (1 << 1)), ((1 << 6) | (1 << 5) | (1 << 2) | (1 << 1)), ((1 << 7) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1)),
                             ((1 << 7) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 2) | (1 << 1)), ((1 << 7) | (1 << 6) | (1 << 5)), ((1 << 7) | (1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 2) | (1 << 1)), ((1 << 7) | (1 << 6) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1))};
 
@@ -5746,15 +5806,23 @@ uint8_t displayBuff[4];
 uint8_t flag_time_display_update;
 uint8_t flag_dot_blink;
 
-uint8_t rtcData[9];
+
+uint8_t rtcData[20];
+
+
+
 
 uint16_t bcd_temp;
 
 uint8_t flag_button_press_count[4];
 uint8_t button_press_count[4];
 
-uint8_t mode;
-uint8_t mode_timeout_count;
+volatile uint8_t mode;
+volatile uint8_t mode_timeout_count;
+volatile uint8_t mode_flash_count;
+
+uint8_t flag_alarm1,flag_alarm2;
+uint8_t display_mode;
 
 enum mode{
     MODE_NORMAL,
@@ -5767,13 +5835,28 @@ enum mode{
     MODE_SET_AL1_M,
     MODE_SET_AL2_H,
     MODE_SET_AL2_M,
-    MODE_SET_TEMP_MODE
+    MODE_SET_DISPLAY_MODE
+};
+
+enum display_mode{
+    DISPLAY_MODE_TIME,
+    DISPLAY_MODE_TIME_DATE_30S_2S,
+    DISPLAY_MODE_TIME_TEMP_10S_2S,
+    DISPLAY_MODE_TIME_TEMP_30S_2S,
+    DISPLAY_MODE_TIME_TEMP_60S_5S,
+    DISPLAY_MODE_END
 };
 
 void secondISR(void);
 void displayRefreshISR(void);
 void initRTC(void);
 void updateRTC(uint8_t bcdHour, uint8_t bcdMinute);
+void updateAlarm1(uint8_t bcdHour, uint8_t bcdMinute);
+void updateAlarm2(uint8_t bcdHour, uint8_t bcdMinute);
+void updateDay(uint8_t bcdDay);
+void updateDate(uint8_t bcdDate);
+void updateMonth(uint8_t bcdMonth);
+void updateYear(uint8_t bcdYear);
 static uint8_t bcdHourIncr(uint8_t hr);
 static uint8_t bcdHourDecr(uint8_t hr);
 static uint8_t bcdMinuteIncr(uint8_t mn);
@@ -5791,20 +5874,34 @@ void initRTC(void){
 
 
     i2c_readDataBlock(0x68,0x00,rtcData,sizeof(rtcData));
-    if((rtcData[0] & 0x80) == 0x80){
 
+
+    if((rtcData[0x0F] & 0x80) == 0x80){
         rtcData[0] = 0x00;
-        rtcData[1] = 0x00;
-        rtcData[2] = 0x00;
-        rtcData[3] = 0x00;
-        rtcData[4] = 0x01;
-        rtcData[5] = 0x01;
-        rtcData[6] = 0x01;
-        rtcData[7] = 0x20;
-        rtcData[8] = 0x10;
+        rtcData[0x00 +1] = 0x00;
+        rtcData[0x01 +1] = 0x00;
+        rtcData[0x02 +1] = 0x00;
+        rtcData[0x03 +1] = 0x01;
+        rtcData[0x04 +1] = 0x01;
+        rtcData[0x05 +1] = 0x01;
+        rtcData[0x06 +1] = 0x20;
+        rtcData[0x07 +1] = 0x00;
+        rtcData[0x08 +1] = 0x00;
+        rtcData[0x09 +1] = 0x00;
+        rtcData[0x0A +1] = 0x00;
+        rtcData[0x0B +1] = 0x00;
+        rtcData[0x09 +1] = 0x00;
+        rtcData[0x0A +1] = 0x00;
+        rtcData[0x0E +1] = 0x00;
+        rtcData[0x0F +1] = 0x00;
 
         i2c_writeNBytes(0x68,rtcData,sizeof(rtcData));
+    } else if((rtcData[0x0E] & 0x04) == 0x04){
+        rtcData[0] = 0x0E;
+        rtcData[1] = 0x00;
+        i2c_writeNBytes(0x68,rtcData,2);
     }
+# 206 "main.c"
 }
 
 void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
@@ -5815,8 +5912,60 @@ void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
     i2c_writeNBytes(0x68,rtcData,4);
 }
 
-static uint8_t bcdHourIncr(uint8_t hr){
+void updateAlarm1(uint8_t bcdHour, uint8_t bcdMinute){
+    rtcData[0] = 0x08;
+    rtcData[1] = bcdMinute;
+    rtcData[2] = (bcdHour & 0xBF) ;
+    if((bcdMinute != 0) || (bcdHour != 0)){
 
+        rtcData[1] |= 0x80;
+        rtcData[2] |= 0x80;
+    }
+    i2c_writeNBytes(0x68,rtcData,3);
+}
+
+void updateAlarm2(uint8_t bcdHour, uint8_t bcdMinute){
+    rtcData[0] = 0x0B;
+    rtcData[1] = bcdMinute;
+    rtcData[2] = bcdHour & 0xBF;
+    if((bcdMinute != 0) || (bcdHour != 0)){
+
+        rtcData[1] |= 0x80;
+        rtcData[2] |= 0x80;
+    }
+    i2c_writeNBytes(0x68,rtcData,3);
+}
+
+void updateDay(uint8_t bcdDay){
+    rtcData[0] = 0x03;
+    rtcData[1] = bcdDay & 0x07;
+    i2c_writeNBytes(0x68,rtcData,2);
+}
+
+void updateDate(uint8_t bcdDate){
+    rtcData[0] = 0x04;
+    rtcData[1] = bcdDate & 0x3F;
+    i2c_writeNBytes(0x68,rtcData,2);
+}
+
+void updateMonth(uint8_t bcdMonth){
+    rtcData[0] = 0x05;
+    rtcData[1] = bcdMonth & 0x9F;
+    i2c_writeNBytes(0x68,rtcData,2);
+}
+
+void updateYear(uint8_t bcdYear){
+    if(bcdYear <= 0x99){
+        rtcData[0] = 0x06;
+        rtcData[1] = bcdYear;
+        i2c_writeNBytes(0x68,rtcData,2);
+    }
+}
+
+
+
+static uint8_t bcdHourIncr(uint8_t hr){
+    hr &= 0x7F;
     if(hr == 0x09) return 0x10;
     if(hr == 0x19) return 0x20;
     if(hr == 0x23) return 0x00;
@@ -5824,6 +5973,7 @@ static uint8_t bcdHourIncr(uint8_t hr){
 }
 
 static uint8_t bcdHourDecr(uint8_t hr){
+    hr &= 0x7F;
     if(hr == 0x00) return 0x23;
     if(hr == 0x10) return 0x09;
     if(hr == 0x20) return 0x19;
@@ -5831,7 +5981,7 @@ static uint8_t bcdHourDecr(uint8_t hr){
 }
 
 static uint8_t bcdMinuteIncr(uint8_t mn){
-
+    mn &= 0x7F;
     if(mn == 0x09) return 0x10;
     if(mn == 0x19) return 0x20;
     if(mn == 0x29) return 0x30;
@@ -5842,6 +5992,7 @@ static uint8_t bcdMinuteIncr(uint8_t mn){
 }
 
 static uint8_t bcdMinuteDecr(uint8_t mn){
+    mn &= 0x7F;
     if(mn == 0x00) return 0x59;
     if(mn == 0x10) return 0x09;
     if(mn == 0x20) return 0x19;
@@ -5859,13 +6010,13 @@ static uint8_t bcdMonthIncr(uint8_t mo){
 }
 
 static uint8_t bcdMonthDecr(uint8_t mo){
-    if(mo == 0x01) return 0x12;
+    if(mo <= 0x01) return 0x12;
     if(mo == 0x10) return 0x09;
     return (mo - 1);
 }
 
 static uint8_t bcdDateIncr(uint8_t dt){
-    if(dt == 0x31) return 0x01;
+    if(dt >= 0x31) return 0x01;
     if(dt == 0x09) return 0x10;
     if(dt == 0x19) return 0x20;
     if(dt == 0x29) return 0x30;
@@ -5873,7 +6024,7 @@ static uint8_t bcdDateIncr(uint8_t dt){
 }
 
 static uint8_t bcdDateDecr(uint8_t dt){
-    if(dt == 0x01) return 0x31;
+    if(dt <= 0x01) return 0x31;
     if(dt == 0x10) return 0x09;
     if(dt == 0x20) return 0x19;
     if(dt == 0x30) return 0x29;
@@ -5891,7 +6042,7 @@ uint16_t intToBCD(uint16_t binaryInput){
 
     return bcdResult;
 }
-# 219 "main.c"
+# 363 "main.c"
 adc_result_t FIR_filter(adc_result_t sample){
     static adc_result_t buffer[8] = {0,0,0,0,0,0,0,0};
     static adc_result_t oldest = 0;
@@ -5918,6 +6069,15 @@ void main(void)
     do { LATAbits.LATA3 = 0; } while(0);
 
     mode = MODE_NORMAL;
+    flag_alarm1 = 0;
+    flag_alarm2 = 0;
+
+
+    display_mode = DATAEE_ReadByte(0x01);
+
+    if(display_mode >= DISPLAY_MODE_END){
+        display_mode = DISPLAY_MODE_TIME;
+    }
 
     IOCBF4_SetInterruptHandler(&secondISR);
     TMR0_SetInterruptHandler(&displayRefreshISR);
@@ -5957,23 +6117,42 @@ void main(void)
                 if(button_press_count[0] > 5 && button_press_count[0] < 100){
                     if(mode == MODE_NORMAL){
                         mode = MODE_SET_HOUR;
-                        mode_timeout_count = 8;
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_HOUR){
                         mode = MODE_SET_MINUTE;
-                        mode_timeout_count = 8;
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_MINUTE){
                         mode = MODE_SET_MONTH;
-                        mode_timeout_count = 8;
+                        mode_timeout_count = 18;
+                        mode_flash_count = 4;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_MONTH){
                         mode = MODE_SET_DATE;
-                        mode_timeout_count = 8;
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_DATE){
-                        mode = MODE_SET_TEMP_MODE;
-                        mode_timeout_count = 8;
+                        mode = MODE_SET_AL1_H;
+                        mode_timeout_count = 18;
+                        mode_flash_count = 4;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL1_H){
+                        mode = MODE_SET_AL1_M;
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL1_M){
+                        mode = MODE_SET_AL2_H;
+                        mode_timeout_count = 18;
+                        mode_flash_count = 4;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL2_H){
+                        mode = MODE_SET_AL2_M;
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL2_M){
+                        mode = MODE_SET_DISPLAY_MODE;
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else {
                         mode = MODE_NORMAL;
@@ -5988,12 +6167,45 @@ void main(void)
                 if(button_press_count[1] > 5 && button_press_count[1] < 100){
 
                     if(mode == MODE_SET_HOUR){
-                        rtcData[2] = bcdHourIncr(rtcData[2]);
-                        mode_timeout_count = 8;
+                        rtcData[0x02] = bcdHourIncr(rtcData[0x02]);
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_MINUTE){
-                        rtcData[1] = bcdMinuteIncr(rtcData[1]);
-                        mode_timeout_count = 8;
+                        rtcData[0x01] = bcdMinuteIncr(rtcData[0x01]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_MONTH){
+                        rtcData[0x05] = bcdMonthIncr(rtcData[0x05]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_DATE){
+                        rtcData[0x04] = bcdDateIncr(rtcData[0x04]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL1_H){
+                        rtcData[0x09] = bcdHourIncr(rtcData[0x09]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL1_M){
+                        rtcData[0x08] = bcdMinuteIncr(rtcData[0x08]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL2_H){
+                        rtcData[0x0C] = bcdHourIncr(rtcData[0x0C]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL2_M){
+                        rtcData[0x0B] = bcdMinuteIncr(rtcData[0x0B]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_DISPLAY_MODE){
+                        display_mode++;
+
+                        if(display_mode == DISPLAY_MODE_END){
+                            display_mode = 0;
+                        }
+
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     }
 
@@ -6006,12 +6218,40 @@ void main(void)
                 if(button_press_count[2] > 5 && button_press_count[2] < 100){
 
                     if(mode == MODE_SET_HOUR){
-                        rtcData[2] = bcdHourDecr(rtcData[2]);
-                        mode_timeout_count = 8;
+                        rtcData[0x02] = bcdHourDecr(rtcData[0x02]);
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_MINUTE){
-                        rtcData[1] = bcdMinuteDecr(rtcData[1]);
-                        mode_timeout_count = 8;
+                        rtcData[0x01] = bcdMinuteDecr(rtcData[0x01]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_MONTH){
+                        rtcData[0x05] = bcdMonthDecr(rtcData[0x05]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_DATE){
+                        rtcData[0x04] = bcdDateDecr(rtcData[0x04]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL1_H){
+                        rtcData[0x09] = bcdHourDecr(rtcData[0x09]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL1_M){
+                        rtcData[0x08] = bcdMinuteDecr(rtcData[0x08]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL2_H){
+                        rtcData[0x0C] = bcdHourDecr(rtcData[0x0C]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_AL2_M){
+                        rtcData[0x0B] = bcdMinuteDecr(rtcData[0x0B]);
+                        mode_timeout_count = 18;
+                        flag_time_display_update = 1;
+                    } else if(mode == MODE_SET_DISPLAY_MODE){
+                        if(display_mode) display_mode--;
+                        mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     }
                 }
@@ -6023,11 +6263,18 @@ void main(void)
                 if(button_press_count[3] > 5 && button_press_count[3] < 100){
 
                     if((mode == MODE_SET_HOUR) || (mode == MODE_SET_MINUTE)){
-                        updateRTC(rtcData[2],rtcData[1]);
-                    } else if((mode == MODE_SET_MONTH) || (mode == MODE_SET_DATE)){
+                        updateRTC(rtcData[0x02],rtcData[0x01]);
+                    } else if(mode == MODE_SET_MONTH){
+                        updateMonth(rtcData[0x05]);
+                    } else if (mode == MODE_SET_DATE){
+                        updateDate(rtcData[0x04]);
+                    } else if ((mode == MODE_SET_AL1_H) || (mode == MODE_SET_AL1_M)){
+                        updateAlarm1(rtcData[0x09], rtcData[0x08]);
+                    } else if ((mode == MODE_SET_AL2_H) || (mode == MODE_SET_AL2_M)){
+                        updateAlarm2(rtcData[0x0C], rtcData[0x0B]);
+                    } else if(mode == MODE_SET_DISPLAY_MODE){
 
-                    } else if(mode == MODE_SET_TEMP_MODE){
-
+                        DATAEE_WriteByte(0x01, display_mode);
                     }
 
                     mode = MODE_NORMAL;
@@ -6040,19 +6287,32 @@ void main(void)
 
         if(mode == MODE_NORMAL){
             if(flag_time_display_update == 1){
-                i2c_readDataBlock(0x68,0x00,rtcData,sizeof(rtcData));
+                if(PORTBbits.RB4) {
 
-                displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
-                displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
-                displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
-                displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
+                    i2c_readDataBlock(0x68,0x00,rtcData,0x10);
+
+                    if((rtcData[0x0F] & 0x01) != 0) {
+                        flag_alarm1 = 1;
+                    }
+                    if((rtcData[0x0F] & 0x02) != 0) {
+                        flag_alarm2 = 1;
+                    }
+
+
+
+                }
+
+                displayBuff[0] = displayNum[((rtcData[0x02] >> 4) & 0x03)];
+                displayBuff[1] = displayNum[(rtcData[0x02]& 0x0F)];
+                displayBuff[2] = displayNum[((rtcData[0x01] >> 4) & 0x07)];
+                displayBuff[3] = displayNum[(rtcData[0x01]& 0x0F)];
 
                 flag_time_display_update = 0;
 
-                if((rtcData[0]& 0x0F) == 0x07){
-                    mode = MODE_TEMPERATURE;
-                    mode_timeout_count = 3;
-                }
+
+
+
+
             }
         } else if(mode == MODE_TEMPERATURE){
             if(flag_time_display_update == 1){
@@ -6071,10 +6331,10 @@ void main(void)
         } else if(mode == MODE_SET_HOUR){
             if(flag_time_display_update == 1){
                 do { LATAbits.LATA7 = 1; } while(0);
-                displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
-                displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
-                displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
-                displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
+                displayBuff[0] = displayNum[((rtcData[0x02] >> 4) & 0x03)];
+                displayBuff[1] = displayNum[(rtcData[0x02]& 0x0F)];
+                displayBuff[2] = displayNum[((rtcData[0x01] >> 4) & 0x07)];
+                displayBuff[3] = displayNum[(rtcData[0x01]& 0x0F)];
                 if(flag_dot_blink){
                     displayBuff[1] |= (1 << 0);
                 }
@@ -6083,10 +6343,10 @@ void main(void)
         } else if(mode == MODE_SET_MINUTE){
             if(flag_time_display_update == 1){
                 do { LATAbits.LATA7 = 1; } while(0);
-                displayBuff[0] = displayNum[((rtcData[2] >> 4) & 0x03)];
-                displayBuff[1] = displayNum[(rtcData[2]& 0x0F)];
-                displayBuff[2] = displayNum[((rtcData[1] >> 4) & 0x0F)];
-                displayBuff[3] = displayNum[(rtcData[1]& 0x0F)];
+                displayBuff[0] = displayNum[((rtcData[0x02] >> 4) & 0x03)];
+                displayBuff[1] = displayNum[(rtcData[0x02]& 0x0F)];
+                displayBuff[2] = displayNum[((rtcData[0x01] >> 4) & 0x07)];
+                displayBuff[3] = displayNum[(rtcData[0x01]& 0x0F)];
                 if(flag_dot_blink){
                     displayBuff[3] |= (1 << 0);
                 }
@@ -6094,39 +6354,129 @@ void main(void)
             }
         } else if(mode == MODE_SET_MONTH){
             if(flag_time_display_update == 1){
-                do { LATAbits.LATA7 = 1; } while(0);
-                displayBuff[0] = displayNum[((rtcData[4] >> 4) & 0x03)];
-                displayBuff[1] = displayNum[(rtcData[4]& 0x0F)];
-                displayBuff[2] = displayNum[((rtcData[5] >> 4) & 0x0F)];
-                displayBuff[3] = displayNum[(rtcData[5]& 0x0F)];
-                if(flag_dot_blink){
-                    displayBuff[3] |= (1 << 0);
+                if(mode_flash_count){
+
+                    do { LATAbits.LATA7 = 0; } while(0);
+                    displayBuff[0] = ((1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 1));
+                    displayBuff[1] = ((1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 1));
+                    displayBuff[2] = ((1 << 7) | (1 << 6) | (1 << 3) | (1 << 2));
+                    displayBuff[3] = ((1 << 7) | (1 << 6) | (1 << 5) | (1 << 2));
+                } else {
+                    do { LATAbits.LATA7 = 0; } while(0);
+                    displayBuff[0] = displayNum[((rtcData[0x04] >> 4) & 0x03)];
+                    displayBuff[1] = displayNum[(rtcData[0x04]& 0x0F)];
+                    displayBuff[2] = displayNum[((rtcData[0x05] >> 4) & 0x01)];
+                    displayBuff[3] = displayNum[(rtcData[0x05]& 0x0F)];
+                    if(flag_dot_blink){
+                        displayBuff[3] |= (1 << 0);
+                    }
                 }
                 flag_time_display_update = 0;
             }
         } else if(mode == MODE_SET_DATE){
             if(flag_time_display_update == 1){
-                do { LATAbits.LATA7 = 1; } while(0);
-                displayBuff[0] = displayNum[((rtcData[4] >> 4) & 0x03)];
-                displayBuff[1] = displayNum[(rtcData[4]& 0x0F)];
-                displayBuff[2] = displayNum[((rtcData[5] >> 4) & 0x0F)];
-                displayBuff[3] = displayNum[(rtcData[5]& 0x0F)];
+                do { LATAbits.LATA7 = 0; } while(0);
+                displayBuff[0] = displayNum[((rtcData[0x04] >> 4) & 0x03)];
+                displayBuff[1] = displayNum[(rtcData[0x04]& 0x0F)];
+                displayBuff[2] = displayNum[((rtcData[0x05] >> 4) & 0x01)];
+                displayBuff[3] = displayNum[(rtcData[0x05]& 0x0F)];
                 if(flag_dot_blink){
                     displayBuff[1] |= (1 << 0);
                 }
                 flag_time_display_update = 0;
             }
-        } else if(mode == MODE_SET_TEMP_MODE){
+        } else if(mode == MODE_SET_AL1_H){
+            if(flag_time_display_update == 1){
+                if(mode_flash_count){
+
+                    do { LATAbits.LATA7 = 0; } while(0);
+                    displayBuff[0] = ((1 << 7) | (1 << 6) | (1 << 5) | (1 << 3) | (1 << 2) | (1 << 1));
+                    displayBuff[1] = ((1 << 4) | (1 << 3) | (1 << 2));
+                    displayBuff[2] = 0x00;
+                    displayBuff[3] = ((1 << 6) | (1 << 5));
+                } else {
+                    do { LATAbits.LATA7 = 1; } while(0);
+                    displayBuff[0] = displayNum[((rtcData[0x09] >> 4) & 0x03)];
+                    displayBuff[1] = displayNum[(rtcData[0x09]& 0x0F)];
+                    displayBuff[2] = displayNum[((rtcData[0x08] >> 4) & 0x07)];
+                    displayBuff[3] = displayNum[(rtcData[0x08]& 0x0F)];
+                    if(flag_dot_blink){
+                        displayBuff[1] |= (1 << 0);
+                    }
+                }
+                flag_time_display_update = 0;
+            }
+        } else if(mode == MODE_SET_AL1_M){
             if(flag_time_display_update == 1){
                 do { LATAbits.LATA7 = 1; } while(0);
-                displayBuff[0] = ((1 << 4) | (1 << 3) | (1 << 2) | (1 << 1));
+                displayBuff[0] = displayNum[((rtcData[0x09] >> 4) & 0x03)];
+                displayBuff[1] = displayNum[(rtcData[0x09]& 0x0F)];
+                displayBuff[2] = displayNum[((rtcData[0x08] >> 4) & 0x07)];
+                displayBuff[3] = displayNum[(rtcData[0x08]& 0x0F)];
+                if(flag_dot_blink){
+                    displayBuff[3] |= (1 << 0);
+                }
+                flag_time_display_update = 0;
+            }
+        } else if(mode == MODE_SET_AL2_H){
+            if(flag_time_display_update == 1){
+                if(mode_flash_count){
+
+                    do { LATAbits.LATA7 = 0; } while(0);
+                    displayBuff[0] = ((1 << 7) | (1 << 6) | (1 << 5) | (1 << 3) | (1 << 2) | (1 << 1));
+                    displayBuff[1] = ((1 << 4) | (1 << 3) | (1 << 2));
+                    displayBuff[2] = 0x00;
+                    displayBuff[3] = ((1 << 7) | (1 << 6) | (1 << 4) | (1 << 3) | (1 << 1));
+                } else {
+                    do { LATAbits.LATA7 = 1; } while(0);
+                    displayBuff[0] = displayNum[((rtcData[0x0C] >> 4) & 0x03)];
+                    displayBuff[1] = displayNum[(rtcData[0x0C]& 0x0F)];
+                    displayBuff[2] = displayNum[((rtcData[0x0B] >> 4) & 0x07)];
+                    displayBuff[3] = displayNum[(rtcData[0x0B]& 0x0F)];
+                    if(flag_dot_blink){
+                        displayBuff[1] |= (1 << 0);
+                    }
+                }
+                flag_time_display_update = 0;
+            }
+        } else if(mode == MODE_SET_AL2_M){
+            if(flag_time_display_update == 1){
+                do { LATAbits.LATA7 = 1; } while(0);
+                displayBuff[0] = displayNum[((rtcData[0x0C] >> 4) & 0x03)];
+                displayBuff[1] = displayNum[(rtcData[0x0C]& 0x0F)];
+                displayBuff[2] = displayNum[((rtcData[0x0B] >> 4) & 0x07)];
+                displayBuff[3] = displayNum[(rtcData[0x0B]& 0x0F)];
+                if(flag_dot_blink){
+                    displayBuff[3] |= (1 << 0);
+                }
+                flag_time_display_update = 0;
+            }
+        } else if(mode == MODE_SET_DISPLAY_MODE){
+            if(flag_time_display_update == 1){
+                do { LATAbits.LATA7 = 0; } while(0);
+                bcd_temp = (uint8_t) intToBCD((uint16_t)display_mode);
+                displayBuff[0] = ((1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 1));
                 displayBuff[1] = 0x00;
-                displayBuff[2] = displayNum[((rtcData[5] >> 4) & 0x0F)];
-                displayBuff[3] = displayNum[(rtcData[5]& 0x0F)];
+                displayBuff[2] = displayNum[((bcd_temp >> 4) & 0x0F)];
+                displayBuff[3] = displayNum[(bcd_temp& 0x0F)];
 
                 flag_time_display_update = 0;
             }
         }
+
+
+        if(flag_alarm1){
+            flag_alarm1 = 0;
+
+
+        }
+
+        if(flag_alarm2){
+            flag_alarm2 = 0;
+
+        }
+
+
     }
 }
 
@@ -6147,6 +6497,8 @@ void secondISR(void){
             mode = MODE_NORMAL;
         }
     }
+
+    if(mode_flash_count) mode_flash_count--;
 }
 
 void displayRefreshISR(void){
