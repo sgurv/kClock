@@ -5813,6 +5813,7 @@ uint8_t rtcData[20];
 
 
 uint16_t bcd_temp;
+uint16_t filter_temp;
 
 uint8_t flag_button_press_count[4];
 uint8_t button_press_count[4];
@@ -5822,11 +5823,14 @@ volatile uint8_t mode_timeout_count;
 volatile uint8_t mode_flash_count;
 
 uint8_t flag_alarm1,flag_alarm2;
-uint8_t display_mode;
+uint8_t display_mode,temp_display_mode;
+
+uint8_t buzz_timeout;
 
 enum mode{
     MODE_NORMAL,
     MODE_TEMPERATURE,
+    MODE_DATE,
     MODE_SET_HOUR,
     MODE_SET_MINUTE,
     MODE_SET_MONTH,
@@ -5840,9 +5844,9 @@ enum mode{
 
 enum display_mode{
     DISPLAY_MODE_TIME,
-    DISPLAY_MODE_TIME_DATE_30S_2S,
-    DISPLAY_MODE_TIME_TEMP_10S_2S,
-    DISPLAY_MODE_TIME_TEMP_30S_2S,
+    DISPLAY_MODE_TIME_DATE_30S_3S,
+    DISPLAY_MODE_TIME_TEMP_10S_3S,
+    DISPLAY_MODE_TIME_TEMP_30S_3S,
     DISPLAY_MODE_TIME_TEMP_60S_5S,
     DISPLAY_MODE_END
 };
@@ -5853,6 +5857,7 @@ void initRTC(void);
 void updateRTC(uint8_t bcdHour, uint8_t bcdMinute);
 void updateAlarm1(uint8_t bcdHour, uint8_t bcdMinute);
 void updateAlarm2(uint8_t bcdHour, uint8_t bcdMinute);
+void clearAlarmFlag(void);
 void updateDay(uint8_t bcdDay);
 void updateDate(uint8_t bcdDate);
 void updateMonth(uint8_t bcdMonth);
@@ -5901,7 +5906,7 @@ void initRTC(void){
         rtcData[1] = 0x00;
         i2c_writeNBytes(0x68,rtcData,2);
     }
-# 206 "main.c"
+# 211 "main.c"
 }
 
 void updateRTC(uint8_t bcdHour, uint8_t bcdMinute){
@@ -5934,6 +5939,13 @@ void updateAlarm2(uint8_t bcdHour, uint8_t bcdMinute){
         rtcData[2] |= 0x80;
     }
     i2c_writeNBytes(0x68,rtcData,3);
+}
+
+void clearAlarmFlag(void){
+    uint8_t rData[2];
+    rData[0] = 0x0F;
+    rData[1] = 0x00;
+    i2c_writeNBytes(0x68,rData,2);
 }
 
 void updateDay(uint8_t bcdDay){
@@ -6042,7 +6054,7 @@ uint16_t intToBCD(uint16_t binaryInput){
 
     return bcdResult;
 }
-# 363 "main.c"
+# 375 "main.c"
 adc_result_t FIR_filter(adc_result_t sample){
     static adc_result_t buffer[8] = {0,0,0,0,0,0,0,0};
     static adc_result_t oldest = 0;
@@ -6152,6 +6164,7 @@ void main(void)
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_AL2_M){
                         mode = MODE_SET_DISPLAY_MODE;
+                        temp_display_mode = display_mode;
                         mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else {
@@ -6199,15 +6212,17 @@ void main(void)
                         mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_DISPLAY_MODE){
-                        display_mode++;
+                        temp_display_mode++;
 
-                        if(display_mode == DISPLAY_MODE_END){
-                            display_mode = 0;
+                        if(temp_display_mode == DISPLAY_MODE_END){
+                            temp_display_mode = 0;
                         }
 
                         mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     }
+
+                    mode_flash_count = 0;
 
                 }
                 button_press_count[1] = 0;
@@ -6250,10 +6265,12 @@ void main(void)
                         mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     } else if(mode == MODE_SET_DISPLAY_MODE){
-                        if(display_mode) display_mode--;
+                        if(temp_display_mode) temp_display_mode--;
                         mode_timeout_count = 18;
                         flag_time_display_update = 1;
                     }
+
+                    mode_flash_count = 0;
                 }
                 button_press_count[2] = 0;
                 flag_button_press_count[2] = 0;
@@ -6274,7 +6291,8 @@ void main(void)
                         updateAlarm2(rtcData[0x0C], rtcData[0x0B]);
                     } else if(mode == MODE_SET_DISPLAY_MODE){
 
-                        DATAEE_WriteByte(0x01, display_mode);
+                        display_mode = temp_display_mode;
+                        DATAEE_WriteByte(0x01, temp_display_mode);
                     }
 
                     mode = MODE_NORMAL;
@@ -6298,35 +6316,75 @@ void main(void)
                         flag_alarm2 = 1;
                     }
 
+                    if((flag_alarm1 == 1) || (flag_alarm1 == 1)){
+                        clearAlarmFlag();
+                    }
+
 
 
                 }
 
-                displayBuff[0] = displayNum[((rtcData[0x02] >> 4) & 0x03)];
-                displayBuff[1] = displayNum[(rtcData[0x02]& 0x0F)];
-                displayBuff[2] = displayNum[((rtcData[0x01] >> 4) & 0x07)];
-                displayBuff[3] = displayNum[(rtcData[0x01]& 0x0F)];
+                if((display_mode == DISPLAY_MODE_TIME_DATE_30S_3S)
+                        && ((rtcData[0x00] == 0x27) || (rtcData[0x00] == 0x57))){
 
-                flag_time_display_update = 0;
+                    mode_flash_count = 6;
+                    mode = MODE_DATE;
+                } else if((display_mode == DISPLAY_MODE_TIME_TEMP_10S_3S)
+                        && ((rtcData[0x00] == 0x07) || (rtcData[0x00] == 0x17)
+                        || (rtcData[0x00] == 0x27) || (rtcData[0x00] == 0x37)
+                        || (rtcData[0x00] == 0x47) || (rtcData[0x00] == 0x57))){
 
+                    mode_flash_count = 6;
+                    mode = MODE_TEMPERATURE;
+                } else if((display_mode == DISPLAY_MODE_TIME_TEMP_30S_3S)
+                        && ((rtcData[0x00] == 0x27) || (rtcData[0x00] == 0x57))){
 
+                    mode_flash_count = 6;
+                    mode = MODE_TEMPERATURE;
+                } else if((display_mode == DISPLAY_MODE_TIME_TEMP_60S_5S) && (rtcData[0x00] == 0x55)){
 
+                    mode_flash_count = 10;
+                    mode = MODE_TEMPERATURE;
+                } else {
 
+                    displayBuff[0] = displayNum[((rtcData[0x02] >> 4) & 0x03)];
+                    displayBuff[1] = displayNum[(rtcData[0x02]& 0x0F)];
+                    displayBuff[2] = displayNum[((rtcData[0x01] >> 4) & 0x07)];
+                    displayBuff[3] = displayNum[(rtcData[0x01]& 0x0F)];
 
+                    flag_time_display_update = 0;
+                }
             }
         } else if(mode == MODE_TEMPERATURE){
             if(flag_time_display_update == 1){
+                if(mode_flash_count){
+                    do { LATAbits.LATA7 = 0; } while(0);
 
-                do { LATAbits.LATA7 = 0; } while(0);
+                    bcd_temp = intToBCD(filter_temp);
 
-                bcd_temp = intToBCD(FIR_filter(ADC_GetConversion(channel_AN13)));
+                    displayBuff[0] = displayNum[((bcd_temp >> 8) & 0x0F)];
+                    displayBuff[1] = displayNum[((bcd_temp >> 4) & 0x0F)] | (1 << 0);
+                    displayBuff[2] = displayNum[(bcd_temp & 0x0F)];
+                    displayBuff[3] = ((1 << 7) | (1 << 4) | (1 << 3) | (1 << 2));
 
-                displayBuff[0] = displayNum[((bcd_temp >> 8) & 0x0F)];
-                displayBuff[1] = displayNum[((bcd_temp >> 4) & 0x0F)] | (1 << 0);
-                displayBuff[2] = displayNum[(bcd_temp & 0x0F)];
-                displayBuff[3] = ((1 << 7) | (1 << 4) | (1 << 3) | (1 << 2));
+                    flag_time_display_update = 0;
+                } else {
+                    mode = MODE_NORMAL;
+                }
+            }
+        } else if(mode == MODE_DATE){
+            if(flag_time_display_update == 1){
+                if(mode_flash_count){
+                    do { LATAbits.LATA7 = 0; } while(0);
+                    displayBuff[0] = displayNum[((rtcData[0x04] >> 4) & 0x03)];
+                    displayBuff[1] = displayNum[(rtcData[0x04]& 0x0F)];
+                    displayBuff[2] = displayNum[((rtcData[0x05] >> 4) & 0x01)];
+                    displayBuff[3] = displayNum[(rtcData[0x05]& 0x0F)];
 
-                flag_time_display_update = 0;
+                    flag_time_display_update = 0;
+                } else {
+                    mode = MODE_NORMAL;
+                }
             }
         } else if(mode == MODE_SET_HOUR){
             if(flag_time_display_update == 1){
@@ -6454,7 +6512,7 @@ void main(void)
         } else if(mode == MODE_SET_DISPLAY_MODE){
             if(flag_time_display_update == 1){
                 do { LATAbits.LATA7 = 0; } while(0);
-                bcd_temp = (uint8_t) intToBCD((uint16_t)display_mode);
+                bcd_temp = (uint8_t) intToBCD((uint16_t)temp_display_mode);
                 displayBuff[0] = ((1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 1));
                 displayBuff[1] = 0x00;
                 displayBuff[2] = displayNum[((bcd_temp >> 4) & 0x0F)];
@@ -6468,15 +6526,30 @@ void main(void)
         if(flag_alarm1){
             flag_alarm1 = 0;
 
-
+            buzz_timeout = 30;
+            do { LATBbits.LATB7 = 1; } while(0);
         }
 
         if(flag_alarm2){
             flag_alarm2 = 0;
 
+            buzz_timeout = 30;
+            do { LATBbits.LATB7 = 1; } while(0);
+        }
+
+        if(buzz_timeout == 0) {
+            do { LATBbits.LATB7 = 0; } while(0);
         }
 
 
+
+
+        if((display_mode == DISPLAY_MODE_TIME_TEMP_10S_3S)
+            || (display_mode == DISPLAY_MODE_TIME_TEMP_30S_3S)
+            || (display_mode == DISPLAY_MODE_TIME_TEMP_60S_5S)){
+
+            filter_temp = FIR_filter(ADC_GetConversion(channel_AN13));
+        }
     }
 }
 
@@ -6484,12 +6557,12 @@ void secondISR(void){
 
     if(mode == MODE_NORMAL){
         do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0);
-        flag_time_display_update = 1;
     } else {
         if(flag_dot_blink) flag_dot_blink = 0;
         else flag_dot_blink = 1;
-        flag_time_display_update = 1;
     }
+
+    flag_time_display_update = 1;
 
     if(mode_timeout_count) {
         mode_timeout_count--;
@@ -6499,6 +6572,8 @@ void secondISR(void){
     }
 
     if(mode_flash_count) mode_flash_count--;
+
+    if(buzz_timeout) buzz_timeout--;
 }
 
 void displayRefreshISR(void){
